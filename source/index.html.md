@@ -26,6 +26,9 @@ Welcome to [Polkaholic](http://polkaholic.io) API!
 
 Polkaholic API gives you powerful access to over 30+ networks in Polkadot and Kusama ecosystem. Get a [free API key](https://polkaholic.io/apikeys) today and start building your own dApp!
 
+Any questions? Find us on [Matrix](https://matrix.to/#/#polkaholic:matrix.org): `#polkaholic:matrix.org`
+
+
 <aside class="success">
 All pages on the polkaholic.io web site have API call information displayed at the bottom, and are documented here.
 </aside>
@@ -129,7 +132,7 @@ You can query any supported chain either by its id or chainID.
 (Last updated: 2022-06-05)
 
 <aside class="notice">
-Didn't find the chain you are looking for? Send us an email <a href = "mailto:info@polkaholic.io">info@polkaholic.io</a> and we will index it!
+Didn't find the chain you are looking for? Send us an email <a href = "mailto:info@polkaholic.io">info@polkaholic.io</a> or find us on <a href = "https://matrix.to/#/#polkaholic:matrix.org">Matrix</a>. We will index it!
 </aside>
 
 ## Get All Chains
