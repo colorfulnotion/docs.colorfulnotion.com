@@ -24,9 +24,9 @@ meta:
 
 Welcome to [Polkaholic](http://polkaholic.io) API!
 
-Polkaholic API gives you powerful access to over 40+ networks in Polkadot and Kusama ecosystem. Get a [free API key](https://polkaholic.io/apikeys) today and start building your own dApp!
+Polkaholic API gives you powerful access to over 40+ networks in Polkadot and Kusama ecosystem. Get a [free API key](https://polkaholic.io/apikeys) today and start building your own dApps!
 
-Any questions? Find us on [Matrix](https://matrix.to/#/#polkaholic:matrix.org): `#polkaholic:matrix.org`
+Got any questions? Find us on [Matrix](https://matrix.to/#/#polkaholic:matrix.org): `#polkaholic:matrix.org`
 
 
 <aside class="success">
@@ -59,16 +59,19 @@ You must replace <code>YOUR-API-KEY</code> with your personal API key.
 # Chains
 
 ## Supported Chains
+
+As of 2022-06-27, Polkaholic supports Polkadot & 17 polkadot-parachains, plus Kusama & 28 kusama-parachains - 47 chains in total.
+
 <aside class="success">
 We coined the "ChainID" as a convenient way to identify any given chain using the following rule:  
 </aside>
 
-| Chain| ChainID               | ChainID Description|
-|-----------|----------|--------------|
-|Polkadot (Mainnet)   |  0 | For Polkadot Mainnet (or the relaychain), use Polkadot's prefix as chainID (Prefix: 0)
-|Kusama (Mainnet)    |  2 | For Kusama Mainnet (or the relaychain), use Kusama's prefix as chainID (Prefix: 2)
-|Polkadot - parachain   |  paraID | Use its Polkadot paraID as chainID. A valid chainID for polkadot-parachain should be 4-digits long and in the range of [1000-2xxx]
-|Kusama - parachain     |  20000+paraID | Use its Kusama paraID *Plus* 20000 as chainID. A valid chainID for kusama-parachain should be 5-digits long and in the range of [21000-22xxx]
+| Chain               | ChainID       | ChainID Description|
+|---------------------|:-------------:|--------------------|
+|Polkadot (Mainnet)   |  0            | For Polkadot Mainnet (or the relaychain), use Polkadot's prefix as chainID (Prefix: 0)
+|Kusama (Mainnet)     |  2            | For Kusama Mainnet (or the relaychain), use Kusama's prefix as chainID (Prefix: 2)
+|Polkadot - parachain |  paraID       | Use its Polkadot paraID as chainID. A valid chainID for polkadot-parachain should be 4-digits long and in the range of [1000-2xxx]
+|Kusama - parachain   |  20000+paraID | Use its Kusama paraID *Plus* 20000 as chainID. A valid chainID for kusama-parachain should be 5-digits long and in the range of [21000-22xxx]
 
 You can query any supported chain either by its id or chainID.
 
@@ -141,8 +144,6 @@ You can query any supported chain either by its id or chainID.
 
 *_Unstable Chain_: These chains are unstable/unreachable; therefore API services are limited for these chains.
 
-As of 2022-06-27, Polkaholic supports Polkadot & 17 polkadot-parachains + Kusama & 28 kusama-parachains, 47 chains in total.
-
 (Last updated: 2022-06-27)
 
 <aside class="notice">
@@ -166,18 +167,19 @@ curl "https://api.polkaholic.io/chains" \
     "chainID": 0,
     "chainName": "Polkadot",
     "symbol": "DOT",
-    "lastFinalizedTS": 1654207445,
+    "lastFinalizedTS": 1656359324,
     "iconUrl": "https://cdn.polkaholic.io/polkadot.png",
-    "numExtrinsics": 26587385,
-    "numSignedExtrinsics": 9445075,
-    "numTransfers": 7624259,
-    "numEvents": 107552637,
-    "numHolders": 2058984,
+    "numExtrinsics": 27523464,
+    "numSignedExtrinsics": 9679985,
+    "numTransfers": 7890948,
+    "numEvents": 116538632,
+    "numHolders": 2101379,
     "relayChain": "polkadot",
     "totalIssuance": 1167630208,
     "isEVM": 0,
-    "blocksCovered": 10576476,
-    "blocksFinalized": 10576473
+    "blocksCovered": 10924487,
+    "blocksFinalized": 10924484,
+    "crawlingStatus": ""
   },
   {
     "id": "statemint",
@@ -185,18 +187,19 @@ curl "https://api.polkaholic.io/chains" \
     "chainID": 1000,
     "chainName": "Statemint",
     "symbol": "DOT",
-    "lastFinalizedTS": 1654207445,
+    "lastFinalizedTS": 1656359324,
     "iconUrl": "https://cdn.polkaholic.io/statemint.svg",
-    "numExtrinsics": 2524634,
-    "numSignedExtrinsics": 135,
-    "numTransfers": 26,
-    "numEvents": 2526047,
-    "numHolders": 39,
+    "numExtrinsics": 2853812,
+    "numSignedExtrinsics": 157,
+    "numTransfers": 39,
+    "numEvents": 2855459,
+    "numHolders": 52,
     "relayChain": "polkadot",
     "totalIssuance": 0,
     "isEVM": 0,
-    "blocksCovered": 1414851,
-    "blocksFinalized": 1414849
+    "blocksCovered": 1581649,
+    "blocksFinalized": 1581647,
+    "crawlingStatus": ""
   },
   {
     "id": "acala",
@@ -204,19 +207,20 @@ curl "https://api.polkaholic.io/chains" \
     "chainID": 2000,
     "chainName": "Acala",
     "symbol": "ACA",
-    "lastFinalizedTS": 1654207445,
+    "lastFinalizedTS": 1656359324,
     "iconUrl": "https://cdn.polkaholic.io/acala.png",
-    "numExtrinsics": 3338118,
-    "numSignedExtrinsics": 1038703,
-    "numTransfers": 1176606,
-    "numEvents": 14584548,
-    "numHolders": 171898,
+    "numExtrinsics": 3769800,
+    "numSignedExtrinsics": 1135331,
+    "numTransfers": 2223553,
+    "numEvents": 16680798,
+    "numHolders": 174983,
     "relayChain": "polkadot",
     "totalIssuance": 1000000000,
     "isEVM": 0,
-    "blocksCovered": 1147978,
-    "blocksFinalized": 1147976
-  }
+    "blocksCovered": 1315579,
+    "blocksFinalized": 1315577,
+    "crawlingStatus": ""
+  },
   ...
 ]  
 ```
@@ -234,14 +238,16 @@ None
 
 ### Response Description
 
-Attribute | Description
---------- | -----------
-id | The "Human-readble" identifier of the give chain (same as Talisman's chain id) |    
-chainID | The Alternative identifiers of the given chain  |  
-relayChain | The corresponding relaychain of the given parachain  |
-isEVM | Whether the chain supports Ethereum Pallet  |
-blocksCovered |The most recent block (including unfinalized block) |
-blocksFinalized | The most recent finalized block   |
+Attribute       | Description
+--------------- | -----------
+id              | The "Human-readble" identifier of the give chain (same as Talisman's chain id)    
+chainID         | The Alternative identifiers of the given chain
+relayChain      | The corresponding relaychain of the given parachain
+isEVM           | Whether the chain supports Ethereum Pallet
+prefix          | The Chain prefix for SS58 address    |  
+blocksCovered   | The most recent block (including unfinalized block)
+blocksFinalized | The most recent finalized block
+crawlingStatus  | The Crawling Exception Status, if any.
 
 
 ## Get ChainInfo and Recent Blocks
@@ -452,6 +458,14 @@ Parameter | Description
 ChainIdentifier | The identifier of the chain to retrieve data about
 BlockNumber | The Block Number to retrieve data about
 
+
+### URL Parameters
+
+Parameter | Description | Optional? | Default |
+--------- | ----------- | --------- | ------- |
+decroate  | Whether API should return decorated fields | Yes | true
+extra     | Decorate the response with fields like ['usd','address', 'related', 'data'] | Yes | usd,address, data
+
 ### Response Description
 
 Attribute | Description | Sample Object |
@@ -576,6 +590,13 @@ Both Substrate Extrinsic and EVM transactions are searchable by its TxHash; to a
 Parameter | Description |
 --------- | -----------
 TxHash | The Transaction Hash to retrieve data about, can be either Substrate's extrinsicHash or EVM's transactionHash
+
+### URL Parameters
+
+Parameter | Description | Optional? | Default |
+--------- | ----------- | --------- | ------- |
+decroate  | Whether API should return decorated fields | Yes | true
+extra     | Decorate the response with fields like ['usd','address', 'related', 'data'] | Yes | usd,address, data
 
 ### Response Description (Decorated SubStrate Extrinsic)
 
@@ -743,6 +764,12 @@ Parameter | Description |
 --------- | -----------
 TxHash | The Transaction Hash to retrieve data about, can be either Substrate's extrinsicHash or EVM's transactionHash
 
+### URL Parameters
+
+Parameter | Description | Optional? | Default |
+--------- | ----------- | --------- | ------- |
+decroate  | Whether API should return decorated fields | Yes | true
+extra     | Decorate the response with fields like ['usd','address', 'related', 'data'] | Yes | usd,address, data
 
 ### Response Description (Decorated EVM Transaction)
 
@@ -885,6 +912,8 @@ Parameter | Description | Optional? | Default |
 --------- | ----------- | --------- | ------- |
 group     | The group type to return by the API (see below) | Yes | 'realtime'
 lookbackWindow     | TBA | Yes | 180
+decroate  | Whether API should return decorated fields | Yes | true
+extra     | Decorate the response with fields like ['usd','address', 'related', 'data'] | Yes | usd,address, data
 
 ### Supported Query Group
 Currently `/account` endpoint supprts [`realtime`,`balances`, `xcmtransfers`, `history`,`extrinsics`,`transfers`,`crowdloans`,`rewards`, `feed`] group type. Only *one* group type will be returned by the API at a time.
@@ -1496,9 +1525,12 @@ Return the latest 1000 xcm tranfers from all supported networks.
 
 `GET https://api.polkaholic.io/xcmtransfers/`
 
-### Query Parameters
+### URL Parameters
 
-None
+Parameter | Description | Optional? | Default |
+--------- | ----------- | --------- | ------- |
+decroate  | Whether API should return decorated fields | Yes | true
+extra     | Decorate the response with fields like ['usd','address', 'related', 'data'] | Yes | usd,address, data
 
 ### Response Description
 
@@ -1578,7 +1610,10 @@ blockNumberEnd | Int| The Ending BlockNumber(inclusive) | Optional
 
 ### URL Parameters
 
-TODO
+Parameter | Description | Optional? | Default |
+--------- | ----------- | --------- | ------- |
+decroate  | Whether API should return decorated fields | Yes | true
+extra     | Decorate the response with fields like ['usd','address', 'related', 'data'] | Yes | usd,address, data
 
 ### Response Description
 
@@ -1652,6 +1687,13 @@ blockNumberStart | Int | The Starting BlockNumber(inclusive) | Optional
 blockNumberEnd | Int| The Ending BlockNumber(inclusive) | Optional
 result | Int | 0: Failure, 1: Success. If unspecified: including both | Optional
 
+### URL Parameters
+
+Parameter | Description | Optional? | Default |
+--------- | ----------- | --------- | ------- |
+decroate  | Whether API should return decorated fields | Yes | true
+extra     | Decorate the response with fields like ['usd','address', 'related', 'data'] | Yes | usd,address, data
+
 ### Response Description
 
 Attribute | Description
@@ -1714,7 +1756,10 @@ result | Int | 0: Failure, 1: Success. If unspecified: including both | Optional
 
 ### URL Parameters
 
-TODO
+Parameter | Description | Optional? | Default |
+--------- | ----------- | --------- | ------- |
+decroate  | Whether API should return decorated fields | Yes | true
+extra     | Decorate the response with fields like ['usd','address', 'related', 'data'] | Yes | usd,address, data
 
 ### Response Description
 
@@ -1794,6 +1839,13 @@ dateEnd | `"YYYY-MM-DD"` |  The Ending Date(inclusive). ex: "2022-05-31" | Optio
 blockNumberStart | Int | The Starting BlockNumber at sending chain (inclusive) | Optional
 blockNumberEnd | Int| The Ending BlockNumber at sending chain (inclusive) | Optional
 incomplete | Int | 0: Complete(xcm successfully initiated), 1: Incomplete. If Unspecified: Including both | Optional
+
+### URL Parameters
+
+Parameter | Description | Optional? | Default |
+--------- | ----------- | --------- | ------- |
+decroate  | Whether API should return decorated fields | Yes | true
+extra     | Decorate the response with fields like ['usd','address', 'related', 'data'] | Yes | usd,address, data
 
 ### Response Description
 Return an list of (xcmtransfer)[#xcmtransfers]
