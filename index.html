@@ -503,7 +503,7 @@
         <h1 id='introduction'>Introduction</h1>
 <p>Welcome to <a href="http://polkaholic.io">Polkaholic</a> API!</p>
 
-<p>Polkaholic API gives you powerful access to over 30+ networks in Polkadot and Kusama ecosystem. Get a <a href="https://polkaholic.io/apikeys">free API key</a> today and start building your own dApp!</p>
+<p>Polkaholic API gives you powerful access to over 40+ networks in Polkadot and Kusama ecosystem. Get a <a href="https://polkaholic.io/apikeys">free API key</a> today and start building your own dApp!</p>
 
 <p>Any questions? Find us on <a href="https://matrix.to/#/#polkaholic:matrix.org">Matrix</a>: <code>#polkaholic:matrix.org</code></p>
 
@@ -565,304 +565,433 @@ We coined the "ChainID" as a convenient way to identify any given chain using th
 </tbody></table>
 
 <p>You can query any supported chain either by its id or chainID.</p>
-<h3 id='supported-chains-polkadot-ecosystem'>Supported Chains - Polkadot Ecosystem</h3>
+<h3 id='supported-polkadot-chains'>Supported Polkadot Chains</h3>
 <table><thead>
 <tr>
 <th>Chain</th>
 <th>id</th>
 <th>chainID</th>
-<th>isEVM</th>
+<th>Polkaholic Explorer</th>
+<th>Prefix</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>Polkadot (Mainnet)</td>
+<td>Polkadot</td>
 <td>polkadot</td>
 <td>0</td>
-<td>No</td>
+<td><a href="https://polkadot.polkaholic.io">polkadot.polkaholic.io</a></td>
+<td>0</td>
 </tr>
 <tr>
 <td>Statemint</td>
 <td>statemint</td>
 <td>1000</td>
-<td>No</td>
+<td><a href="https://statemint.polkaholic.io">statemint.polkaholic.io</a></td>
+<td>0</td>
 </tr>
 <tr>
 <td>Acala</td>
 <td>acala</td>
 <td>2000</td>
-<td>No</td>
+<td><a href="https://acala.polkaholic.io">acala.polkaholic.io</a></td>
+<td>10</td>
 </tr>
 <tr>
 <td>Clover</td>
 <td>clover</td>
 <td>2002</td>
-<td>Yes</td>
+<td><a href="https://clover.polkaholic.io">clover.polkaholic.io</a></td>
+<td>128</td>
 </tr>
 <tr>
 <td>Moonbeam</td>
 <td>moonbeam</td>
 <td>2004</td>
-<td>Yes</td>
+<td><a href="https://moonbeam.polkaholic.io">moonbeam.polkaholic.io</a></td>
+<td>1284</td>
 </tr>
 <tr>
 <td>Astar</td>
 <td>astar</td>
 <td>2006</td>
-<td>Yes</td>
+<td><a href="https://astar.polkaholic.io">astar.polkaholic.io</a></td>
+<td>5</td>
+</tr>
+<tr>
+<td>Kapex*</td>
+<td>kapex</td>
+<td>2007</td>
+<td><a href="https://kapex.polkaholic.io">kapex.polkaholic.io</a></td>
+<td>2007</td>
+</tr>
+<tr>
+<td>Equilibrium</td>
+<td>equilibrium</td>
+<td>2011</td>
+<td><a href="https://equilibrium.polkaholic.io">equilibrium.polkaholic.io</a></td>
+<td>68</td>
 </tr>
 <tr>
 <td>Parallel</td>
 <td>parallel</td>
 <td>2012</td>
-<td>No</td>
+<td><a href="https://parallel.polkaholic.io">parallel.polkaholic.io</a></td>
+<td>172</td>
+</tr>
+<tr>
+<td>Litentry</td>
+<td>litentry</td>
+<td>2013</td>
+<td><a href="https://litentry.polkaholic.io">litentry.polkaholic.io</a></td>
+<td>31</td>
 </tr>
 <tr>
 <td>Composable Finance</td>
-<td>composable-finance</td>
+<td>composable</td>
 <td>2019</td>
-<td>No</td>
+<td><a href="https://composable.polkaholic.io">composable.polkaholic.io</a></td>
+<td>50</td>
 </tr>
 <tr>
-<td>Efinity</td>
+<td>Efinity*</td>
 <td>efinity</td>
 <td>2021</td>
-<td>No</td>
+<td><a href="https://efinity.polkaholic.io">efinity.polkaholic.io</a></td>
+<td>1110</td>
 </tr>
 <tr>
 <td>Nodle</td>
 <td>nodle</td>
 <td>2026</td>
-<td>No</td>
+<td><a href="https://nodle.polkaholic.io">nodle.polkaholic.io</a></td>
+<td>37</td>
+</tr>
+<tr>
+<td>Ares*</td>
+<td>ares</td>
+<td>2028</td>
+<td><a href="https://ares.polkaholic.io">ares.polkaholic.io</a></td>
+<td>34</td>
+</tr>
+<tr>
+<td>Bifrost-Polkadot*</td>
+<td>bifrost-dot</td>
+<td>2030</td>
+<td><a href="https://bifrost-dot.polkaholic.io">bifrost-dot.polkaholic.io</a></td>
+<td>6</td>
 </tr>
 <tr>
 <td>Centrifuge</td>
 <td>centrifuge</td>
 <td>2031</td>
-<td>No</td>
+<td><a href="https://centrifuge.polkaholic.io">centrifuge.polkaholic.io</a></td>
+<td>36</td>
 </tr>
 <tr>
 <td>Interlay</td>
 <td>interlay</td>
 <td>2032</td>
-<td>No</td>
+<td><a href="https://interlay.polkaholic.io">interlay.polkaholic.io</a></td>
+<td>2032</td>
 </tr>
 <tr>
 <td>HydraDX</td>
 <td>hydradx</td>
 <td>2034</td>
-<td>No</td>
+<td><a href="https://hydradx.polkaholic.io">hydradx.polkaholic.io</a></td>
+<td>63</td>
 </tr>
 <tr>
 <td>Phala</td>
 <td>phala</td>
 <td>2035</td>
-<td>No</td>
+<td><a href="https://phala.polkaholic.io">phala.polkaholic.io</a></td>
+<td>30</td>
+</tr>
+<tr>
+<td>Unique</td>
+<td>unique</td>
+<td>2037</td>
+<td><a href="https://unique.polkaholic.io">unique.polkaholic.io</a></td>
+<td>7391</td>
+</tr>
+<tr>
+<td>Polkadex*</td>
+<td>polkadex</td>
+<td>2040</td>
+<td><a href="https://polkadex.polkaholic.io">polkadex.polkaholic.io</a></td>
+<td>88</td>
+</tr>
+<tr>
+<td>Origin Trail*</td>
+<td>origintrail</td>
+<td>2043</td>
+<td><a href="https://origintrail.polkaholic.io">origintrail.polkaholic.io</a></td>
+<td>101</td>
 </tr>
 </tbody></table>
-<h3 id='supported-chains-kusama-ecosystem'>Supported Chains - Kusama Ecosystem</h3>
+<h3 id='supported-kusama-chains'>Supported Kusama Chains</h3>
 <table><thead>
 <tr>
 <th>Chain</th>
 <th>id</th>
 <th>chainID</th>
-<th>isEVM</th>
+<th>Polkaholic Explorer</th>
+<th>Prefix</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>Kusama (Mainnet)</td>
+<td>Kusama</td>
 <td>kusama</td>
 <td>2</td>
-<td>No</td>
+<td><a href="https://kusama.polkaholic.io">kusama.polkaholic.io</a></td>
+<td>2</td>
 </tr>
 <tr>
 <td>Statemine</td>
 <td>statemine</td>
 <td>21000</td>
-<td>No</td>
+<td><a href="https://statemine.polkaholic.io">statemine.polkaholic.io</a></td>
+<td>2</td>
 </tr>
 <tr>
 <td>Encointer</td>
 <td>encointer</td>
 <td>21001</td>
-<td>No</td>
+<td><a href="https://encointer.polkaholic.io">encointer.polkaholic.io</a></td>
+<td>2</td>
 </tr>
 <tr>
 <td>Karura</td>
 <td>karura</td>
 <td>22000</td>
-<td>No</td>
+<td><a href="https://karura.polkaholic.io">karura.polkaholic.io</a></td>
+<td>8</td>
 </tr>
 <tr>
-<td>Bifrost</td>
+<td>Bifrost-Kusama</td>
 <td>bifrost-ksm</td>
 <td>22001</td>
-<td>No</td>
+<td><a href="https://bifrost-ksm.polkaholic.io">bifrost-ksm.polkaholic.io</a></td>
+<td>6</td>
 </tr>
 <tr>
 <td>Khala</td>
 <td>khala</td>
 <td>22004</td>
-<td>No</td>
+<td><a href="https://khala.polkaholic.io">khala.polkaholic.io</a></td>
+<td>30</td>
 </tr>
 <tr>
 <td>Shiden</td>
 <td>shiden</td>
 <td>22007</td>
-<td>Yes</td>
+<td><a href="https://shiden.polkaholic.io">shiden.polkaholic.io</a></td>
+<td>5</td>
 </tr>
 <tr>
-<td>Sora Kusama</td>
-<td>sora-kusama</td>
+<td>Mars*</td>
+<td>mars</td>
+<td>22008</td>
+<td><a href="https://mars.polkaholic.io">mars.polkaholic.io</a></td>
+<td>42</td>
+</tr>
+<tr>
+<td>Sora Kusama*</td>
+<td>sora</td>
 <td>22011</td>
-<td>No</td>
+<td><a href="https://sora.polkaholic.io">sora.polkaholic.io</a></td>
+<td>69</td>
 </tr>
 <tr>
-<td>Crust Shadow</td>
-<td>crust-shadow</td>
+<td>Crust Shadow*</td>
+<td>shadow</td>
 <td>22012</td>
-<td>No</td>
+<td><a href="https://shadow.polkaholic.io">shadow.polkaholic.io</a></td>
+<td>66</td>
 </tr>
 <tr>
 <td>Integritee</td>
 <td>integritee</td>
 <td>22015</td>
-<td>No</td>
+<td><a href="https://integritee.polkaholic.io">integritee.polkaholic.io</a></td>
+<td>13</td>
 </tr>
 <tr>
-<td>Sakura</td>
-<td>sakura</td>
-<td>22016</td>
-<td>No</td>
+<td>SubGame Gamma*</td>
+<td>subgame-gamma</td>
+<td>22018</td>
+<td><a href="https://subgame-gamma.polkaholic.io">subgame-gamma.polkaholic.io</a></td>
+<td>27</td>
 </tr>
 <tr>
 <td>Moonriver</td>
 <td>moonriver</td>
 <td>22023</td>
-<td>Yes</td>
-</tr>
-<tr>
-<td>Genshiro</td>
-<td>genshiro</td>
-<td>22024</td>
-<td>No</td>
+<td><a href="https://moonriver.polkaholic.io">moonriver.polkaholic.io</a></td>
+<td>1285</td>
 </tr>
 <tr>
 <td>Robonomics</td>
 <td>robonomics</td>
 <td>22048</td>
-<td>No</td>
+<td><a href="https://robonomics.polkaholic.io">robonomics.polkaholic.io</a></td>
+<td>32</td>
 </tr>
 <tr>
 <td>Calamari</td>
 <td>calamari</td>
 <td>22084</td>
-<td>No</td>
+<td><a href="https://calamari.polkaholic.io">calamari.polkaholic.io</a></td>
+<td>78</td>
 </tr>
 <tr>
 <td>Parallel Heiko</td>
 <td>parallel-heiko</td>
 <td>22085</td>
-<td>No</td>
+<td><a href="https://parallel-heiko.polkaholic.io">parallel-heiko.polkaholic.io</a></td>
+<td>110</td>
 </tr>
 <tr>
 <td>KILT Spiritnet</td>
-<td>kilt-spiritnet</td>
+<td>spiritnet</td>
 <td>22086</td>
-<td>No</td>
+<td><a href="https://spiritnet.polkaholic.io">spiritnet.polkaholic.io</a></td>
+<td>38</td>
 </tr>
 <tr>
 <td>Picasso</td>
 <td>picasso</td>
 <td>22087</td>
-<td>No</td>
+<td><a href="https://picasso.polkaholic.io">picasso.polkaholic.io</a></td>
+<td>49</td>
 </tr>
 <tr>
 <td>Altair</td>
 <td>altair</td>
 <td>22088</td>
-<td>No</td>
+<td><a href="https://altair.polkaholic.io">altair.polkaholic.io</a></td>
+<td>136</td>
 </tr>
 <tr>
 <td>Basilisk</td>
 <td>basilisk</td>
 <td>22090</td>
-<td>No</td>
+<td><a href="https://basilisk.polkaholic.io">basilisk.polkaholic.io</a></td>
+<td>10041</td>
 </tr>
 <tr>
 <td>Kintsugi</td>
-<td>kintsugi-btc</td>
+<td>kintsugi</td>
 <td>22092</td>
-<td>No</td>
+<td><a href="https://kintsugi.polkaholic.io">kintsugi.polkaholic.io</a></td>
+<td>2092</td>
 </tr>
 <tr>
-<td>Unorthodox</td>
+<td>Unorthodox*</td>
 <td>unorthodox</td>
 <td>22094</td>
-<td>No</td>
+<td><a href="https://unorthodox.polkaholic.io">unorthodox.polkaholic.io</a></td>
+<td>42</td>
 </tr>
 <tr>
 <td>Quartz</td>
 <td>quartz</td>
 <td>22095</td>
-<td>No</td>
+<td><a href="https://quartz.polkaholic.io">quartz.polkaholic.io</a></td>
+<td>255</td>
 </tr>
 <tr>
 <td>Bit.Country Pioneer</td>
-<td>bit-country-pioneer</td>
+<td>bitcountrypioneer</td>
 <td>22096</td>
-<td>No</td>
+<td><a href="https://bitcountrypioneer.polkaholic.io">bitcountrypioneer.polkaholic.io</a></td>
+<td>268</td>
 </tr>
 <tr>
-<td>SubsocialX</td>
+<td>SubsocialX*</td>
 <td>subsocialx</td>
 <td>22100</td>
-<td>No</td>
+<td><a href="https://subsocialx.polkaholic.io">subsocialx.polkaholic.io</a></td>
+<td>28</td>
 </tr>
 <tr>
 <td>Zeitgeist</td>
 <td>zeitgeist</td>
 <td>22101</td>
-<td>No</td>
+<td><a href="https://zeitgeist.polkaholic.io">zeitgeist.polkaholic.io</a></td>
+<td>73</td>
 </tr>
 <tr>
 <td>Pichiu</td>
 <td>pichiu</td>
 <td>22102</td>
-<td>No</td>
+<td><a href="https://pichiu.polkaholic.io">pichiu.polkaholic.io</a></td>
+<td>42</td>
 </tr>
 <tr>
 <td>Darwinia Crab</td>
-<td>darwinia-crab</td>
+<td>crab</td>
 <td>22105</td>
-<td>No</td>
+<td><a href="https://crab.polkaholic.io">crab.polkaholic.io</a></td>
+<td>42</td>
 </tr>
 <tr>
 <td>Litmus</td>
 <td>litmus</td>
 <td>22106</td>
-<td>No</td>
+<td><a href="https://litmus.polkaholic.io">litmus.polkaholic.io</a></td>
+<td>131</td>
 </tr>
 <tr>
 <td>Kico</td>
 <td>kico</td>
 <td>22107</td>
-<td>No</td>
+<td><a href="https://kico.polkaholic.io">kico.polkaholic.io</a></td>
+<td>42</td>
 </tr>
 <tr>
-<td>Mangata</td>
-<td>mangata</td>
+<td>Mangata*</td>
+<td>mangatax</td>
 <td>22110</td>
-<td>No</td>
+<td><a href="https://mangatax.polkaholic.io">mangatax.polkaholic.io</a></td>
+<td>42</td>
 </tr>
 <tr>
 <td>Turing</td>
 <td>turing</td>
 <td>22114</td>
-<td>No</td>
+<td><a href="https://turing.polkaholic.io">turing.polkaholic.io</a></td>
+<td>51</td>
+</tr>
+<tr>
+<td>Dora Factory</td>
+<td>dorafactory</td>
+<td>22115</td>
+<td><a href="https://dorafactory.polkaholic.io">dorafactory.polkaholic.io</a></td>
+<td>128</td>
+</tr>
+<tr>
+<td>Tanganika*</td>
+<td>tanganika</td>
+<td>22116</td>
+<td><a href="https://tanganika.polkaholic.io">tanganika.polkaholic.io</a></td>
+<td>33</td>
+</tr>
+<tr>
+<td>Listen*</td>
+<td>listen</td>
+<td>22118</td>
+<td><a href="https://listen.polkaholic.io">listen.polkaholic.io</a></td>
+<td>42</td>
 </tr>
 </tbody></table>
 
-<p>(Last updated: 2022-06-05)</p>
+<p>*<em>Unstable Chain</em>: These chains are unstable/unreachable; therefore API services are limited for these chains.</p>
+
+<p>As of 2022-06-27, Polkaholic supports Polkadot &amp; 17 polkadot-parachains + Kusama &amp; 28 kusama-parachains, 47 chains in total.</p>
+
+<p>(Last updated: 2022-06-27)</p>
 
 <aside class="notice">
 Didn't find the chain you are looking for? Send us an email <a href = "mailto:info@polkaholic.io">info@polkaholic.io</a> or find us on <a href = "https://matrix.to/#/#polkaholic:matrix.org">Matrix</a>. We will index it!
