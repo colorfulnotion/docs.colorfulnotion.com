@@ -10,6 +10,9 @@ assignees: ''
 **Bug Description**
 A clear and concise description of what the bug is and how to reproduce it.
 
+**Link**
+If applicable, please provide the link where your see the bug (i.e. https://polkaholic.io/chain/404)
+
 **Screenshots**
 If applicable, add screenshots to help explain your problem.
 
@@ -17,6 +20,3 @@ If applicable, add screenshots to help explain your problem.
  - OS: [e.g. iOS]
  - Browser [e.g. chrome, safari]
  - Version [e.g. 22]
-
-**Last upstream Slate commit (run `git log --author="\(Robert Lord\)\|\(Matthew Peveler\)\|\(Mike Ralphson\)" | head -n 1`):**
-Put the commit hash here
