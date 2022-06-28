@@ -503,9 +503,9 @@
         <h1 id='introduction'>Introduction</h1>
 <p>Welcome to <a href="http://polkaholic.io">Polkaholic</a> API!</p>
 
-<p>Polkaholic API gives you powerful access to over 40+ networks in Polkadot and Kusama ecosystem. Get a <a href="https://polkaholic.io/apikeys">free API key</a> today and start building your own dApp!</p>
+<p>Polkaholic API gives you powerful access to over 40+ networks in Polkadot and Kusama ecosystem. Get a <a href="https://polkaholic.io/apikeys">free API key</a> today and start building your own dApps!</p>
 
-<p>Any questions? Find us on <a href="https://matrix.to/#/#polkaholic:matrix.org">Matrix</a>: <code>#polkaholic:matrix.org</code></p>
+<p>Got any questions? Find us on <a href="https://matrix.to/#/#polkaholic:matrix.org">Matrix</a>: <code>#polkaholic:matrix.org</code></p>
 
 <aside class="success">
 All pages on the polkaholic.io web site have API call information displayed at the bottom, and are documented here.
@@ -531,6 +531,8 @@ curl <span class="s2">"https://api.polkaholic.io/"</span> <span class="se">\</sp
 You must replace <code>YOUR-API-KEY</code> with your personal API key.
 </aside>
 <h1 id='chains'>Chains</h1><h2 id='supported-chains'>Supported Chains</h2>
+<p>As of 2022-06-27, Polkaholic supports Polkadot &amp; 17 polkadot-parachains, plus Kusama &amp; 28 kusama-parachains - 47 chains in total.</p>
+
 <aside class="success">
 We coined the "ChainID" as a convenient way to identify any given chain using the following rule:  
 </aside>
@@ -538,28 +540,28 @@ We coined the "ChainID" as a convenient way to identify any given chain using th
 <table><thead>
 <tr>
 <th>Chain</th>
-<th>ChainID</th>
+<th style="text-align: center">ChainID</th>
 <th>ChainID Description</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>Polkadot (Mainnet)</td>
-<td>0</td>
+<td style="text-align: center">0</td>
 <td>For Polkadot Mainnet (or the relaychain), use Polkadot&#39;s prefix as chainID (Prefix: 0)</td>
 </tr>
 <tr>
 <td>Kusama (Mainnet)</td>
-<td>2</td>
+<td style="text-align: center">2</td>
 <td>For Kusama Mainnet (or the relaychain), use Kusama&#39;s prefix as chainID (Prefix: 2)</td>
 </tr>
 <tr>
 <td>Polkadot - parachain</td>
-<td>paraID</td>
+<td style="text-align: center">paraID</td>
 <td>Use its Polkadot paraID as chainID. A valid chainID for polkadot-parachain should be 4-digits long and in the range of [1000-2xxx]</td>
 </tr>
 <tr>
 <td>Kusama - parachain</td>
-<td>20000+paraID</td>
+<td style="text-align: center">20000+paraID</td>
 <td>Use its Kusama paraID <em>Plus</em> 20000 as chainID. A valid chainID for kusama-parachain should be 5-digits long and in the range of [21000-22xxx]</td>
 </tr>
 </tbody></table>
@@ -989,8 +991,6 @@ We coined the "ChainID" as a convenient way to identify any given chain using th
 
 <p>*<em>Unstable Chain</em>: These chains are unstable/unreachable; therefore API services are limited for these chains.</p>
 
-<p>As of 2022-06-27, Polkaholic supports Polkadot &amp; 17 polkadot-parachains + Kusama &amp; 28 kusama-parachains, 47 chains in total.</p>
-
 <p>(Last updated: 2022-06-27)</p>
 
 <aside class="notice">
@@ -1009,18 +1009,19 @@ Didn't find the chain you are looking for? Send us an email <a href = "mailto:in
     </span><span class="nl">"chainID"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
     </span><span class="nl">"chainName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Polkadot"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DOT"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"lastFinalizedTS"</span><span class="p">:</span><span class="w"> </span><span class="mi">1654207445</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"lastFinalizedTS"</span><span class="p">:</span><span class="w"> </span><span class="mi">1656359324</span><span class="p">,</span><span class="w">
     </span><span class="nl">"iconUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://cdn.polkaholic.io/polkadot.png"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"numExtrinsics"</span><span class="p">:</span><span class="w"> </span><span class="mi">26587385</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"numSignedExtrinsics"</span><span class="p">:</span><span class="w"> </span><span class="mi">9445075</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"numTransfers"</span><span class="p">:</span><span class="w"> </span><span class="mi">7624259</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"numEvents"</span><span class="p">:</span><span class="w"> </span><span class="mi">107552637</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"numHolders"</span><span class="p">:</span><span class="w"> </span><span class="mi">2058984</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"numExtrinsics"</span><span class="p">:</span><span class="w"> </span><span class="mi">27523464</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"numSignedExtrinsics"</span><span class="p">:</span><span class="w"> </span><span class="mi">9679985</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"numTransfers"</span><span class="p">:</span><span class="w"> </span><span class="mi">7890948</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"numEvents"</span><span class="p">:</span><span class="w"> </span><span class="mi">116538632</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"numHolders"</span><span class="p">:</span><span class="w"> </span><span class="mi">2101379</span><span class="p">,</span><span class="w">
     </span><span class="nl">"relayChain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"polkadot"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"totalIssuance"</span><span class="p">:</span><span class="w"> </span><span class="mi">1167630208</span><span class="p">,</span><span class="w">
     </span><span class="nl">"isEVM"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"blocksCovered"</span><span class="p">:</span><span class="w"> </span><span class="mi">10576476</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"blocksFinalized"</span><span class="p">:</span><span class="w"> </span><span class="mi">10576473</span><span class="w">
+    </span><span class="nl">"blocksCovered"</span><span class="p">:</span><span class="w"> </span><span class="mi">10924487</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"blocksFinalized"</span><span class="p">:</span><span class="w"> </span><span class="mi">10924484</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"crawlingStatus"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="p">{</span><span class="w">
     </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"statemint"</span><span class="p">,</span><span class="w">
@@ -1028,18 +1029,19 @@ Didn't find the chain you are looking for? Send us an email <a href = "mailto:in
     </span><span class="nl">"chainID"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w">
     </span><span class="nl">"chainName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Statemint"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DOT"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"lastFinalizedTS"</span><span class="p">:</span><span class="w"> </span><span class="mi">1654207445</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"lastFinalizedTS"</span><span class="p">:</span><span class="w"> </span><span class="mi">1656359324</span><span class="p">,</span><span class="w">
     </span><span class="nl">"iconUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://cdn.polkaholic.io/statemint.svg"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"numExtrinsics"</span><span class="p">:</span><span class="w"> </span><span class="mi">2524634</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"numSignedExtrinsics"</span><span class="p">:</span><span class="w"> </span><span class="mi">135</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"numTransfers"</span><span class="p">:</span><span class="w"> </span><span class="mi">26</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"numEvents"</span><span class="p">:</span><span class="w"> </span><span class="mi">2526047</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"numHolders"</span><span class="p">:</span><span class="w"> </span><span class="mi">39</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"numExtrinsics"</span><span class="p">:</span><span class="w"> </span><span class="mi">2853812</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"numSignedExtrinsics"</span><span class="p">:</span><span class="w"> </span><span class="mi">157</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"numTransfers"</span><span class="p">:</span><span class="w"> </span><span class="mi">39</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"numEvents"</span><span class="p">:</span><span class="w"> </span><span class="mi">2855459</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"numHolders"</span><span class="p">:</span><span class="w"> </span><span class="mi">52</span><span class="p">,</span><span class="w">
     </span><span class="nl">"relayChain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"polkadot"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"totalIssuance"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
     </span><span class="nl">"isEVM"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"blocksCovered"</span><span class="p">:</span><span class="w"> </span><span class="mi">1414851</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"blocksFinalized"</span><span class="p">:</span><span class="w"> </span><span class="mi">1414849</span><span class="w">
+    </span><span class="nl">"blocksCovered"</span><span class="p">:</span><span class="w"> </span><span class="mi">1581649</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"blocksFinalized"</span><span class="p">:</span><span class="w"> </span><span class="mi">1581647</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"crawlingStatus"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="p">{</span><span class="w">
     </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"acala"</span><span class="p">,</span><span class="w">
@@ -1047,19 +1049,20 @@ Didn't find the chain you are looking for? Send us an email <a href = "mailto:in
     </span><span class="nl">"chainID"</span><span class="p">:</span><span class="w"> </span><span class="mi">2000</span><span class="p">,</span><span class="w">
     </span><span class="nl">"chainName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Acala"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ACA"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"lastFinalizedTS"</span><span class="p">:</span><span class="w"> </span><span class="mi">1654207445</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"lastFinalizedTS"</span><span class="p">:</span><span class="w"> </span><span class="mi">1656359324</span><span class="p">,</span><span class="w">
     </span><span class="nl">"iconUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://cdn.polkaholic.io/acala.png"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"numExtrinsics"</span><span class="p">:</span><span class="w"> </span><span class="mi">3338118</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"numSignedExtrinsics"</span><span class="p">:</span><span class="w"> </span><span class="mi">1038703</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"numTransfers"</span><span class="p">:</span><span class="w"> </span><span class="mi">1176606</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"numEvents"</span><span class="p">:</span><span class="w"> </span><span class="mi">14584548</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"numHolders"</span><span class="p">:</span><span class="w"> </span><span class="mi">171898</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"numExtrinsics"</span><span class="p">:</span><span class="w"> </span><span class="mi">3769800</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"numSignedExtrinsics"</span><span class="p">:</span><span class="w"> </span><span class="mi">1135331</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"numTransfers"</span><span class="p">:</span><span class="w"> </span><span class="mi">2223553</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"numEvents"</span><span class="p">:</span><span class="w"> </span><span class="mi">16680798</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"numHolders"</span><span class="p">:</span><span class="w"> </span><span class="mi">174983</span><span class="p">,</span><span class="w">
     </span><span class="nl">"relayChain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"polkadot"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"totalIssuance"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000000000</span><span class="p">,</span><span class="w">
     </span><span class="nl">"isEVM"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"blocksCovered"</span><span class="p">:</span><span class="w"> </span><span class="mi">1147978</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"blocksFinalized"</span><span class="p">:</span><span class="w"> </span><span class="mi">1147976</span><span class="w">
-  </span><span class="p">}</span><span class="w">
+    </span><span class="nl">"blocksCovered"</span><span class="p">:</span><span class="w"> </span><span class="mi">1315579</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"blocksFinalized"</span><span class="p">:</span><span class="w"> </span><span class="mi">1315577</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"crawlingStatus"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+  </span><span class="p">},</span><span class="w">
   </span><span class="err">...</span><span class="w">
 </span><span class="p">]</span><span class="w">  
 </span></code></pre></div>
@@ -1092,12 +1095,20 @@ Didn't find the chain you are looking for? Send us an email <a href = "mailto:in
 <td>Whether the chain supports Ethereum Pallet</td>
 </tr>
 <tr>
+<td>prefix</td>
+<td>The Chain prefix for SS58 address</td>
+</tr>
+<tr>
 <td>blocksCovered</td>
 <td>The most recent block (including unfinalized block)</td>
 </tr>
 <tr>
 <td>blocksFinalized</td>
 <td>The most recent finalized block</td>
+</tr>
+<tr>
+<td>crawlingStatus</td>
+<td>The Crawling Exception Status, if any.</td>
 </tr>
 </tbody></table>
 <h2 id='get-chaininfo-and-recent-blocks'>Get ChainInfo and Recent Blocks</h2><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># querying ChainIdentifier "2004" is equivalent to querying "moonbeam"</span>
@@ -1313,6 +1324,28 @@ curl <span class="s2">"https://api.polkaholic.io/block/2004/453100"</span> <span
 <td>The Block Number to retrieve data about</td>
 </tr>
 </tbody></table>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Optional?</th>
+<th>Default</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>decroate</td>
+<td>Whether API should return decorated fields</td>
+<td>Yes</td>
+<td>true</td>
+</tr>
+<tr>
+<td>extra</td>
+<td>Decorate the response with fields like [&#39;usd&#39;,&#39;address&#39;, &#39;related&#39;, &#39;data&#39;]</td>
+<td>Yes</td>
+<td>usd,address, data</td>
+</tr>
+</tbody></table>
 <h3 id='response-description-3'>Response Description</h3>
 <table><thead>
 <tr>
@@ -1470,6 +1503,28 @@ Both Substrate Extrinsic and EVM transactions are searchable by its TxHash; to a
 <tr>
 <td>TxHash</td>
 <td>The Transaction Hash to retrieve data about, can be either Substrate&#39;s extrinsicHash or EVM&#39;s transactionHash</td>
+</tr>
+</tbody></table>
+<h3 id='url-parameters-2'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Optional?</th>
+<th>Default</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>decroate</td>
+<td>Whether API should return decorated fields</td>
+<td>Yes</td>
+<td>true</td>
+</tr>
+<tr>
+<td>extra</td>
+<td>Decorate the response with fields like [&#39;usd&#39;,&#39;address&#39;, &#39;related&#39;, &#39;data&#39;]</td>
+<td>Yes</td>
+<td>usd,address, data</td>
 </tr>
 </tbody></table>
 <h3 id='response-description-decorated-substrate-extrinsic'>Response Description (Decorated SubStrate Extrinsic)</h3>
@@ -1672,6 +1727,28 @@ curl <span class="s2">"https://api.polkaholic.io/tx/0x8b91d038421d5aba4b3a651d70
 <td>The Transaction Hash to retrieve data about, can be either Substrate&#39;s extrinsicHash or EVM&#39;s transactionHash</td>
 </tr>
 </tbody></table>
+<h3 id='url-parameters-3'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Optional?</th>
+<th>Default</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>decroate</td>
+<td>Whether API should return decorated fields</td>
+<td>Yes</td>
+<td>true</td>
+</tr>
+<tr>
+<td>extra</td>
+<td>Decorate the response with fields like [&#39;usd&#39;,&#39;address&#39;, &#39;related&#39;, &#39;data&#39;]</td>
+<td>Yes</td>
+<td>usd,address, data</td>
+</tr>
+</tbody></table>
 <h3 id='response-description-decorated-evm-transaction'>Response Description (Decorated EVM Transaction)</h3>
 <table><thead>
 <tr>
@@ -1835,7 +1912,7 @@ curl <span class="s2">"https://api.polkaholic.io/account/13eEyAEkyazXwKnh51DPgdB
 <td>The Address (public key, SS58 address or nativeH160 address) to retrieve data about</td>
 </tr>
 </tbody></table>
-<h3 id='url-parameters'>URL Parameters</h3>
+<h3 id='url-parameters-4'>URL Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -1855,6 +1932,18 @@ curl <span class="s2">"https://api.polkaholic.io/account/13eEyAEkyazXwKnh51DPgdB
 <td>TBA</td>
 <td>Yes</td>
 <td>180</td>
+</tr>
+<tr>
+<td>decroate</td>
+<td>Whether API should return decorated fields</td>
+<td>Yes</td>
+<td>true</td>
+</tr>
+<tr>
+<td>extra</td>
+<td>Decorate the response with fields like [&#39;usd&#39;,&#39;address&#39;, &#39;related&#39;, &#39;data&#39;]</td>
+<td>Yes</td>
+<td>usd,address, data</td>
 </tr>
 </tbody></table>
 <h3 id='supported-query-group'>Supported Query Group</h3>
@@ -2413,8 +2502,28 @@ curl <span class="s2">"https://api.polkaholic.io/account/13eEyAEkyazXwKnh51DPgdB
 <p>Return the latest 1000 xcm tranfers from all supported networks.</p>
 <h3 id='http-request-16'>HTTP Request</h3>
 <p><code>GET https://api.polkaholic.io/xcmtransfers/</code></p>
-<h3 id='query-parameters-2'>Query Parameters</h3>
-<p>None</p>
+<h3 id='url-parameters-5'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Optional?</th>
+<th>Default</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>decroate</td>
+<td>Whether API should return decorated fields</td>
+<td>Yes</td>
+<td>true</td>
+</tr>
+<tr>
+<td>extra</td>
+<td>Decorate the response with fields like [&#39;usd&#39;,&#39;address&#39;, &#39;related&#39;, &#39;data&#39;]</td>
+<td>Yes</td>
+<td>usd,address, data</td>
+</tr>
+</tbody></table>
 <h3 id='response-description-4'>Response Description</h3>
 <table><thead>
 <tr>
@@ -2556,8 +2665,28 @@ This API is in alpha development! Currently we do not track xcm coming into Inte
 <td style="text-align: center">Optional</td>
 </tr>
 </tbody></table>
-<h3 id='url-parameters-2'>URL Parameters</h3>
-<p>TODO</p>
+<h3 id='url-parameters-6'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Optional?</th>
+<th>Default</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>decroate</td>
+<td>Whether API should return decorated fields</td>
+<td>Yes</td>
+<td>true</td>
+</tr>
+<tr>
+<td>extra</td>
+<td>Decorate the response with fields like [&#39;usd&#39;,&#39;address&#39;, &#39;related&#39;, &#39;data&#39;]</td>
+<td>Yes</td>
+<td>usd,address, data</td>
+</tr>
+</tbody></table>
 <h3 id='response-description-5'>Response Description</h3>
 <table><thead>
 <tr>
@@ -2698,6 +2827,28 @@ This API is in alpha development! Currently we do not track xcm coming into Inte
 <td style="text-align: center">Optional</td>
 </tr>
 </tbody></table>
+<h3 id='url-parameters-7'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Optional?</th>
+<th>Default</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>decroate</td>
+<td>Whether API should return decorated fields</td>
+<td>Yes</td>
+<td>true</td>
+</tr>
+<tr>
+<td>extra</td>
+<td>Decorate the response with fields like [&#39;usd&#39;,&#39;address&#39;, &#39;related&#39;, &#39;data&#39;]</td>
+<td>Yes</td>
+<td>usd,address, data</td>
+</tr>
+</tbody></table>
 <h3 id='response-description-6'>Response Description</h3>
 <table><thead>
 <tr>
@@ -2805,8 +2956,28 @@ This API is in alpha development! Currently we do not track xcm coming into Inte
 <td style="text-align: center">Optional</td>
 </tr>
 </tbody></table>
-<h3 id='url-parameters-3'>URL Parameters</h3>
-<p>TODO</p>
+<h3 id='url-parameters-8'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Optional?</th>
+<th>Default</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>decroate</td>
+<td>Whether API should return decorated fields</td>
+<td>Yes</td>
+<td>true</td>
+</tr>
+<tr>
+<td>extra</td>
+<td>Decorate the response with fields like [&#39;usd&#39;,&#39;address&#39;, &#39;related&#39;, &#39;data&#39;]</td>
+<td>Yes</td>
+<td>usd,address, data</td>
+</tr>
+</tbody></table>
 <h3 id='response-description-7'>Response Description</h3>
 <table><thead>
 <tr>
@@ -2941,6 +3112,28 @@ This API is in alpha development! Currently we do not track xcm coming into Inte
 <td style="text-align: center">Optional</td>
 </tr>
 </tbody></table>
+<h3 id='url-parameters-9'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Optional?</th>
+<th>Default</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>decroate</td>
+<td>Whether API should return decorated fields</td>
+<td>Yes</td>
+<td>true</td>
+</tr>
+<tr>
+<td>extra</td>
+<td>Decorate the response with fields like [&#39;usd&#39;,&#39;address&#39;, &#39;related&#39;, &#39;data&#39;]</td>
+<td>Yes</td>
+<td>usd,address, data</td>
+</tr>
+</tbody></table>
 <h3 id='response-description-8'>Response Description</h3>
 <p>Return an list of (xcmtransfer)[#xcmtransfers]</p>
 <h1 id='hash'>Hash</h1><h2 id='hash-lookup'>Hash Lookup</h2>
@@ -3019,7 +3212,7 @@ curl <span class="s2">"https://api.polkaholic.io/hash/0xe5b17b7515813b54826b7231
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h3 id='http-request-21'>HTTP Request</h3>
 <p><code>GET https://api.polkaholic.io/hash/&lt;Hash&gt;</code></p>
-<h3 id='query-parameters-3'>Query Parameters</h3>
+<h3 id='query-parameters-2'>Query Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
