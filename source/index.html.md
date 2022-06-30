@@ -1550,7 +1550,7 @@ rawAsset | The "raw" representation of the sent asset. (NOTE: Sometimes differen
 This API is in alpha development! Currently we do not track xcm coming into Interlay/Kintsugi
 </aside>
 
-# Search
+# Search (tx, events, xcms...)
 
 Search API returns a list of {extrinsics, evmtxs, events, xcmtransfers, xcmmessages} given certain user-specified criteria.
 
@@ -1937,7 +1937,7 @@ chainID | String or Int | The identifier of the source chain to retrieve data ab
 chainIDDest | String or Int | The identifier of the dest chain to retrieve data about  | Optional  
 dateStart | `"YYYY-MM-DD"` | The Starting Date(inclusive). ex: "2022-05-01" | Optional
 dateEnd | `"YYYY-MM-DD"` |  The Ending Date(inclusive). ex: "2022-05-31" | Optional
-msgType | String | ['ump','dmp','xcmp'] | Optional
+msgType | String | Filter based on channel msg type ['ump','dmp','xcmp'] | Optional
 relayChain | String| relayChain of the msg. ex: 'polkadot' or 'kusama' | Optional
 
 ### URL Parameters
@@ -1945,7 +1945,7 @@ relayChain | String| relayChain of the msg. ex: 'polkadot' or 'kusama' | Optiona
 NONE
 
 ### Response Description
-Return an list of (xcmmessage)[]
+Return an list of xcmmessage
 
 Attribute    | Description
 -------------|------------
