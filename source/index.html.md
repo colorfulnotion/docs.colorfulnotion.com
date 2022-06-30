@@ -1446,7 +1446,7 @@ curl "https://api.polkaholic.io/account/balances/dwehUeMiyxAcSWUBsJiJ7WKmHZLueCx
 
 # XCM
 
-## Get XCM (Cross-Chain Messaging) Transfers
+## Get XCM Transfers
 
 ```shell
 curl "https://api.polkaholic.io/xcmtransfers" \
@@ -1550,9 +1550,9 @@ rawAsset | The "raw" representation of the sent asset. (NOTE: Sometimes differen
 This API is in alpha development! Currently we do not track xcm coming into Interlay/Kintsugi
 </aside>
 
-# Search
+# Search (tx, events, xcms...)
 
-Search API returns a list of {extrinsics, evmtxs, events, xcms} given certain user-specified criteria.
+Search API returns a list of {extrinsics, evmtxs, events, xcmtransfers, xcmmessages} given certain user-specified criteria.
 
 ## Search Extrinsics
 
@@ -1771,19 +1771,19 @@ section | The "section" part of the event. Ex: "balances"  |
 method  | The "method" part of the event. Ex: "Transfer"  |
 
 
-## Search XCMs
+## Search XCM Transfers
 
-This endpoint returns a list of channelMsg given certain user-specified criteria.
+This endpoint returns a list of xcm transfers given certain user-specified criteria.
 
 
 ```shell
-curl https://api.polkaholic.io/search/xcms \
+curl https://api.polkaholic.io/search/xcmtransfers \
 -X POST \
 -H "Content-Type: application/json" \
 -d '{
     "chainID": "polkadot",
     "chainIDDest": "acala",
-    "incomplete": 0,
+    "complete": 0,
     "toAddress":"0x9e992a944acb1efa30bcd3275aedf7218bac369ca62dc0269ccec2f36db65c6f"
 }'
 ```
@@ -1824,7 +1824,7 @@ curl https://api.polkaholic.io/search/xcms \
 
 ### HTTP Request
 
-`POST https://api.polkaholic.io/search/xcms`
+`POST https://api.polkaholic.io/search/xcmtransfers`
 
 ### Input Parameters
 
@@ -1838,7 +1838,7 @@ dateStart | `"YYYY-MM-DD"` | The Starting Date(inclusive). ex: "2022-05-01" | Op
 dateEnd | `"YYYY-MM-DD"` |  The Ending Date(inclusive). ex: "2022-05-31" | Optional
 blockNumberStart | Int | The Starting BlockNumber at sending chain (inclusive) | Optional
 blockNumberEnd | Int| The Ending BlockNumber at sending chain (inclusive) | Optional
-incomplete | Int | 0: Complete(xcm successfully initiated), 1: Incomplete. If Unspecified: Including both | Optional
+complete | Int | 1: Complete(xcm successfully initiated), 0: Incomplete. If Unspecified: Including both | Optional
 
 ### URL Parameters
 
@@ -1849,6 +1849,113 @@ extra     | Decorate the response with fields like ['usd','address', 'related', 
 
 ### Response Description
 Return an list of (xcmtransfer)[#xcmtransfers]
+
+## Search XCM Messages
+
+This endpoint returns a list of channelMsg {dmp, ump, xcmp} given certain user-specified criteria.
+
+
+```shell
+curl https://api.polkaholic.io/search/xcmmessages \
+-X POST \
+-H "Content-Type: application/json" \
+-d '{
+    "startDate": "2022-06-27",
+    "endDate": "2022-06-30",
+    "relayChain":"polkadot"
+}'
+```
+
+> Example Response (array of xcm message)
+
+```json
+[
+  {
+    "xcmID": "1334065-1-dmp-2000-0-0",
+    "chainID": 0,
+    "id": "polkadot",
+    "chainName": "Polkadot",
+    "chainIDDest": 2000,
+    "idDest": "acala",
+    "chainDestName": "Acala",    
+    "msgType": "dmp",
+    "msgHash": "a6fd9ca31c18b44d64cdfed29c90eebeb89548f294cf2389ca76e56b79f4f367",
+    "msgHex": "0x02100104000100000700e87648170a13000100000700e8764817010300286bee0d010004000101006642ee28fc1b7d1a01ea2bc956bfe5fde1c7121cae33afe51a83cc683785a81f",
+    "msgStr": "{\"v2\":[{\"reserveAssetDeposited\":[{\"id\":{\"concrete\":{\"parents\":1,\"interior\":{\"here\":null}}},\"fun\":{\"fungible\":100000000000}}]},{\"clearOrigin\":null},{\"buyExecution\":{\"fees\":{\"id\":{\"concrete\":{\"parents\":1,\"interior\":{\"here\":null}}},\"fun\":{\"fungible\":100000000000}},\"weightLimit\":{\"limited\":4000000000}}},{\"depositAsset\":{\"assets\":{\"wild\":{\"all\":null}},\"maxAssets\":1,\"beneficiary\":{\"parents\":0,\"interior\":{\"x1\":{\"accountId32\":{\"network\":{\"any\":null},\"id\":\"0x6642ee28fc1b7d1a01ea2bc956bfe5fde1c7121cae33afe51a83cc683785a81f\"}}}}}}]}",
+    "ts": 1656594360,
+    "blockNumber": 1334065,
+    "relayChain": "Polkadot",
+    "sentAt": 10962759
+  },
+  {
+    "xcmID": "10962787-1-ump-0-2006-0",
+    "chainID": 2006,
+    "id": "astar",
+    "chainName": "Astar",
+    "chainIDDest": 0,
+    "idDest": "polkadot",
+    "chainDestName": "Polkadot",    
+    "msgType": "ump",
+    "msgHash": "f85d75771ed2b88c5ecfe9d9d9bb3255a650eb33512d1e6b8bf49c2ae8a1e700",
+    "msgHex": "0x02100004000000000700aea68f020a13000000000700aea68f02010300286bee0d010004000101006877a0db00acc7da104aa11b05cf091254843468189c8b13808567eead2c8e57",
+    "msgStr": "{\"v2\":[{\"withdrawAsset\":[{\"id\":{\"concrete\":{\"parents\":0,\"interior\":{\"here\":null}}},\"fun\":{\"fungible\":11000000000}}]},{\"clearOrigin\":null},{\"buyExecution\":{\"fees\":{\"id\":{\"concrete\":{\"parents\":0,\"interior\":{\"here\":null}}},\"fun\":{\"fungible\":11000000000}},\"weightLimit\":{\"limited\":4000000000}}},{\"depositAsset\":{\"assets\":{\"wild\":{\"all\":null}},\"maxAssets\":1,\"beneficiary\":{\"parents\":0,\"interior\":{\"x1\":{\"accountId32\":{\"network\":{\"any\":null},\"id\":\"0x6877a0db00acc7da104aa11b05cf091254843468189c8b13808567eead2c8e57\"}}}}}}]}",
+    "ts": 1656594528,
+    "blockNumber": 10962787,
+    "relayChain": "Polkadot",
+    "sentAt": 10962786
+  },
+  {
+    "xcmID": "1334166-1-xcmp-2000-2004-0",
+    "chainID": 2004,
+    "id": "moonbeam",
+    "chainName": "Moonbeam",
+    "chainIDDest": 2000,
+    "idDest": "acala",
+    "chainDestName": "Acala",
+    "msgType": "xcmp",
+    "msgHash": "e4da9547a5c2977713b7c9277b26a77e8ea65e2c07ea177b125c359e72728f00",
+    "msgHex": "0x0210000400000106080000000b08b6957fbd430a1300000106080000000b08b6957fbd43010300286bee0d01000400010100d0c696806e3f6020040241eefddbbbb6ef5bf870f4c77feaac4775d26e7a662c",
+    "msgStr": "{\"v2\":[{\"withdrawAsset\":[{\"id\":{\"concrete\":{\"parents\":0,\"interior\":{\"x1\":{\"generalKey\":\"0x0000\"}}}},\"fun\":{\"fungible\":74481168397832}}]},{\"clearOrigin\":null},{\"buyExecution\":{\"fees\":{\"id\":{\"concrete\":{\"parents\":0,\"interior\":{\"x1\":{\"generalKey\":\"0x0000\"}}}},\"fun\":{\"fungible\":74481168397832}},\"weightLimit\":{\"limited\":4000000000}}},{\"depositAsset\":{\"assets\":{\"wild\":{\"all\":null}},\"maxAssets\":1,\"beneficiary\":{\"parents\":0,\"interior\":{\"x1\":{\"accountId32\":{\"network\":{\"any\":null},\"id\":\"0xd0c696806e3f6020040241eefddbbbb6ef5bf870f4c77feaac4775d26e7a662c\"}}}}}}]}",
+    "ts": 1656595609,
+    "blockNumber": 1334166,
+    "relayChain": "Polkadot",
+    "sentAt": 10962961,
+  },
+  ...
+]
+```
+
+### HTTP Request
+
+`POST https://api.polkaholic.io/search/xcmmessages`
+
+### Input Parameters
+
+Attribute | Type | Description | Optional?
+--------- | -----|----- | :---------:
+chainID | String or Int | The identifier of the source chain to retrieve data about  | Optional
+chainIDDest | String or Int | The identifier of the dest chain to retrieve data about  | Optional  
+dateStart | `"YYYY-MM-DD"` | The Starting Date(inclusive). ex: "2022-05-01" | Optional
+dateEnd | `"YYYY-MM-DD"` |  The Ending Date(inclusive). ex: "2022-05-31" | Optional
+msgType | String | Filter based on channel msg type ['ump','dmp','xcmp'] | Optional
+relayChain | String| relayChain of the msg. ex: 'polkadot' or 'kusama' | Optional
+
+### URL Parameters
+
+NONE
+
+### Response Description
+Return an list of xcmmessage
+
+Attribute    | Description
+-------------|------------
+xcmID        | The xcm identifiers in the form of: <br /> `blockNumber-txIdx-mpType-sourceChainID-destChainID-msgIdx` |
+msgType      | _ump_  - upward msg send from parachain to relaychain.<br />_dmp_  - downard msg send from relaychain to parachain. <br />_xcmp_ - horizontal msg (hrmp) send from parachain to parachain
+msgHex       | The hexEncoded msg. _Note:_ First byte is effectively removed from the raw xcmp msg |
+msgHash      | The blake256(msgHex)   |
+msgStr       | The undecorated Channel Msg   |
+blockNumber  | The BN where the msg is received by dest chain  |
+sentAt       | The hrmpWatermark BN  |
 
 # Hash
 
