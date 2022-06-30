@@ -390,12 +390,12 @@
             <a href="#xcm" class="toc-h1 toc-link" data-title="XCM">XCM</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#get-xcm-cross-chain-messaging-transfers" class="toc-h2 toc-link" data-title="Get XCM (Cross-Chain Messaging) Transfers">Get XCM (Cross-Chain Messaging) Transfers</a>
+                    <a href="#get-xcm-transfers" class="toc-h2 toc-link" data-title="Get XCM Transfers">Get XCM Transfers</a>
                   </li>
               </ul>
           </li>
           <li>
-            <a href="#search" class="toc-h1 toc-link" data-title="Search">Search</a>
+            <a href="#search-tx-events-xcms" class="toc-h1 toc-link" data-title="Search (tx, events, xcms...)">Search (tx, events, xcms...)</a>
               <ul class="toc-list-h2">
                   <li>
                     <a href="#search-extrinsics" class="toc-h2 toc-link" data-title="Search Extrinsics">Search Extrinsics</a>
@@ -407,7 +407,10 @@
                     <a href="#search-events" class="toc-h2 toc-link" data-title="Search Events">Search Events</a>
                   </li>
                   <li>
-                    <a href="#search-xcms" class="toc-h2 toc-link" data-title="Search XCMs">Search XCMs</a>
+                    <a href="#search-xcm-transfers" class="toc-h2 toc-link" data-title="Search XCM Transfers">Search XCM Transfers</a>
+                  </li>
+                  <li>
+                    <a href="#search-xcm-messages" class="toc-h2 toc-link" data-title="Search XCM Messages">Search XCM Messages</a>
                   </li>
               </ul>
           </li>
@@ -2431,7 +2434,7 @@ curl <span class="s2">"https://api.polkaholic.io/account/13eEyAEkyazXwKnh51DPgdB
   </span><span class="nl">"nextPage"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h1 id='xcm'>XCM</h1><h2 id='get-xcm-cross-chain-messaging-transfers'>Get XCM (Cross-Chain Messaging) Transfers</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.polkaholic.io/xcmtransfers"</span> <span class="se">\</span>
+</span></code></pre></div><h1 id='xcm'>XCM</h1><h2 id='get-xcm-transfers'>Get XCM Transfers</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.polkaholic.io/xcmtransfers"</span> <span class="se">\</span>
   <span class="nt">-X</span> GET <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Authorization: YOUR-API-KEY"</span>
 
@@ -2572,8 +2575,8 @@ curl <span class="s2">"https://api.polkaholic.io/account/13eEyAEkyazXwKnh51DPgdB
 <aside class="information">
 This API is in alpha development! Currently we do not track xcm coming into Interlay/Kintsugi
 </aside>
-<h1 id='search'>Search</h1>
-<p>Search API returns a list of {extrinsics, evmtxs, events, xcms} given certain user-specified criteria.</p>
+<h1 id='search-tx-events-xcms'>Search (tx, events, xcms...)</h1>
+<p>Search API returns a list of {extrinsics, evmtxs, events, xcmtransfers, xcmmessages} given certain user-specified criteria.</p>
 <h2 id='search-extrinsics'>Search Extrinsics</h2>
 <p>This endpoint returns a list of extrinsic meta given certain user-specified criteria.</p>
 <div class="highlight"><pre class="highlight shell tab-shell"><code>curl https://api.polkaholic.io/search/extrinsics <span class="se">\</span>
@@ -3002,15 +3005,15 @@ This API is in alpha development! Currently we do not track xcm coming into Inte
 <td>The &quot;method&quot; part of the event. Ex: &quot;Transfer&quot;</td>
 </tr>
 </tbody></table>
-<h2 id='search-xcms'>Search XCMs</h2>
-<p>This endpoint returns a list of channelMsg given certain user-specified criteria.</p>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>curl https://api.polkaholic.io/search/xcms <span class="se">\</span>
+<h2 id='search-xcm-transfers'>Search XCM Transfers</h2>
+<p>This endpoint returns a list of xcm transfers given certain user-specified criteria.</p>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl https://api.polkaholic.io/search/xcmtransfers <span class="se">\</span>
 <span class="nt">-X</span> POST <span class="se">\</span>
 <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
 <span class="nt">-d</span> <span class="s1">'{
     "chainID": "polkadot",
     "chainIDDest": "acala",
-    "incomplete": 0,
+    "complete": 0,
     "toAddress":"0x9e992a944acb1efa30bcd3275aedf7218bac369ca62dc0269ccec2f36db65c6f"
 }'</span>
 </code></pre></div>
@@ -3047,7 +3050,7 @@ This API is in alpha development! Currently we do not track xcm coming into Inte
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre></div><h3 id='http-request-20'>HTTP Request</h3>
-<p><code>POST https://api.polkaholic.io/search/xcms</code></p>
+<p><code>POST https://api.polkaholic.io/search/xcmtransfers</code></p>
 <h3 id='input-parameters-4'>Input Parameters</h3>
 <table><thead>
 <tr>
@@ -3106,9 +3109,9 @@ This API is in alpha development! Currently we do not track xcm coming into Inte
 <td style="text-align: center">Optional</td>
 </tr>
 <tr>
-<td>incomplete</td>
+<td>complete</td>
 <td>Int</td>
-<td>0: Complete(xcm successfully initiated), 1: Incomplete. If Unspecified: Including both</td>
+<td>1: Complete(xcm successfully initiated), 0: Incomplete. If Unspecified: Including both</td>
 <td style="text-align: center">Optional</td>
 </tr>
 </tbody></table>
@@ -3136,6 +3139,162 @@ This API is in alpha development! Currently we do not track xcm coming into Inte
 </tbody></table>
 <h3 id='response-description-8'>Response Description</h3>
 <p>Return an list of (xcmtransfer)[#xcmtransfers]</p>
+<h2 id='search-xcm-messages'>Search XCM Messages</h2>
+<p>This endpoint returns a list of channelMsg {dmp, ump, xcmp} given certain user-specified criteria.</p>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl https://api.polkaholic.io/search/xcmmessages <span class="se">\</span>
+<span class="nt">-X</span> POST <span class="se">\</span>
+<span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+<span class="nt">-d</span> <span class="s1">'{
+    "startDate": "2022-06-27",
+    "endDate": "2022-06-30",
+    "relayChain":"polkadot"
+}'</span>
+</code></pre></div>
+<blockquote>
+<p>Example Response (array of xcm message)</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"xcmID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1334065-1-dmp-2000-0-0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"chainID"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"polkadot"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"chainName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Polkadot"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"chainIDDest"</span><span class="p">:</span><span class="w"> </span><span class="mi">2000</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"idDest"</span><span class="p">:</span><span class="w"> </span><span class="s2">"acala"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"chainDestName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Acala"</span><span class="p">,</span><span class="w">    
+    </span><span class="nl">"msgType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dmp"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"msgHash"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a6fd9ca31c18b44d64cdfed29c90eebeb89548f294cf2389ca76e56b79f4f367"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"msgHex"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x02100104000100000700e87648170a13000100000700e8764817010300286bee0d010004000101006642ee28fc1b7d1a01ea2bc956bfe5fde1c7121cae33afe51a83cc683785a81f"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"msgStr"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{</span><span class="se">\"</span><span class="s2">v2</span><span class="se">\"</span><span class="s2">:[{</span><span class="se">\"</span><span class="s2">reserveAssetDeposited</span><span class="se">\"</span><span class="s2">:[{</span><span class="se">\"</span><span class="s2">id</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">concrete</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">parents</span><span class="se">\"</span><span class="s2">:1,</span><span class="se">\"</span><span class="s2">interior</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">here</span><span class="se">\"</span><span class="s2">:null}}},</span><span class="se">\"</span><span class="s2">fun</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">fungible</span><span class="se">\"</span><span class="s2">:100000000000}}]},{</span><span class="se">\"</span><span class="s2">clearOrigin</span><span class="se">\"</span><span class="s2">:null},{</span><span class="se">\"</span><span class="s2">buyExecution</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">fees</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">id</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">concrete</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">parents</span><span class="se">\"</span><span class="s2">:1,</span><span class="se">\"</span><span class="s2">interior</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">here</span><span class="se">\"</span><span class="s2">:null}}},</span><span class="se">\"</span><span class="s2">fun</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">fungible</span><span class="se">\"</span><span class="s2">:100000000000}},</span><span class="se">\"</span><span class="s2">weightLimit</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">limited</span><span class="se">\"</span><span class="s2">:4000000000}}},{</span><span class="se">\"</span><span class="s2">depositAsset</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">assets</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">wild</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">all</span><span class="se">\"</span><span class="s2">:null}},</span><span class="se">\"</span><span class="s2">maxAssets</span><span class="se">\"</span><span class="s2">:1,</span><span class="se">\"</span><span class="s2">beneficiary</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">parents</span><span class="se">\"</span><span class="s2">:0,</span><span class="se">\"</span><span class="s2">interior</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">x1</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">accountId32</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">network</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">any</span><span class="se">\"</span><span class="s2">:null},</span><span class="se">\"</span><span class="s2">id</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">0x6642ee28fc1b7d1a01ea2bc956bfe5fde1c7121cae33afe51a83cc683785a81f</span><span class="se">\"</span><span class="s2">}}}}}}]}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"ts"</span><span class="p">:</span><span class="w"> </span><span class="mi">1656594360</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"blockNumber"</span><span class="p">:</span><span class="w"> </span><span class="mi">1334065</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"relayChain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Polkadot"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"sentAt"</span><span class="p">:</span><span class="w"> </span><span class="mi">10962759</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"xcmID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10962787-1-ump-0-2006-0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"chainID"</span><span class="p">:</span><span class="w"> </span><span class="mi">2006</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"astar"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"chainName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Astar"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"chainIDDest"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"idDest"</span><span class="p">:</span><span class="w"> </span><span class="s2">"polkadot"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"chainDestName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Polkadot"</span><span class="p">,</span><span class="w">    
+    </span><span class="nl">"msgType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ump"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"msgHash"</span><span class="p">:</span><span class="w"> </span><span class="s2">"f85d75771ed2b88c5ecfe9d9d9bb3255a650eb33512d1e6b8bf49c2ae8a1e700"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"msgHex"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x02100004000000000700aea68f020a13000000000700aea68f02010300286bee0d010004000101006877a0db00acc7da104aa11b05cf091254843468189c8b13808567eead2c8e57"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"msgStr"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{</span><span class="se">\"</span><span class="s2">v2</span><span class="se">\"</span><span class="s2">:[{</span><span class="se">\"</span><span class="s2">withdrawAsset</span><span class="se">\"</span><span class="s2">:[{</span><span class="se">\"</span><span class="s2">id</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">concrete</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">parents</span><span class="se">\"</span><span class="s2">:0,</span><span class="se">\"</span><span class="s2">interior</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">here</span><span class="se">\"</span><span class="s2">:null}}},</span><span class="se">\"</span><span class="s2">fun</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">fungible</span><span class="se">\"</span><span class="s2">:11000000000}}]},{</span><span class="se">\"</span><span class="s2">clearOrigin</span><span class="se">\"</span><span class="s2">:null},{</span><span class="se">\"</span><span class="s2">buyExecution</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">fees</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">id</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">concrete</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">parents</span><span class="se">\"</span><span class="s2">:0,</span><span class="se">\"</span><span class="s2">interior</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">here</span><span class="se">\"</span><span class="s2">:null}}},</span><span class="se">\"</span><span class="s2">fun</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">fungible</span><span class="se">\"</span><span class="s2">:11000000000}},</span><span class="se">\"</span><span class="s2">weightLimit</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">limited</span><span class="se">\"</span><span class="s2">:4000000000}}},{</span><span class="se">\"</span><span class="s2">depositAsset</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">assets</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">wild</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">all</span><span class="se">\"</span><span class="s2">:null}},</span><span class="se">\"</span><span class="s2">maxAssets</span><span class="se">\"</span><span class="s2">:1,</span><span class="se">\"</span><span class="s2">beneficiary</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">parents</span><span class="se">\"</span><span class="s2">:0,</span><span class="se">\"</span><span class="s2">interior</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">x1</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">accountId32</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">network</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">any</span><span class="se">\"</span><span class="s2">:null},</span><span class="se">\"</span><span class="s2">id</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">0x6877a0db00acc7da104aa11b05cf091254843468189c8b13808567eead2c8e57</span><span class="se">\"</span><span class="s2">}}}}}}]}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"ts"</span><span class="p">:</span><span class="w"> </span><span class="mi">1656594528</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"blockNumber"</span><span class="p">:</span><span class="w"> </span><span class="mi">10962787</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"relayChain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Polkadot"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"sentAt"</span><span class="p">:</span><span class="w"> </span><span class="mi">10962786</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"xcmID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1334166-1-xcmp-2000-2004-0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"chainID"</span><span class="p">:</span><span class="w"> </span><span class="mi">2004</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"moonbeam"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"chainName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Moonbeam"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"chainIDDest"</span><span class="p">:</span><span class="w"> </span><span class="mi">2000</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"idDest"</span><span class="p">:</span><span class="w"> </span><span class="s2">"acala"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"chainDestName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Acala"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"msgType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"xcmp"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"msgHash"</span><span class="p">:</span><span class="w"> </span><span class="s2">"e4da9547a5c2977713b7c9277b26a77e8ea65e2c07ea177b125c359e72728f00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"msgHex"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x0210000400000106080000000b08b6957fbd430a1300000106080000000b08b6957fbd43010300286bee0d01000400010100d0c696806e3f6020040241eefddbbbb6ef5bf870f4c77feaac4775d26e7a662c"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"msgStr"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{</span><span class="se">\"</span><span class="s2">v2</span><span class="se">\"</span><span class="s2">:[{</span><span class="se">\"</span><span class="s2">withdrawAsset</span><span class="se">\"</span><span class="s2">:[{</span><span class="se">\"</span><span class="s2">id</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">concrete</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">parents</span><span class="se">\"</span><span class="s2">:0,</span><span class="se">\"</span><span class="s2">interior</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">x1</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">generalKey</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">0x0000</span><span class="se">\"</span><span class="s2">}}}},</span><span class="se">\"</span><span class="s2">fun</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">fungible</span><span class="se">\"</span><span class="s2">:74481168397832}}]},{</span><span class="se">\"</span><span class="s2">clearOrigin</span><span class="se">\"</span><span class="s2">:null},{</span><span class="se">\"</span><span class="s2">buyExecution</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">fees</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">id</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">concrete</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">parents</span><span class="se">\"</span><span class="s2">:0,</span><span class="se">\"</span><span class="s2">interior</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">x1</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">generalKey</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">0x0000</span><span class="se">\"</span><span class="s2">}}}},</span><span class="se">\"</span><span class="s2">fun</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">fungible</span><span class="se">\"</span><span class="s2">:74481168397832}},</span><span class="se">\"</span><span class="s2">weightLimit</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">limited</span><span class="se">\"</span><span class="s2">:4000000000}}},{</span><span class="se">\"</span><span class="s2">depositAsset</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">assets</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">wild</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">all</span><span class="se">\"</span><span class="s2">:null}},</span><span class="se">\"</span><span class="s2">maxAssets</span><span class="se">\"</span><span class="s2">:1,</span><span class="se">\"</span><span class="s2">beneficiary</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">parents</span><span class="se">\"</span><span class="s2">:0,</span><span class="se">\"</span><span class="s2">interior</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">x1</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">accountId32</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">network</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">any</span><span class="se">\"</span><span class="s2">:null},</span><span class="se">\"</span><span class="s2">id</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">0xd0c696806e3f6020040241eefddbbbb6ef5bf870f4c77feaac4775d26e7a662c</span><span class="se">\"</span><span class="s2">}}}}}}]}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"ts"</span><span class="p">:</span><span class="w"> </span><span class="mi">1656595609</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"blockNumber"</span><span class="p">:</span><span class="w"> </span><span class="mi">1334166</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"relayChain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Polkadot"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"sentAt"</span><span class="p">:</span><span class="w"> </span><span class="mi">10962961</span><span class="p">,</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="err">...</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div><h3 id='http-request-21'>HTTP Request</h3>
+<p><code>POST https://api.polkaholic.io/search/xcmmessages</code></p>
+<h3 id='input-parameters-5'>Input Parameters</h3>
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+<th style="text-align: center">Optional?</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>chainID</td>
+<td>String or Int</td>
+<td>The identifier of the source chain to retrieve data about</td>
+<td style="text-align: center">Optional</td>
+</tr>
+<tr>
+<td>chainIDDest</td>
+<td>String or Int</td>
+<td>The identifier of the dest chain to retrieve data about</td>
+<td style="text-align: center">Optional</td>
+</tr>
+<tr>
+<td>dateStart</td>
+<td><code>&quot;YYYY-MM-DD&quot;</code></td>
+<td>The Starting Date(inclusive). ex: &quot;2022-05-01&quot;</td>
+<td style="text-align: center">Optional</td>
+</tr>
+<tr>
+<td>dateEnd</td>
+<td><code>&quot;YYYY-MM-DD&quot;</code></td>
+<td>The Ending Date(inclusive). ex: &quot;2022-05-31&quot;</td>
+<td style="text-align: center">Optional</td>
+</tr>
+<tr>
+<td>msgType</td>
+<td>String</td>
+<td>Filter based on channel msg type [&#39;ump&#39;,&#39;dmp&#39;,&#39;xcmp&#39;]</td>
+<td style="text-align: center">Optional</td>
+</tr>
+<tr>
+<td>relayChain</td>
+<td>String</td>
+<td>relayChain of the msg. ex: &#39;polkadot&#39; or &#39;kusama&#39;</td>
+<td style="text-align: center">Optional</td>
+</tr>
+</tbody></table>
+<h3 id='url-parameters-10'>URL Parameters</h3>
+<p>NONE</p>
+<h3 id='response-description-9'>Response Description</h3>
+<p>Return an list of xcmmessage</p>
+
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>xcmID</td>
+<td>The xcm identifiers in the form of: <br /> <code>blockNumber-txIdx-mpType-sourceChainID-destChainID-msgIdx</code></td>
+</tr>
+<tr>
+<td>msgType</td>
+<td><em>ump</em>  - upward msg send from parachain to relaychain.<br /><em>dmp</em>  - downard msg send from relaychain to parachain. <br /><em>xcmp</em> - horizontal msg (hrmp) send from parachain to parachain</td>
+</tr>
+<tr>
+<td>msgHex</td>
+<td>The hexEncoded msg. <em>Note:</em> First byte is effectively removed from the raw xcmp msg</td>
+</tr>
+<tr>
+<td>msgHash</td>
+<td>The blake256(msgHex)</td>
+</tr>
+<tr>
+<td>msgStr</td>
+<td>The undecorated Channel Msg</td>
+</tr>
+<tr>
+<td>blockNumber</td>
+<td>The BN where the msg is received by dest chain</td>
+</tr>
+<tr>
+<td>sentAt</td>
+<td>The hrmpWatermark BN</td>
+</tr>
+</tbody></table>
 <h1 id='hash'>Hash</h1><h2 id='hash-lookup'>Hash Lookup</h2>
 <aside class="notice">
 Not sure what hashType it is? Get an authoritative answer with this API!
@@ -3210,7 +3369,7 @@ curl <span class="s2">"https://api.polkaholic.io/hash/0xe5b17b7515813b54826b7231
     </span><span class="nl">"chainID"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
     </span><span class="nl">"blockNumber"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h3 id='http-request-21'>HTTP Request</h3>
+</span></code></pre></div><h3 id='http-request-22'>HTTP Request</h3>
 <p><code>GET https://api.polkaholic.io/hash/&lt;Hash&gt;</code></p>
 <h3 id='query-parameters-2'>Query Parameters</h3>
 <table><thead>
@@ -3224,7 +3383,7 @@ curl <span class="s2">"https://api.polkaholic.io/hash/0xe5b17b7515813b54826b7231
 <td>The hash to lookup. If found, the corresponding hashType and relevant info will be returned</td>
 </tr>
 </tbody></table>
-<h3 id='response-description-9'>Response Description</h3>
+<h3 id='response-description-10'>Response Description</h3>
 <table><thead>
 <tr>
 <th>Attribute</th>
