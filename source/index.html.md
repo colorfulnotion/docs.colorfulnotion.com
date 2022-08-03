@@ -908,28 +908,30 @@ Address | The Address (public key, SS58 address or nativeH160 address) to retrie
 
 ### URL Parameters
 
-Parameter | Description | Optional? | Default |
---------- | ----------- | --------- | ------- |
-group     | The group type to return by the API (see below) | Yes | 'realtime'
-lookbackWindow     | TBA | Yes | 180
-decroate  | Whether API should return decorated fields | Yes | true
-extra     | Decorate the response with fields like ['usd','address', 'related', 'data'] | Yes | usd,address, data
+Parameter      | Description | Optional? | Default |
+---------------| ----------- | --------- | ------- |
+group          | The group type to return by the API (see below) | Yes | 'realtime'
+lookbackWindow | TBA | Yes | 180
+decroate       | Whether API should return decorated fields | Yes | true
+extra          | Decorate the response with fields like ['usd','address', 'related', 'data'] | Yes | usd,address, data
+chainfilters   | Filter the result by comma-separated chainIdentifiers. i.e. `chainfilters=polkadot,kusama,2000`  | Yes | 'all'
+
 
 ### Supported Query Group
 Currently `/account` endpoint supprts [`realtime`,`balances`, `xcmtransfers`, `history`,`extrinsics`,`transfers`,`crowdloans`,`rewards`, `feed`] group type. Only *one* group type will be returned by the API at a time.
 
 
-| Group Type | Description | Paginated | Return Sample |
-| ---------  | ----------- | :-----------: |:-----------: |
-| realtime  | Current account snapshot  | - | [e1]()  
-| balances  | Historical Account Balance snapshots over the last N days (in USD)| - | [e2]()
-| xcmtransfer | cross-chain transfers initiated by the account. | - | [e3]()
-| history  | Historical account snapshots  | Yes | [e4]()
-| extrinsics  | Extrinsics (including both substrateTX and evmTX) initiated by the account | Yes | [e5]()
-| transfers  |Incoming transfers to the account  | Yes | [e6]()
-| crowdloans  | direct crowdloans contributions made by the account   | Yes | [e7]()
-| rewards  | staking rewards/panalties received by the account | Yes | [e8]()
-| feed  | Extrinsics initiate by the accounts which an account follows | Yes |[e9]()
+| Group Type | Description | Paginated | Chainfilter Support | Return Sample |
+| ---------  | ----------- | :-----------: |:-----------: | :-----------: |
+| realtime  | Current account snapshot  | - | Yes |[e1]()  
+| balances  | Historical Account Balance snapshots over the last N days (in USD)| - | Yes | [e2]()
+| xcmtransfer | cross-chain transfers initiated by the account. | - |  Yes | [e3]()
+| history  | Historical account snapshots  | Yes |  Yes | [e4]()
+| extrinsics  | Extrinsics (including both substrateTX and evmTX) initiated by the account | Yes |  Yes |[e5]()
+| transfers  |Incoming transfers to the account  | Yes |  Yes | [e6]()
+| crowdloans  | direct crowdloans contributions made by the account   | Yes |  Relaychain Only | [e7]()
+| rewards  | staking rewards/panalties received by the account | Yes | Yes | [e8]()
+| feed  | Extrinsics initiate by the accounts which an account follows | Yes |Partial |[e9]()
 
 
 
@@ -942,6 +944,7 @@ Return all assets that are held by an account (realtime)
 `GET https://api.polkaholic.io/account/realtime/<Address>`
 
 ```shell
+# get realtime assets on all chains, using default decoration
 curl "https://api.polkaholic.io/account/realtime/13Dh9XPwREhog65gkg2a2humtNhaaYRqgMp4Mf9jS7A6GK8m" \
   -H "Authorization: YOUR-API-KEY"
 ```
@@ -992,6 +995,47 @@ curl "https://api.polkaholic.io/account/realtime/13Dh9XPwREhog65gkg2a2humtNhaaYR
 ]
 ```
 
+```shell
+# get acala asset in realtime, no decoration
+curl "https://api.polkaholic.io/account/realtime/13Dh9XPwREhog65gkg2a2humtNhaaYRqgMp4Mf9jS7A6GK8m?chainfilters=acala&decrate=f" \
+  -H "Authorization: YOUR-API-KEY"
+```
+```json
+[
+    {
+        "assetChain": "{\"Loan\":{\"Token\":\"DOT\"}}~2000",
+        "assetInfo": {
+            "assetType": "Loan",
+            "assetName": "Loan:DOT",
+            "numHolders": 4910,
+            "asset": "{\"Loan\":{\"Token\":\"DOT\"}}",
+            "symbol": "Loan:DOT",
+            "decimals": 10,
+            "chainID": 2000,
+            "chainName": "Acala",
+            "assetChain": "{\"Loan\":{\"Token\":\"DOT\"}}~2000",
+            "isUSD": 0,
+            "priceUSDpaths": false,
+            "nativeAssetChain": null
+        },
+        "state": {
+            "debit": 0,
+            "borrowedAsset": {
+                "Token": "AUSD"
+            },
+            "ts": 1655532486,
+            "bn": 1251351,
+            "source": "moonbeam",
+            "genTS": 1659313994,
+            "exchangeRate": 0.10141204925333436,
+            "exchangeRateCurrent": 0.10141204925333436
+        }
+    },
+    ...
+]
+```
+
+
 ## Get Account (balances)
 
 Return a list of balance snapshots for an account
@@ -1040,40 +1084,64 @@ Return a list of XCM initiated by an account
 `GET https://api.polkaholic.io/account/xcmtransfers/<Address>`
 
 ```shell
-curl "https://api.polkaholic.io/account/xcmtransfers/13eEyAEkyazXwKnh51DPgdBdTWB8FWm4bPpsCB17RJ3K5LNV" \
+# get a list of account's xcmtransfers on kintsugi(22092); decorate it with usd and any onchain identity
+curl "https://api.polkaholic.io/account/xcmtransfers/13eEyAEkyazXwKnh51DPgdBdTWB8FWm4bPpsCB17RJ3K5LNV?decorate=t&extra=usd,address&chainfilters=22092" \
   -H "Authorization: YOUR-API-KEY"
 ```
 
 ```json
 [
   {
-    "extrinsicHash": "0x424fb0b5e055b616795f687ecaf64feccc100958dacd065a8ac83097db557565",
-    "extrinsicID": "1859804-2",
+    "extrinsicHash": "0x26a5ae999227e6819710952c1da48502655bf686fe00004e19fe583e878c2b6f",
+    "extrinsicID": "675237-2",
     "incomplete": 0,
     "status": "NonFinalizedSource",
-    "sectionMethod": "polkadotXcm:limitedReserveTransferAssets",
-    "section": "polkadotXcm",
-    "method": "limitedReserveTransferAssets",
+    "section": "xTokens",
+    "method": "transfer",
+    "relayChain": "kusama",
     "fromAddress": "0x74df9177b1360bf0c07952ffb2d37817366adf8900e3bb90287b9784fda3e045",
-    "id": "statemine",
-    "chainID": 21000,
-    "chainName": "Statemine",
-    "blockNumber": 1859804,
-    "sourceTS": 1647826188,
-    "destAddress": "0x74df9177b1360bf0c07952ffb2d37817366adf8900e3bb90287b9784fda3e045",
-    "idDest": "karura",
-    "chainIDDest": 22000,
-    "chainDestName": "Karura",
-    "blockNumberDest": 1662518,
-    "destTS": 1647826201,
-    "asset": "{\"Token\":\"ARIS\"}",
-    "rawAsset": "{\"Token\":\"16\"}",
-    "amountSent": 50000,
-    "amountSentUSD": 0,
-    "amountReceived": 49999.9936,
-    "amountReceivedUSD": 0,
-    "priceUSD": 0,
-    "priceUSDCurrent": 0
+    "id": "kintsugi",
+    "chainID": 22092,
+    "chainName": "Kintsugi",
+    "blockNumber": 675237,
+    "sourceTS": 1649259492,
+    "destAddress": "0xf618d8489511f00682df9f7d794d081cf5716b012d014846c01a162e94091d15",
+    "idDest": "kusama",
+    "chainIDDest": 2,
+    "chainDestName": "Kusama",
+    "blockNumberDest": 12136574,
+    "destTS": 1649259510,
+    "asset": "{\"Token\":\"KSM\"}",
+    "rawAsset": "{\"Token\":\"KSM\"}",
+    "amountSent": 1.37495,
+    "amountSentUSD": 240.77849409999996,
+    "amountReceived": 1.37484333334,
+    "amountReceivedUSD": 240.75981484783412,
+    "priceUSD": 175.118,
+    "priceUSDCurrent": 60.9746,
+    "destAddress_info": {
+      "kusamaAddress": "J8zgGfZApQQbBNHGNTttqqQaoJqzQMsiFqi57GbXAY9oYJi",
+      "additional": [
+        [
+          {
+            "Raw": "userpic"
+          },
+          {
+            "Raw": "7b8096c637d32a3636b543b747463590"
+          }
+        ],
+        [
+          {
+            "Raw": "background"
+          },
+          {
+            "Raw": "b0c4ad41ce0b7418d7009c979e587d2a"
+          }
+        ]
+      ],
+      "twitter": "@mwmtg3"
+    },
+    "destAddress_judgements": []
   },
   ...
 ]    
@@ -1313,7 +1381,7 @@ Return a list of crowdloan contributions make by an account (paginated)
 `GET https://api.polkaholic.io/account/crowdloans/<Address>`
 
 ```shell
-curl "https://api.polkaholic.io/account/crowdloans/FDZV9KZkAjzFSbct4ySSRiUkUTiMt26yGw8RYHiM1EHduDs" \
+curl "https://api.polkaholic.io/account/crowdloans/FDZV9KZkAjzFSbct4ySSRiUkUTiMt26yGw8RYHiM1EHduDs?chainfilters=kusama" \
   -H "Authorization: YOUR-API-KEY"
 ```
 
@@ -1417,9 +1485,6 @@ curl "https://api.polkaholic.io/account/rewards/13eEyAEkyazXwKnh51DPgdBdTWB8FWm4
 ```
 
 
-
-
-
 ## Get Account (feed)
 
 Return a list of extrinsics from all accounts that an address is following (paginated)
@@ -1449,10 +1514,10 @@ curl "https://api.polkaholic.io/account/balances/dwehUeMiyxAcSWUBsJiJ7WKmHZLueCx
 ## Get XCM Transfers
 
 ```shell
-curl "https://api.polkaholic.io/xcmtransfers" \
+# get xcmtransfers from  moonbeam/moonrivers
+curl "https://api.polkaholic.io/xcmtransfers?chainfilters=moonbeam,moonriver" \
   -X GET \
   -H "Authorization: YOUR-API-KEY"
-
 ```
 
 > Example Response (last 1000 xcmtransfers)
@@ -1460,60 +1525,62 @@ curl "https://api.polkaholic.io/xcmtransfers" \
 ```json
 [
   {
-      "extrinsicHash": "0x9d4b548d4764988fbfc73a500c92792ce157b8bb356648338deb3b8ffbeb17c1",
-      "extrinsicID": "2018879-4",
-      "incomplete": 0,
-      "status": "NonFinalizedSource",
-      "section": "xTokens",
-      "method": "transferMulticurrencies",
-      "fromAddress": "0xcc1ba006a1715e894b621a36169165cb72343b1c6ad4ba2230d394be4033a645",
-      "id": "karura",
-      "chainID": 22000,
-      "chainName": "Karura",
-      "blockNumber": 2018879,
-      "sourceTS": 1654270152,
-      "destAddress": "0xcc1ba006a1715e894b621a36169165cb72343b1c6ad4ba2230d394be4033a645",
-      "idDest": "statemine",
-      "chainIDDest": 21000,
-      "chainDestName": "Statemine",
-      "blockNumberDest": 2213841,
-      "destTS": 1654270172,
-      "asset": "{\"Token\":\"RMRK\"}",
-      "rawAsset": "{\"ForeignAsset\":\"0\"}",
-      "amountSent": 238.5455268637,
-      "amountSentUSD": 1080.7734476508283,
-      "amountReceived": 238.5455268637,
-      "amountReceivedUSD": 1080.7734476508283,
-      "priceUSD": 4.53068,
-      "priceUSDCurrent": 4.80811
+    "extrinsicHash": "0xfee0215fe4586ad3e6c79264dbec11c1a1d41c5f74f99cda3ee17cc805912fc1",
+    "extrinsicID": "2576986-2",
+    "incomplete": 0,
+    "status": null,
+    "section": "polkadotXcm",
+    "method": "limitedReserveTransferAssets",
+    "relayChain": "kusama",
+    "fromAddress": "0x8ef13b727052170d8f21b20133664b31bff906fe7d157362840299b8bf6b1a64",
+    "id": "statemine",
+    "chainID": 21000,
+    "chainName": "Statemine",
+    "blockNumber": 2576986,
+    "sourceTS": 1659456769,
+    "destAddress": "0x0bcf7735dfd5cb5c646821ab9c9fb9a8ad6ddd1f",
+    "idDest": "moonriver",
+    "chainIDDest": 22023,
+    "chainDestName": "Moonriver",
+    "blockNumberDest": 2309213,
+    "destTS": 1659456780,
+    "asset": "{\"Token\":\"RMRK\"}",
+    "rawAsset": "{\"Token\":\"8\"}",
+    "amountSent": 1,
+    "amountSentUSD": 3.32324,
+    "amountReceived": 0.99896,
+    "amountReceivedUSD": 3.3197838304,
+    "priceUSD": 3.32324,
+    "priceUSDCurrent": 3.22612
   },
   {
-      "extrinsicHash": "0x291a9de305db0cffa1961d08b32102ab6c348a47dab34d9f23a67ec3bbb5a8b2",
-      "extrinsicID": "10589459-2",
-      "incomplete": 0,
-      "status": "NonFinalizedSource",
-      "section": "xcmPallet",
-      "method": "reserveTransferAssets",
-      "fromAddress": "0xfc1df3d0aadb175f478e7d6aa79c31e25c685988e0714c7a0ff9de38f70dcf2f",
-      "id": "polkadot",
-      "chainID": 0,
-      "chainName": "Polkadot",
-      "blockNumber": 10589459,
-      "sourceTS": 1654287090,
-      "destAddress": "0xfc1df3d0aadb175f478e7d6aa79c31e25c685988e0714c7a0ff9de38f70dcf2f",
-      "idDest": "parallel",
-      "chainIDDest": 2012,
-      "chainDestName": "Parallel",
-      "blockNumberDest": 1099628,
-      "destTS": 1654287091,
-      "asset": "{\"Token\":\"DOT\"}",
-      "rawAsset": "{\"Token\":\"DOT\"}",
-      "amountSent": 103.5773,
-      "amountSentUSD": 968.4581127299999,
-      "amountReceived": 103.5677,
-      "amountReceivedUSD": 968.36835177,
-      "priceUSD": 9.3501,
-      "priceUSDCurrent": 9.38238
+    "extrinsicHash": "0x0924a261244caf07b11b6e81396a044395c930a8914b34f47e75fe63ab692d32",
+    "extrinsicID": "1560107-2",
+    "incomplete": 0,
+    "status": null,
+    "section": "xTokens",
+    "method": "TransferredMultiAssets",
+    "relayChain": "polkadot",
+    "fromAddress": "0x24db1b64a82237408d3236328b898582aa57ab8bb4eb09719368a0b72c38db5b",
+    "id": "acala",
+    "chainID": 2000,
+    "chainName": "Acala",
+    "blockNumber": 1560107,
+    "sourceTS": 1659455370,
+    "destAddress": "0x5908fdb0bea504552a3a89c40d1c553a16db0acb",
+    "idDest": "moonbeam",
+    "chainIDDest": 2004,
+    "chainDestName": "Moonbeam",
+    "blockNumberDest": 1568464,
+    "destTS": 1659455388,
+    "asset": "{\"Token\":\"GLMR\"}",
+    "rawAsset": "{\"Token\":\"GLMR\"}",
+    "amountSent": 0.990676,
+    "amountSentUSD": 0.6896402745560001,
+    "amountReceived": 0.9906759992,
+    "amountReceivedUSD": 0.6896402739990953,
+    "priceUSD": 0.696131,
+    "priceUSDCurrent": 0.69711
   },
 ...
 ]
@@ -1531,6 +1598,7 @@ Parameter | Description | Optional? | Default |
 --------- | ----------- | --------- | ------- |
 decroate  | Whether API should return decorated fields | Yes | true
 extra     | Decorate the response with fields like ['usd','address', 'related', 'data'] | Yes | usd,address, data
+chainfilters   | Filter the result by comma-separated chainIdentifiers. i.e. `chainfilters=polkadot,moonbeam,2000`  | Yes | 'all'
 
 ### Response Description
 
@@ -1538,7 +1606,8 @@ Attribute | Description
 --------- | -----------
 fromAddress  | Sender's pubkey |  
 destAddress    | Recipient's pubkey|   
-sectionMethod | The extrinsic's module_call that initiated the xcm (i.e. `xcmPallet:limitedReserveTransferAssets`, `xTokens:transfer`)
+section | The related  module_call detected by our indexer (i.e. `xcmPallet`, `xTokens`, `polkadotXcm`)
+method | The related module_func detected by our indexer (i.e. `limitedReserveTransferAssets`, `transfer`, `TransferredMultiAssets`) etc  |  
 relayChain | The relayChain that facilitates the message passing (polkadot or kusama)
 chainID   | The initiated chain where the xcm is sending from |
 chainIDDest   | The destination chain where the xcm is going to |
