@@ -1,11 +1,11 @@
 # Error Code
 
 <aside class="notice">
-This error section applies to all paraholic API calls.
+This error section applies to all Polkaholic API calls.
 </aside>
 
 
-The Paraholic API uses the following error codes:
+The polkaholic API uses the following error codes:
 
 Error Code | Meaning | Description
 :----: | ------- |  ------- |

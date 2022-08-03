@@ -1,5 +1,5 @@
 <aside class="notice">
-This section provides a list of sample objects used by paraholic api
+This section provides a list of sample objects used by Polkaholic api
 </aside>
 
 (under construction)
@@ -9,7 +9,7 @@ This section provides a list of sample objects used by paraholic api
 
 ## DecoratedEvents
 ```shell
-# From https://paraholic.io/tx/0x044e63a8548c51bac4f3cdf71cc3bc31e63b460f7652030604aee4361f1b1878
+# From https://polkaholic.io/tx/0x044e63a8548c51bac4f3cdf71cc3bc31e63b460f7652030604aee4361f1b1878
 # eventID = 'chainID-blockNumber-transactionIndex-eventIndex'
 ```
 ```json
@@ -66,7 +66,7 @@ This section provides a list of sample objects used by paraholic api
 ```
 ## DecodedParams
 ```shell
-# From https://paraholic.io/tx/0x044e63a8548c51bac4f3cdf71cc3bc31e63b460f7652030604aee4361f1b1878
+# From https://polkaholic.io/tx/0x044e63a8548c51bac4f3cdf71cc3bc31e63b460f7652030604aee4361f1b1878
 ```
 ```json
 [
@@ -93,7 +93,7 @@ This section provides a list of sample objects used by paraholic api
 If the substrateTx is linked to an evmTx in EVM pallet, the meta for the linked evmTx will also be returned
 
 ```shell
-# From https://paraholic.io/tx/0x003cd404c02683a49b2506c844540a5fabf990f3cdb38662acaa26e4d511e84b
+# From https://polkaholic.io/tx/0x003cd404c02683a49b2506c844540a5fabf990f3cdb38662acaa26e4d511e84b
 ```
 ```json
 {
@@ -110,7 +110,7 @@ If the substrateTx is linked to an evmTx in EVM pallet, the meta for the linked 
 If the evmTx is linked to an subStrateTx, the meta for the linked subStrateTx will also be returned
 
 ```shell
-# From https://paraholic.io/tx/0xdd73c2c24ab6942b67865d6d5e8ac905ed39686ae59adef01983658217c397b4
+# From https://polkaholic.io/tx/0xdd73c2c24ab6942b67865d6d5e8ac905ed39686ae59adef01983658217c397b4
 ```
 ```json
 {
