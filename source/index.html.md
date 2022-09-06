@@ -90,7 +90,7 @@ You can query any supported chain either by its id or chainID.
 | Parallel           | parallel    |    2012 | [parallel.polkaholic.io](https://parallel.polkaholic.io)       |    172 |
 | Litentry           | litentry    |    2013 | [litentry.polkaholic.io](https://litentry.polkaholic.io)       |     31 |
 | Composable Finance | composable  |    2019 | [composable.polkaholic.io](https://composable.polkaholic.io)   |     50 |
-| Efinity*           | efinity     |    2021 | [efinity.polkaholic.io](https://efinity.polkaholic.io)         |   1110 |
+| Efinity           | efinity     |    2021 | [efinity.polkaholic.io](https://efinity.polkaholic.io)         |   1110 |
 | Nodle              | nodle       |    2026 | [nodle.polkaholic.io](https://nodle.polkaholic.io)             |     37 |
 | Ares*              | ares        |    2028 | [ares.polkaholic.io](https://ares.polkaholic.io)               |     34 |
 | Bifrost-Polkadot*  | bifrost-dot |    2030 | [bifrost-dot.polkaholic.io](https://bifrost-dot.polkaholic.io) |      6 |
@@ -1547,7 +1547,7 @@ asset | The "human-readble" representation of the sent asset
 rawAsset | The "raw" representation of the sent asset. (NOTE: Sometimes different parachains represent the same asset differently. We will automatically any known assets)
 
 <aside class="information">
-This API is in alpha development! Currently we do not track xcm coming into Interlay/Kintsugi
+This API is in alpha development!
 </aside>
 
 # Search (tx, events, xcms...)
