@@ -60,7 +60,7 @@ You must replace <code>YOUR-API-KEY</code> with your personal API key.
 
 ## Supported Chains
 
-As of 2022-06-27, Polkaholic supports Polkadot & 17 polkadot-parachains, plus Kusama & 28 kusama-parachains - 47 chains in total.
+As of 2022-11-01, Polkaholic supports Polkadot & 22 polkadot-parachains, plus Kusama & 39 kusama-parachains - 63 chains in total.
 
 <aside class="success">
 We coined the "ChainID" as a convenient way to identify any given chain using the following rule:  
@@ -77,34 +77,35 @@ You can query any supported chain either by its id or chainID.
 
 ### Supported Polkadot Chains
 
-| Chain              | id          | chainID | Polkaholic Explorer                                            | Prefix |
-|--------------------|-------------|---------|----------------------------------------------------------------|--------|
-| Polkadot           | polkadot    |       0 | [polkadot.polkaholic.io](https://polkadot.polkaholic.io)       |      0 |
-| Statemint          | statemint   |    1000 | [statemint.polkaholic.io](https://statemint.polkaholic.io)     |      0 |
-| Acala              | acala       |    2000 | [acala.polkaholic.io](https://acala.polkaholic.io)             |     10 |
-| Clover             | clover      |    2002 | [clover.polkaholic.io](https://clover.polkaholic.io)           |    128 |
-| Moonbeam           | moonbeam    |    2004 | [moonbeam.polkaholic.io](https://moonbeam.polkaholic.io)       |   1284 |
-| Astar              | astar       |    2006 | [astar.polkaholic.io](https://astar.polkaholic.io)             |      5 |
-| Kapex*             | kapex       |    2007 | [kapex.polkaholic.io](https://kapex.polkaholic.io)             |   2007 |
-| Equilibrium        | equilibrium |    2011 | [equilibrium.polkaholic.io](https://equilibrium.polkaholic.io) |     68 |
-| Parallel           | parallel    |    2012 | [parallel.polkaholic.io](https://parallel.polkaholic.io)       |    172 |
-| Litentry           | litentry    |    2013 | [litentry.polkaholic.io](https://litentry.polkaholic.io)       |     31 |
-| Composable Finance | composable  |    2019 | [composable.polkaholic.io](https://composable.polkaholic.io)   |     50 |
-| Efinity           | efinity     |    2021 | [efinity.polkaholic.io](https://efinity.polkaholic.io)         |   1110 |
-| Nodle              | nodle       |    2026 | [nodle.polkaholic.io](https://nodle.polkaholic.io)             |     37 |
-| Ares*              | ares        |    2028 | [ares.polkaholic.io](https://ares.polkaholic.io)               |     34 |
-| Bifrost-Polkadot*  | bifrost-dot |    2030 | [bifrost-dot.polkaholic.io](https://bifrost-dot.polkaholic.io) |      6 |
-| Centrifuge         | centrifuge  |    2031 | [centrifuge.polkaholic.io](https://centrifuge.polkaholic.io)   |     36 |
-| Interlay           | interlay    |    2032 | [interlay.polkaholic.io](https://interlay.polkaholic.io)       |   2032 |
-| HydraDX            | hydradx     |    2034 | [hydradx.polkaholic.io](https://hydradx.polkaholic.io)         |     63 |
-| Phala              | phala       |    2035 | [phala.polkaholic.io](https://phala.polkaholic.io)             |     30 |
-| Unique             | unique      |    2037 | [unique.polkaholic.io](https://unique.polkaholic.io)           |   7391 |
-| Polkadex*          | polkadex    |    2040 | [polkadex.polkaholic.io](https://polkadex.polkaholic.io)       |     88 |
-| Origin Trail*      | origintrail |    2043 | [origintrail.polkaholic.io](https://origintrail.polkaholic.io) |    101 |
+| Chain              | ID               | ChainID | Polkaholic Explorer                                                      | Prefix |
+|--------------------|------------------|---------|--------------------------------------------------------------------------|--------|
+| Polkadot           | polkadot         |       0 | [polkadot.polkaholic.io](https://polkadot.polkaholic.io)                 |      0 |
+| Statemint          | statemint        |    1000 | [statemint.polkaholic.io](https://statemint.polkaholic.io)               |      0 |
+| Acala              | acala            |    2000 | [acala.polkaholic.io](https://acala.polkaholic.io)                       |     10 |
+| Clover             | clover           |    2002 | [clover.polkaholic.io](https://clover.polkaholic.io)                     |    128 |
+| Moonbeam           | moonbeam         |    2004 | [moonbeam.polkaholic.io](https://moonbeam.polkaholic.io)                 |   1284 |
+| Astar              | astar            |    2006 | [astar.polkaholic.io](https://astar.polkaholic.io)                       |      5 |
+| Kapex*             | kapex            |    2007 | [kapex.polkaholic.io](https://kapex.polkaholic.io)                       |   2007 |
+| Equilibrium        | equilibrium      |    2011 | [equilibrium.polkaholic.io](https://equilibrium.polkaholic.io)           |     68 |
+| Parallel           | parallel         |    2012 | [parallel.polkaholic.io](https://parallel.polkaholic.io)                 |    172 |
+| Litentry           | litentry         |    2013 | [litentry.polkaholic.io](https://litentry.polkaholic.io)                 |     31 |
+| Composable Finance | composable       |    2019 | [composable.polkaholic.io](https://composable.polkaholic.io)             |     50 |
+| Efinity            | efinity          |    2021 | [efinity.polkaholic.io](https://efinity.polkaholic.io)                   |   1110 |
+| Nodle              | nodle            |    2026 | [nodle.polkaholic.io](https://nodle.polkaholic.io)                       |     37 |
+| Bifrost-Polkadot   | bifrost-dot      |    2030 | [bifrost-dot.polkaholic.io](https://bifrost-dot.polkaholic.io)           |      6 |
+| Centrifuge         | centrifuge       |    2031 | [centrifuge.polkaholic.io](https://centrifuge.polkaholic.io)             |     36 |
+| Interlay           | interlay         |    2032 | [interlay.polkaholic.io](https://interlay.polkaholic.io)                 |   2032 |
+| HydraDX            | hydradx          |    2034 | [hydradx.polkaholic.io](https://hydradx.polkaholic.io)                   |     63 |
+| Phala              | phala            |    2035 | [phala.polkaholic.io](https://phala.polkaholic.io)                       |     30 |
+| Unique             | unique           |    2037 | [unique.polkaholic.io](https://unique.polkaholic.io)                     |   7391 |
+| Integritee Shell*  | integritee-shell |    2039 | [integritee-shell.polkaholic.io](https://integritee-shell.polkaholic.io) |     13 |
+| Origin Trail*      | origintrail      |    2043 | [origintrail.polkaholic.io](https://origintrail.polkaholic.io)           |    101 |
+| Darwinia*          | darwinia         |    2046 | [darwinia.polkaholic.io](https://darwinia.polkaholic.io)                 |     18 |
+| Kylin*             | kylin            |    2052 | [kylin.polkaholic.io](https://kylin.polkaholic.io)                       |     42 |
 
 ### Supported Kusama Chains
 
-| Chain               | id                | chainID | Polkaholic Explorer                                                        | Prefix |
+| Chain               | ID                | ChainID | Polkaholic Explorer                                                        | Prefix |
 |---------------------|-------------------|---------|----------------------------------------------------------------------------|--------|
 | Kusama              | kusama            |       2 | [kusama.polkaholic.io](https://kusama.polkaholic.io)                       |      2 |
 | Statemine           | statemine         |   21000 | [statemine.polkaholic.io](https://statemine.polkaholic.io)                 |      2 |
@@ -113,12 +114,11 @@ You can query any supported chain either by its id or chainID.
 | Bifrost-Kusama      | bifrost-ksm       |   22001 | [bifrost-ksm.polkaholic.io](https://bifrost-ksm.polkaholic.io)             |      6 |
 | Khala               | khala             |   22004 | [khala.polkaholic.io](https://khala.polkaholic.io)                         |     30 |
 | Shiden              | shiden            |   22007 | [shiden.polkaholic.io](https://shiden.polkaholic.io)                       |      5 |
-| Mars*               | mars              |   22008 | [mars.polkaholic.io](https://mars.polkaholic.io)                           |     42 |
-| Sora Kusama*        | sora              |   22011 | [sora.polkaholic.io](https://sora.polkaholic.io)                           |     69 |
+| Sora Kusama         | sora              |   22011 | [sora.polkaholic.io](https://sora.polkaholic.io)                           |     69 |
 | Crust Shadow*       | shadow            |   22012 | [shadow.polkaholic.io](https://shadow.polkaholic.io)                       |     66 |
 | Integritee          | integritee        |   22015 | [integritee.polkaholic.io](https://integritee.polkaholic.io)               |     13 |
-| SubGame Gamma*      | subgame-gamma     |   22018 | [subgame-gamma.polkaholic.io](https://subgame-gamma.polkaholic.io)         |     27 |
 | Moonriver           | moonriver         |   22023 | [moonriver.polkaholic.io](https://moonriver.polkaholic.io)                 |   1285 |
+| Genshiro            | genshiro          |   22024 | [genshiro.polkaholic.io](https://genshiro.polkaholic.io)                   |     67 |
 | Robonomics          | robonomics        |   22048 | [robonomics.polkaholic.io](https://robonomics.polkaholic.io)               |     32 |
 | Calamari            | calamari          |   22084 | [calamari.polkaholic.io](https://calamari.polkaholic.io)                   |     78 |
 | Parallel Heiko      | parallel-heiko    |   22085 | [parallel-heiko.polkaholic.io](https://parallel-heiko.polkaholic.io)       |    110 |
@@ -127,24 +127,39 @@ You can query any supported chain either by its id or chainID.
 | Altair              | altair            |   22088 | [altair.polkaholic.io](https://altair.polkaholic.io)                       |    136 |
 | Basilisk            | basilisk          |   22090 | [basilisk.polkaholic.io](https://basilisk.polkaholic.io)                   |  10041 |
 | Kintsugi            | kintsugi          |   22092 | [kintsugi.polkaholic.io](https://kintsugi.polkaholic.io)                   |   2092 |
-| Unorthodox*         | unorthodox        |   22094 | [unorthodox.polkaholic.io](https://unorthodox.polkaholic.io)               |     42 |
 | Quartz              | quartz            |   22095 | [quartz.polkaholic.io](https://quartz.polkaholic.io)                       |    255 |
 | Bit.Country Pioneer | bitcountrypioneer |   22096 | [bitcountrypioneer.polkaholic.io](https://bitcountrypioneer.polkaholic.io) |    268 |
 | SubsocialX*         | subsocialx        |   22100 | [subsocialx.polkaholic.io](https://subsocialx.polkaholic.io)               |     28 |
 | Zeitgeist           | zeitgeist         |   22101 | [zeitgeist.polkaholic.io](https://zeitgeist.polkaholic.io)                 |     73 |
 | Pichiu              | pichiu            |   22102 | [pichiu.polkaholic.io](https://pichiu.polkaholic.io)                       |     42 |
-| Darwinia Crab       | crab              |   22105 | [crab.polkaholic.io](https://crab.polkaholic.io)                           |     42 |
+| Darwinia Crab       | crab              |   22105 | [crab.polkaholic.io](https://crab.polkaholic.io)                           |     18 |
 | Litmus              | litmus            |   22106 | [litmus.polkaholic.io](https://litmus.polkaholic.io)                       |    131 |
-| Kico                | kico              |   22107 | [kico.polkaholic.io](https://kico.polkaholic.io)                           |     42 |
+| Kico                | kico              |   22107 | [kico.polkaholic.io](https://kico.polkaholic.io)                           |     52 |
 | Mangata*            | mangatax          |   22110 | [mangatax.polkaholic.io](https://mangatax.polkaholic.io)                   |     42 |
+| Kabocha             | kabocha           |   22113 | [kabocha.polkaholic.io](https://kabocha.polkaholic.io)                     |     27 |
 | Turing              | turing            |   22114 | [turing.polkaholic.io](https://turing.polkaholic.io)                       |     51 |
 | Dora Factory        | dorafactory       |   22115 | [dorafactory.polkaholic.io](https://dorafactory.polkaholic.io)             |    128 |
 | Tanganika*          | tanganika         |   22116 | [tanganika.polkaholic.io](https://tanganika.polkaholic.io)                 |     33 |
 | Listen*             | listen            |   22118 | [listen.polkaholic.io](https://listen.polkaholic.io)                       |     42 |
+| Bajun Network*      | bajun             |   22119 | [bajun.polkaholic.io](https://bajun.polkaholic.io)                         |   1337 |
+| Imbue Network       | imbue             |   22121 | [imbue.polkaholic.io](https://imbue.polkaholic.io)                         |     42 |
+| GM Parachain*       | gm                |   22123 | [gm.polkaholic.io](https://gm.polkaholic.io)                               |   7013 |
+| InvArch Tinkernet*  | tinkernet         |   22125 | [tinkernet.polkaholic.io](https://tinkernet.polkaholic.io)                 |    117 |
+| Snow*               | snow              |   22129 | [snow.polkaholic.io](https://snow.polkaholic.io)                           |   2207 |
+| DAO IPCI*           | daoipci           |   22222 | [daoipci.polkaholic.io](https://daoipci.polkaholic.io)                     |     32 |
 
 *_Unstable Chain_: These chains are unstable/unreachable; therefore API services are limited for these chains.
 
-(Last updated: 2022-06-27)
+### Supported Moonbase Chains (Testnet)
+| Chain          | ID             | ChainID | Polkaholic Explorer                                                  | Prefix |
+|----------------|----------------|---------|----------------------------------------------------------------------|--------|
+| moonbase-relay | moonbase-relay |   60000 | [moonbase-relay.polkaholic.io](https://moonbase-relay.polkaholic.io) |     42 |
+| Moonbase Beta  | moonbase-beta  |   60888 | [moonbase-beta.polkaholic.io](https://moonbase-beta.polkaholic.io)   |   1288 |
+| Moonbase Alpha | moonbase-alpha |   61000 | [moonbase-alpha.polkaholic.io](https://moonbase-alpha.polkaholic.io) |   1287 |
+
+*_moonbase_: We are doing active development on Moonbase connected contracts; indexing are partially available and endpoint may change without any notice
+
+(Last updated: 2022-11-01)
 
 <aside class="notice">
 Didn't find the chain you are looking for? Send us an email <a href = "mailto:info@polkaholic.io">info@polkaholic.io</a> or find us on <a href = "https://matrix.to/#/#polkaholic:matrix.org">Matrix</a>. We will index it!
