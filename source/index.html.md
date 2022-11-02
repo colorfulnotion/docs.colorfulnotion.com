@@ -1106,57 +1106,103 @@ curl "https://api.polkaholic.io/account/xcmtransfers/13eEyAEkyazXwKnh51DPgdBdTWB
 
 ```json
 [
-  {
-    "extrinsicHash": "0x26a5ae999227e6819710952c1da48502655bf686fe00004e19fe583e878c2b6f",
-    "extrinsicID": "675237-2",
-    "incomplete": 0,
-    "status": "NonFinalizedSource",
-    "section": "xTokens",
-    "method": "transfer",
-    "relayChain": "kusama",
-    "fromAddress": "0x74df9177b1360bf0c07952ffb2d37817366adf8900e3bb90287b9784fda3e045",
-    "id": "kintsugi",
-    "chainID": 22092,
-    "chainName": "Kintsugi",
-    "blockNumber": 675237,
-    "sourceTS": 1649259492,
-    "destAddress": "0xf618d8489511f00682df9f7d794d081cf5716b012d014846c01a162e94091d15",
-    "idDest": "kusama",
-    "chainIDDest": 2,
-    "chainDestName": "Kusama",
-    "blockNumberDest": 12136574,
-    "destTS": 1649259510,
-    "asset": "{\"Token\":\"KSM\"}",
-    "rawAsset": "{\"Token\":\"KSM\"}",
-    "amountSent": 1.37495,
-    "amountSentUSD": 240.77849409999996,
-    "amountReceived": 1.37484333334,
-    "amountReceivedUSD": 240.75981484783412,
-    "priceUSD": 175.118,
-    "priceUSDCurrent": 60.9746,
-    "destAddress_info": {
-      "kusamaAddress": "J8zgGfZApQQbBNHGNTttqqQaoJqzQMsiFqi57GbXAY9oYJi",
-      "additional": [
-        [
-          {
-            "Raw": "userpic"
-          },
-          {
-            "Raw": "7b8096c637d32a3636b543b747463590"
-          }
+    {
+      "extrinsicHash": "0x26a5ae999227e6819710952c1da48502655bf686fe00004e19fe583e878c2b6f",
+      "extrinsicID": "675237-2",
+      "incomplete": 0,
+      "status": "NonFinalizedSource",
+      "section": "xTokens",
+      "method": "transfer",
+      "relayChain": "kusama",
+      "sender": "a3crPwJ717zKVvpP8MWscjfVoXgwETmLhpAppat6P5fPLqKSb",
+      "fromAddress": "0x74df9177b1360bf0c07952ffb2d37817366adf8900e3bb90287b9784fda3e045",
+      "id": "kintsugi",
+      "chainID": 22092,
+      "chainName": "Kintsugi",
+      "blockNumber": 675237,
+      "sourceTS": 1649259492,
+      "beneficiary": "J8zgGfZApQQbBNHGNTttqqQaoJqzQMsiFqi57GbXAY9oYJi",
+      "destAddress": "0xf618d8489511f00682df9f7d794d081cf5716b012d014846c01a162e94091d15",
+      "idDest": "kusama",
+      "chainIDDest": 2,
+      "chainDestName": "Kusama",
+      "blockNumberDest": 12136574,
+      "destTS": 1649259510,
+      "symbol": "KSM",
+      "amountSent": 1.37495,
+      "amountSentUSD": 240.77907633895873,
+      "amountReceived": 1.37484333334,
+      "amountReceivedUSD": 240.7603970416236,
+      "xcmFee": 0.00010666665999981007,
+      "xcmInfo": {
+        "symbol": "KSM",
+        "priceUSD": 175.11842346191406,
+        "relayChain": {
+          "relayChain": "kusama",
+          "relayAt": 12136571
+        },
+        "origination": {
+          "chainName": "Kintsugi",
+          "id": "kintsugi",
+          "chainID": 22092,
+          "paraID": 2092,
+          "sender": "a3crPwJ717zKVvpP8MWscjfVoXgwETmLhpAppat6P5fPLqKSb",
+          "amountSent": 1.37495,
+          "amountSentUSD": 240.77907633895873,
+          "txFee": 0,
+          "txFeeUSD": 0,
+          "blockNumber": 675237,
+          "section": "xTokens",
+          "method": "transfer",
+          "extrinsicID": "675237-2",
+          "extrinsicHash": "0x26a5ae999227e6819710952c1da48502655bf686fe00004e19fe583e878c2b6f",
+          "msgHash": "0x929df819dd616e2371d8b76795d428663c421af1538ebb1d1335a1f839d188a7",
+          "sentAt": 12136571,
+          "ts": 1649259492,
+          "complete": true
+        },
+        "destination": {
+          "chainName": "Kusama",
+          "id": "kusama",
+          "chainID": 2,
+          "paraID": 0,
+          "beneficiary": "J8zgGfZApQQbBNHGNTttqqQaoJqzQMsiFqi57GbXAY9oYJi",
+          "amountReceived": 1.37484333334,
+          "amountReceivedUSD": 240.7603970416236,
+          "teleportFee": 0.00010666665999981007,
+          "teleportFeeUSD": 0.018680746560789826,
+          "teleportFeeChainSymbol": "KSM",
+          "blockNumber": 12136574,
+          "extrinsicID": "12136574-1",
+          "eventID": "2-12136574-1-28",
+          "ts": 1649259510,
+          "status": true
+        },
+        "version": "V2"
+      },
+      "destAddress_info": {
+        "kusamaAddress": "J8zgGfZApQQbBNHGNTttqqQaoJqzQMsiFqi57GbXAY9oYJi",
+        "additional": [
+          [
+            {
+              "Raw": "userpic"
+            },
+            {
+              "Raw": "7b8096c637d32a3636b543b747463590"
+            }
+          ],
+          [
+            {
+              "Raw": "background"
+            },
+            {
+              "Raw": "b0c4ad41ce0b7418d7009c979e587d2a"
+            }
+          ]
         ],
-        [
-          {
-            "Raw": "background"
-          },
-          {
-            "Raw": "b0c4ad41ce0b7418d7009c979e587d2a"
-          }
-        ]
-      ],
-      "twitter": "@mwmtg3"
-    },
-    "destAddress_judgements": []
+        "twitter": "@mwmtg3"
+      },
+      "destAddress_judgements": []
   },
   ...
 ]    
@@ -1629,6 +1675,7 @@ chainIDDest   | The destination chain where the xcm is going to |
 incomplete | whether the xcm is successfully sent by the sender (NOTE: A successfully sent xcm does not guarantee it has been successfully processed by the destChain without errors )
 asset | The "human-readble" representation of the sent asset
 rawAsset | The "raw" representation of the sent asset. (NOTE: Sometimes different parachains represent the same asset differently. We will automatically any known assets)
+xcmInfo | An info struct containing {`symbol`, `priceUSD`,`relayChain`, `origination`, `destination`}
 
 <aside class="information">
 This API is in alpha development!
