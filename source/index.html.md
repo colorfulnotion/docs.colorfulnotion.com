@@ -1585,65 +1585,112 @@ curl "https://api.polkaholic.io/xcmtransfers?chainfilters=moonbeam,moonriver" \
 
 ```json
 [
-  {
-    "extrinsicHash": "0xfee0215fe4586ad3e6c79264dbec11c1a1d41c5f74f99cda3ee17cc805912fc1",
-    "extrinsicID": "2576986-2",
-    "incomplete": 0,
-    "status": null,
-    "section": "polkadotXcm",
-    "method": "limitedReserveTransferAssets",
-    "relayChain": "kusama",
-    "fromAddress": "0x8ef13b727052170d8f21b20133664b31bff906fe7d157362840299b8bf6b1a64",
-    "id": "statemine",
-    "chainID": 21000,
-    "chainName": "Statemine",
-    "blockNumber": 2576986,
-    "sourceTS": 1659456769,
-    "destAddress": "0x0bcf7735dfd5cb5c646821ab9c9fb9a8ad6ddd1f",
-    "idDest": "moonriver",
-    "chainIDDest": 22023,
-    "chainDestName": "Moonriver",
-    "blockNumberDest": 2309213,
-    "destTS": 1659456780,
-    "asset": "{\"Token\":\"RMRK\"}",
-    "rawAsset": "{\"Token\":\"8\"}",
-    "amountSent": 1,
-    "amountSentUSD": 3.32324,
-    "amountReceived": 0.99896,
-    "amountReceivedUSD": 3.3197838304,
-    "priceUSD": 3.32324,
-    "priceUSDCurrent": 3.22612
-  },
-  {
-    "extrinsicHash": "0x0924a261244caf07b11b6e81396a044395c930a8914b34f47e75fe63ab692d32",
-    "extrinsicID": "1560107-2",
-    "incomplete": 0,
-    "status": null,
-    "section": "xTokens",
-    "method": "TransferredMultiAssets",
-    "relayChain": "polkadot",
-    "fromAddress": "0x24db1b64a82237408d3236328b898582aa57ab8bb4eb09719368a0b72c38db5b",
-    "id": "acala",
-    "chainID": 2000,
-    "chainName": "Acala",
-    "blockNumber": 1560107,
-    "sourceTS": 1659455370,
-    "destAddress": "0x5908fdb0bea504552a3a89c40d1c553a16db0acb",
-    "idDest": "moonbeam",
-    "chainIDDest": 2004,
-    "chainDestName": "Moonbeam",
-    "blockNumberDest": 1568464,
-    "destTS": 1659455388,
-    "asset": "{\"Token\":\"GLMR\"}",
-    "rawAsset": "{\"Token\":\"GLMR\"}",
-    "amountSent": 0.990676,
-    "amountSentUSD": 0.6896402745560001,
-    "amountReceived": 0.9906759992,
-    "amountReceivedUSD": 0.6896402739990953,
-    "priceUSD": 0.696131,
-    "priceUSDCurrent": 0.69711
-  },
-...
+    {
+      "extrinsicHash": "0xe36119bd080dc2883ac11c2f6afd7e8db5472175265764c867b5b7d6897fa33a",
+      "extrinsicID": "12742749-2",
+      "incomplete": 0,
+      "status": null,
+      "section": "xcmPallet",
+      "method": "limitedReserveTransferAssets",
+      "relayChain": "polkadot",
+      "sender": "16kk1Ax4ZgC6XFpDcFxZd9L4TWpwHrz8qniqmvJB4DsucngY",
+      "fromAddress": "0xfe897b02d2a4350f99d7a41384fcea6b2c14181bd0d7d012a81190c05d424570",
+      "id": "polkadot",
+      "chainID": 0,
+      "chainName": "Polkadot",
+      "blockNumber": 12742749,
+      "sourceTS": 1667355672,
+      "beneficiary": "0x8e769073839eccf28cf9936d09a6dbfb4f1f123c",
+      "destAddress": "0x8e769073839eccf28cf9936d09a6dbfb4f1f123c",
+      "idDest": "moonbeam",
+      "chainIDDest": 2004,
+      "chainDestName": "Moonbeam",
+      "blockNumberDest": 2208177,
+      "destTS": 1667355678,
+      "symbol": "DOT",
+      "amountSent": 25.7640182042,
+      "amountSentUSD": null,
+      "amountReceived": 0,
+      "amountReceivedUSD": null,
+      "xcmFee": 25.7640182042
+    },
+    {
+      "extrinsicHash": "0xb7bc6d89f398bcf04c8c93cd4269d7bc5aeae0fb576aa62c809bd53c572d4782",
+      "extrinsicID": "15145517-2",
+      "incomplete": 0,
+      "status": null,
+      "section": "xcmPallet",
+      "method": "limitedReserveTransferAssets",
+      "relayChain": "kusama",
+      "sender": "F7bympfByrSBnNPBcYWrEyYZdCGYxxZFCQpq6viCsMUDMNH",
+      "fromAddress": "0x70547d737e6a65bf4911becb02d42036ab038ab41d7546b33809ecf2e0207337",
+      "id": "kusama",
+      "chainID": 2,
+      "chainName": "Kusama",
+      "blockNumber": 15145517,
+      "sourceTS": 1667355450,
+      "beneficiary": "0xbeb187bc094cf89f9dc31a24e611efad15d9edce",
+      "destAddress": "0xbeb187bc094cf89f9dc31a24e611efad15d9edce",
+      "idDest": "moonriver",
+      "chainIDDest": 22023,
+      "chainDestName": "Moonriver",
+      "blockNumberDest": 2901379,
+      "destTS": 1667355450,
+      "symbol": "KSM",
+      "amountSent": 3.119510018007,
+      "amountSentUSD": 112.08162917516269,
+      "amountReceived": 3.119100852705,
+      "amountReceivedUSD": 112.06692817616432,
+      "xcmFee": 3.119510018007,
+      "xcmInfo": {
+        "symbol": "KSM",
+        "priceUSD": 35.92924162069839,
+        "relayChain": {
+          "relayChain": "kusama",
+          "relayAt": 15145517
+        },
+        "origination": {
+          "chainName": "Kusama",
+          "id": "kusama",
+          "chainID": 2,
+          "paraID": 0,
+          "sender": "F7bympfByrSBnNPBcYWrEyYZdCGYxxZFCQpq6viCsMUDMNH",
+          "amountSent": 3.119510018007,
+          "amountSentUSD": 112.08162917516269,
+          "txFee": 6.1247764e-05,
+          "txFeeUSD": 0.002200585711483513,
+          "txFeeSymbol": "KSM",
+          "blockNumber": 15145517,
+          "section": "xcmPallet",
+          "method": "limitedReserveTransferAssets",
+          "extrinsicID": "15145517-2",
+          "extrinsicHash": "0xb7bc6d89f398bcf04c8c93cd4269d7bc5aeae0fb576aa62c809bd53c572d4782",
+          "msgHash": "0xc74503e03b15a437a8ed7be5a01019ae962df557e5b198aa11747a56de0b23d2",
+          "sentAt": 15145517,
+          "ts": 1667355450,
+          "complete": true
+        },
+        "destination": {
+          "chainName": "Moonriver",
+          "id": "moonriver",
+          "chainID": 22023,
+          "paraID": 2023,
+          "beneficiary": "0xbeb187bc094cf89f9dc31a24e611efad15d9edce",
+          "amountReceived": 3.119100852705,
+          "amountReceivedUSD": 112.06692817616432,
+          "teleportFee": 0.0004091653019999697,
+          "teleportFeeUSD": 0.014702927483198448,
+          "teleportFeeChainSymbol": "KSM",
+          "blockNumber": 2901380,
+          "extrinsicID": "2901380-0",
+          "eventID": "22023-2901380-0-1",
+          "ts": 1667355463,
+          "status": true
+        },
+        "version": "V2"
+      }
+    },
+    ...
 ]
 ```
 
@@ -1676,6 +1723,85 @@ incomplete | whether the xcm is successfully sent by the sender (NOTE: A success
 asset | The "human-readble" representation of the sent asset
 rawAsset | The "raw" representation of the sent asset. (NOTE: Sometimes different parachains represent the same asset differently. We will automatically any known assets)
 xcmInfo | An info struct containing {`symbol`, `priceUSD`,`relayChain`, `origination`, `destination`}
+
+
+## Get XCM Messages
+
+```shell
+# get xcmtransfers from  moonbeam/moonrivers
+curl "https://api.polkaholic.io/xcmmessages?chainfilters=moonbeam,moonriver" \
+  -X GET \
+  -H "Authorization: YOUR-API-KEY"
+```
+
+> Example Response (last 1000 xcmmessages)
+
+```json
+[
+    {
+        "msgHash": "0x5ce0ec0b27e0b05642ca3beadda92bd89de55cf68cf2eea105db21776b34f3d6",
+        "msg":{"v2":[{"withdrawAsset":[{"id":{"concrete":{"parents":0,"interior":{"here":null}}},"fun":{"fungible":10000000000}}]},{"clearOrigin":null},{"buyExecution":{"fees":{"id":{"concrete":{"parents":0,"interior":{"here":null}}},"fun":{"fungible":10000000000}},"weightLimit":{"limited":4000000000}}},{"depositAsset":{"assets":{"wild":{"all":null}},"maxAssets":1,"beneficiary":{"parents":0,"interior":{"x1":{"accountId32":{"network":{"any":null},"id":"0x32b276633fb2c5cbabef0408a4f1045fc9603889e481310e9938b68d40d3b92e"}}}}}}]},
+        "version": "v2",
+        "sentAt": 12742754,
+        "chainID": 2004,
+        "chainIDDest": 0,
+        "msgType": "ump",
+        "blockNumber": 12742755,
+        "incoming": 1,
+        "blockTS": 1667355708,
+        "extrinsicHash": "0xd16ab32071e475d6767830e3d8938627573f5112a75703e71c20e10d05f8a0f3",
+        "extrinsicID": "2208179-6",
+        "sectionMethod": "ethereum:transact",
+        "sourceTS": 1667355702,
+        "destTS": 1667355708,
+        "beneficiaries": "0x32b276633fb2c5cbabef0408a4f1045fc9603889e481310e9938b68d40d3b92e",
+        "destAddress": "129UQhit3nnkoctkLPNNWEEbpevzjWRoEbrzXEWZm7LRPDWb",
+        "assetsReceived": [],
+        "amountSentUSD": 6.4867,
+        "amountReceivedUSD": 0,
+        "matched": 1,
+        "matchTS": 1667355734,
+        "parentMsgHash": null,
+        "parentSentAt": null,
+        "parentBlocknumber": null,
+        "childMsgHash": null,
+        "childSentAt": null,
+        "childBlocknumber": null,
+        "blockNumberOutgoing": 2208179,
+        "blockNumberIncoming": 12742755,
+        "executedEventID": null,
+        "destStatus": -1,
+        "errorDesc": null,
+        "relayChain": "polkadot",
+        "id": "moonbeam",
+        "idDest": "polkadot",
+        "chainName": "Moonbeam",
+        "chainDestName": "Polkadot"
+      },
+    ...
+]
+```
+
+Return the latest 1000 xcm message from all supported networks.
+
+### HTTP Request
+
+`GET https://api.polkaholic.io/xcmmessages/`
+
+### URL Parameters
+
+Parameter | Description | Optional? | Default |
+--------- | ----------- | --------- | ------- |
+decroate  | Whether API should return decorated fields | Yes | true
+extra     | Decorate the response with fields like ['usd','address', 'related', 'data'] | Yes | usd,address, data
+chainfilters   | Filter the result by comma-separated chainIdentifiers. i.e. `chainfilters=polkadot,moonbeam,2000`  | Yes | 'all'
+
+### Response Description
+
+Attribute | Description
+--------- | -----------
+fromAddress  | Sender's pubkey |  
+destAddress    | Recipient's pubkey|  
 
 <aside class="information">
 This API is in alpha development!
