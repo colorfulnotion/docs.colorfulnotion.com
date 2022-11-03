@@ -60,7 +60,7 @@ You must replace <code>YOUR-API-KEY</code> with your personal API key.
 
 ## Supported Chains
 
-As of 2022-06-27, Polkaholic supports Polkadot & 17 polkadot-parachains, plus Kusama & 28 kusama-parachains - 47 chains in total.
+As of 2022-11-01, Polkaholic supports Polkadot & 22 polkadot-parachains, plus Kusama & 39 kusama-parachains - 63 chains in total.
 
 <aside class="success">
 We coined the "ChainID" as a convenient way to identify any given chain using the following rule:  
@@ -77,34 +77,35 @@ You can query any supported chain either by its id or chainID.
 
 ### Supported Polkadot Chains
 
-| Chain              | id          | chainID | Polkaholic Explorer                                            | Prefix |
-|--------------------|-------------|---------|----------------------------------------------------------------|--------|
-| Polkadot           | polkadot    |       0 | [polkadot.polkaholic.io](https://polkadot.polkaholic.io)       |      0 |
-| Statemint          | statemint   |    1000 | [statemint.polkaholic.io](https://statemint.polkaholic.io)     |      0 |
-| Acala              | acala       |    2000 | [acala.polkaholic.io](https://acala.polkaholic.io)             |     10 |
-| Clover             | clover      |    2002 | [clover.polkaholic.io](https://clover.polkaholic.io)           |    128 |
-| Moonbeam           | moonbeam    |    2004 | [moonbeam.polkaholic.io](https://moonbeam.polkaholic.io)       |   1284 |
-| Astar              | astar       |    2006 | [astar.polkaholic.io](https://astar.polkaholic.io)             |      5 |
-| Kapex*             | kapex       |    2007 | [kapex.polkaholic.io](https://kapex.polkaholic.io)             |   2007 |
-| Equilibrium        | equilibrium |    2011 | [equilibrium.polkaholic.io](https://equilibrium.polkaholic.io) |     68 |
-| Parallel           | parallel    |    2012 | [parallel.polkaholic.io](https://parallel.polkaholic.io)       |    172 |
-| Litentry           | litentry    |    2013 | [litentry.polkaholic.io](https://litentry.polkaholic.io)       |     31 |
-| Composable Finance | composable  |    2019 | [composable.polkaholic.io](https://composable.polkaholic.io)   |     50 |
-| Efinity           | efinity     |    2021 | [efinity.polkaholic.io](https://efinity.polkaholic.io)         |   1110 |
-| Nodle              | nodle       |    2026 | [nodle.polkaholic.io](https://nodle.polkaholic.io)             |     37 |
-| Ares*              | ares        |    2028 | [ares.polkaholic.io](https://ares.polkaholic.io)               |     34 |
-| Bifrost-Polkadot*  | bifrost-dot |    2030 | [bifrost-dot.polkaholic.io](https://bifrost-dot.polkaholic.io) |      6 |
-| Centrifuge         | centrifuge  |    2031 | [centrifuge.polkaholic.io](https://centrifuge.polkaholic.io)   |     36 |
-| Interlay           | interlay    |    2032 | [interlay.polkaholic.io](https://interlay.polkaholic.io)       |   2032 |
-| HydraDX            | hydradx     |    2034 | [hydradx.polkaholic.io](https://hydradx.polkaholic.io)         |     63 |
-| Phala              | phala       |    2035 | [phala.polkaholic.io](https://phala.polkaholic.io)             |     30 |
-| Unique             | unique      |    2037 | [unique.polkaholic.io](https://unique.polkaholic.io)           |   7391 |
-| Polkadex*          | polkadex    |    2040 | [polkadex.polkaholic.io](https://polkadex.polkaholic.io)       |     88 |
-| Origin Trail*      | origintrail |    2043 | [origintrail.polkaholic.io](https://origintrail.polkaholic.io) |    101 |
+| Chain              | ID               | ChainID | Polkaholic Explorer                                                      | Prefix |
+|--------------------|------------------|---------|--------------------------------------------------------------------------|--------|
+| Polkadot           | polkadot         |       0 | [polkadot.polkaholic.io](https://polkadot.polkaholic.io)                 |      0 |
+| Statemint          | statemint        |    1000 | [statemint.polkaholic.io](https://statemint.polkaholic.io)               |      0 |
+| Acala              | acala            |    2000 | [acala.polkaholic.io](https://acala.polkaholic.io)                       |     10 |
+| Clover             | clover           |    2002 | [clover.polkaholic.io](https://clover.polkaholic.io)                     |    128 |
+| Moonbeam           | moonbeam         |    2004 | [moonbeam.polkaholic.io](https://moonbeam.polkaholic.io)                 |   1284 |
+| Astar              | astar            |    2006 | [astar.polkaholic.io](https://astar.polkaholic.io)                       |      5 |
+| Kapex*             | kapex            |    2007 | [kapex.polkaholic.io](https://kapex.polkaholic.io)                       |   2007 |
+| Equilibrium        | equilibrium      |    2011 | [equilibrium.polkaholic.io](https://equilibrium.polkaholic.io)           |     68 |
+| Parallel           | parallel         |    2012 | [parallel.polkaholic.io](https://parallel.polkaholic.io)                 |    172 |
+| Litentry           | litentry         |    2013 | [litentry.polkaholic.io](https://litentry.polkaholic.io)                 |     31 |
+| Composable Finance | composable       |    2019 | [composable.polkaholic.io](https://composable.polkaholic.io)             |     50 |
+| Efinity            | efinity          |    2021 | [efinity.polkaholic.io](https://efinity.polkaholic.io)                   |   1110 |
+| Nodle              | nodle            |    2026 | [nodle.polkaholic.io](https://nodle.polkaholic.io)                       |     37 |
+| Bifrost-Polkadot   | bifrost-dot      |    2030 | [bifrost-dot.polkaholic.io](https://bifrost-dot.polkaholic.io)           |      6 |
+| Centrifuge         | centrifuge       |    2031 | [centrifuge.polkaholic.io](https://centrifuge.polkaholic.io)             |     36 |
+| Interlay           | interlay         |    2032 | [interlay.polkaholic.io](https://interlay.polkaholic.io)                 |   2032 |
+| HydraDX            | hydradx          |    2034 | [hydradx.polkaholic.io](https://hydradx.polkaholic.io)                   |     63 |
+| Phala              | phala            |    2035 | [phala.polkaholic.io](https://phala.polkaholic.io)                       |     30 |
+| Unique             | unique           |    2037 | [unique.polkaholic.io](https://unique.polkaholic.io)                     |   7391 |
+| Integritee Shell*  | integritee-shell |    2039 | [integritee-shell.polkaholic.io](https://integritee-shell.polkaholic.io) |     13 |
+| Origin Trail*      | origintrail      |    2043 | [origintrail.polkaholic.io](https://origintrail.polkaholic.io)           |    101 |
+| Darwinia*          | darwinia         |    2046 | [darwinia.polkaholic.io](https://darwinia.polkaholic.io)                 |     18 |
+| Kylin*             | kylin            |    2052 | [kylin.polkaholic.io](https://kylin.polkaholic.io)                       |     42 |
 
 ### Supported Kusama Chains
 
-| Chain               | id                | chainID | Polkaholic Explorer                                                        | Prefix |
+| Chain               | ID                | ChainID | Polkaholic Explorer                                                        | Prefix |
 |---------------------|-------------------|---------|----------------------------------------------------------------------------|--------|
 | Kusama              | kusama            |       2 | [kusama.polkaholic.io](https://kusama.polkaholic.io)                       |      2 |
 | Statemine           | statemine         |   21000 | [statemine.polkaholic.io](https://statemine.polkaholic.io)                 |      2 |
@@ -113,12 +114,11 @@ You can query any supported chain either by its id or chainID.
 | Bifrost-Kusama      | bifrost-ksm       |   22001 | [bifrost-ksm.polkaholic.io](https://bifrost-ksm.polkaholic.io)             |      6 |
 | Khala               | khala             |   22004 | [khala.polkaholic.io](https://khala.polkaholic.io)                         |     30 |
 | Shiden              | shiden            |   22007 | [shiden.polkaholic.io](https://shiden.polkaholic.io)                       |      5 |
-| Mars*               | mars              |   22008 | [mars.polkaholic.io](https://mars.polkaholic.io)                           |     42 |
-| Sora Kusama*        | sora              |   22011 | [sora.polkaholic.io](https://sora.polkaholic.io)                           |     69 |
+| Sora Kusama         | sora              |   22011 | [sora.polkaholic.io](https://sora.polkaholic.io)                           |     69 |
 | Crust Shadow*       | shadow            |   22012 | [shadow.polkaholic.io](https://shadow.polkaholic.io)                       |     66 |
 | Integritee          | integritee        |   22015 | [integritee.polkaholic.io](https://integritee.polkaholic.io)               |     13 |
-| SubGame Gamma*      | subgame-gamma     |   22018 | [subgame-gamma.polkaholic.io](https://subgame-gamma.polkaholic.io)         |     27 |
 | Moonriver           | moonriver         |   22023 | [moonriver.polkaholic.io](https://moonriver.polkaholic.io)                 |   1285 |
+| Genshiro            | genshiro          |   22024 | [genshiro.polkaholic.io](https://genshiro.polkaholic.io)                   |     67 |
 | Robonomics          | robonomics        |   22048 | [robonomics.polkaholic.io](https://robonomics.polkaholic.io)               |     32 |
 | Calamari            | calamari          |   22084 | [calamari.polkaholic.io](https://calamari.polkaholic.io)                   |     78 |
 | Parallel Heiko      | parallel-heiko    |   22085 | [parallel-heiko.polkaholic.io](https://parallel-heiko.polkaholic.io)       |    110 |
@@ -127,24 +127,39 @@ You can query any supported chain either by its id or chainID.
 | Altair              | altair            |   22088 | [altair.polkaholic.io](https://altair.polkaholic.io)                       |    136 |
 | Basilisk            | basilisk          |   22090 | [basilisk.polkaholic.io](https://basilisk.polkaholic.io)                   |  10041 |
 | Kintsugi            | kintsugi          |   22092 | [kintsugi.polkaholic.io](https://kintsugi.polkaholic.io)                   |   2092 |
-| Unorthodox*         | unorthodox        |   22094 | [unorthodox.polkaholic.io](https://unorthodox.polkaholic.io)               |     42 |
 | Quartz              | quartz            |   22095 | [quartz.polkaholic.io](https://quartz.polkaholic.io)                       |    255 |
 | Bit.Country Pioneer | bitcountrypioneer |   22096 | [bitcountrypioneer.polkaholic.io](https://bitcountrypioneer.polkaholic.io) |    268 |
 | SubsocialX*         | subsocialx        |   22100 | [subsocialx.polkaholic.io](https://subsocialx.polkaholic.io)               |     28 |
 | Zeitgeist           | zeitgeist         |   22101 | [zeitgeist.polkaholic.io](https://zeitgeist.polkaholic.io)                 |     73 |
 | Pichiu              | pichiu            |   22102 | [pichiu.polkaholic.io](https://pichiu.polkaholic.io)                       |     42 |
-| Darwinia Crab       | crab              |   22105 | [crab.polkaholic.io](https://crab.polkaholic.io)                           |     42 |
+| Darwinia Crab       | crab              |   22105 | [crab.polkaholic.io](https://crab.polkaholic.io)                           |     18 |
 | Litmus              | litmus            |   22106 | [litmus.polkaholic.io](https://litmus.polkaholic.io)                       |    131 |
-| Kico                | kico              |   22107 | [kico.polkaholic.io](https://kico.polkaholic.io)                           |     42 |
+| Kico                | kico              |   22107 | [kico.polkaholic.io](https://kico.polkaholic.io)                           |     52 |
 | Mangata*            | mangatax          |   22110 | [mangatax.polkaholic.io](https://mangatax.polkaholic.io)                   |     42 |
+| Kabocha             | kabocha           |   22113 | [kabocha.polkaholic.io](https://kabocha.polkaholic.io)                     |     27 |
 | Turing              | turing            |   22114 | [turing.polkaholic.io](https://turing.polkaholic.io)                       |     51 |
 | Dora Factory        | dorafactory       |   22115 | [dorafactory.polkaholic.io](https://dorafactory.polkaholic.io)             |    128 |
 | Tanganika*          | tanganika         |   22116 | [tanganika.polkaholic.io](https://tanganika.polkaholic.io)                 |     33 |
 | Listen*             | listen            |   22118 | [listen.polkaholic.io](https://listen.polkaholic.io)                       |     42 |
+| Bajun Network*      | bajun             |   22119 | [bajun.polkaholic.io](https://bajun.polkaholic.io)                         |   1337 |
+| Imbue Network       | imbue             |   22121 | [imbue.polkaholic.io](https://imbue.polkaholic.io)                         |     42 |
+| GM Parachain*       | gm                |   22123 | [gm.polkaholic.io](https://gm.polkaholic.io)                               |   7013 |
+| InvArch Tinkernet*  | tinkernet         |   22125 | [tinkernet.polkaholic.io](https://tinkernet.polkaholic.io)                 |    117 |
+| Snow*               | snow              |   22129 | [snow.polkaholic.io](https://snow.polkaholic.io)                           |   2207 |
+| DAO IPCI*           | daoipci           |   22222 | [daoipci.polkaholic.io](https://daoipci.polkaholic.io)                     |     32 |
 
 *_Unstable Chain_: These chains are unstable/unreachable; therefore API services are limited for these chains.
 
-(Last updated: 2022-06-27)
+### Supported Moonbase Chains (Testnet)
+| Chain          | ID             | ChainID | Polkaholic Explorer                                                  | Prefix |
+|----------------|----------------|---------|----------------------------------------------------------------------|--------|
+| moonbase-relay | moonbase-relay |   60000 | [moonbase-relay.polkaholic.io](https://moonbase-relay.polkaholic.io) |     42 |
+| Moonbase Beta  | moonbase-beta  |   60888 | [moonbase-beta.polkaholic.io](https://moonbase-beta.polkaholic.io)   |   1288 |
+| Moonbase Alpha | moonbase-alpha |   61000 | [moonbase-alpha.polkaholic.io](https://moonbase-alpha.polkaholic.io) |   1287 |
+
+*_moonbase_: We are doing active development on Moonbase connected contracts; indexing are partially available and endpoint may change without any notice
+
+(Last updated: 2022-11-01)
 
 <aside class="notice">
 Didn't find the chain you are looking for? Send us an email <a href = "mailto:info@polkaholic.io">info@polkaholic.io</a> or find us on <a href = "https://matrix.to/#/#polkaholic:matrix.org">Matrix</a>. We will index it!
@@ -463,7 +478,7 @@ BlockNumber | The Block Number to retrieve data about
 
 Parameter | Description | Optional? | Default |
 --------- | ----------- | --------- | ------- |
-decroate  | Whether API should return decorated fields | Yes | true
+decrate   | Whether API should return decorated fields | Yes | true
 extra     | Decorate the response with fields like ['usd','address', 'related', 'data'] | Yes | usd,address, data
 
 ### Response Description
@@ -595,7 +610,7 @@ TxHash | The Transaction Hash to retrieve data about, can be either Substrate's 
 
 Parameter | Description | Optional? | Default |
 --------- | ----------- | --------- | ------- |
-decroate  | Whether API should return decorated fields | Yes | true
+decorate  | Whether API should return decorated fields | Yes | true
 extra     | Decorate the response with fields like ['usd','address', 'related', 'data'] | Yes | usd,address, data
 
 ### Response Description (Decorated SubStrate Extrinsic)
@@ -768,7 +783,7 @@ TxHash | The Transaction Hash to retrieve data about, can be either Substrate's 
 
 Parameter | Description | Optional? | Default |
 --------- | ----------- | --------- | ------- |
-decroate  | Whether API should return decorated fields | Yes | true
+decorate  | Whether API should return decorated fields | Yes | true
 extra     | Decorate the response with fields like ['usd','address', 'related', 'data'] | Yes | usd,address, data
 
 ### Response Description (Decorated EVM Transaction)
@@ -912,7 +927,7 @@ Parameter      | Description | Optional? | Default |
 ---------------| ----------- | --------- | ------- |
 group          | The group type to return by the API (see below) | Yes | 'realtime'
 lookbackWindow | TBA | Yes | 180
-decroate       | Whether API should return decorated fields | Yes | true
+decorate       | Whether API should return decorated fields | Yes | true
 extra          | Decorate the response with fields like ['usd','address', 'related', 'data'] | Yes | usd,address, data
 chainfilters   | Filter the result by comma-separated chainIdentifiers. i.e. `chainfilters=polkadot,kusama,2000`  | Yes | 'all'
 
@@ -1091,57 +1106,76 @@ curl "https://api.polkaholic.io/account/xcmtransfers/13eEyAEkyazXwKnh51DPgdBdTWB
 
 ```json
 [
-  {
-    "extrinsicHash": "0x26a5ae999227e6819710952c1da48502655bf686fe00004e19fe583e878c2b6f",
-    "extrinsicID": "675237-2",
-    "incomplete": 0,
-    "status": "NonFinalizedSource",
-    "section": "xTokens",
-    "method": "transfer",
-    "relayChain": "kusama",
-    "fromAddress": "0x74df9177b1360bf0c07952ffb2d37817366adf8900e3bb90287b9784fda3e045",
-    "id": "kintsugi",
-    "chainID": 22092,
-    "chainName": "Kintsugi",
-    "blockNumber": 675237,
-    "sourceTS": 1649259492,
-    "destAddress": "0xf618d8489511f00682df9f7d794d081cf5716b012d014846c01a162e94091d15",
-    "idDest": "kusama",
-    "chainIDDest": 2,
-    "chainDestName": "Kusama",
-    "blockNumberDest": 12136574,
-    "destTS": 1649259510,
-    "asset": "{\"Token\":\"KSM\"}",
-    "rawAsset": "{\"Token\":\"KSM\"}",
-    "amountSent": 1.37495,
-    "amountSentUSD": 240.77849409999996,
-    "amountReceived": 1.37484333334,
-    "amountReceivedUSD": 240.75981484783412,
-    "priceUSD": 175.118,
-    "priceUSDCurrent": 60.9746,
-    "destAddress_info": {
-      "kusamaAddress": "J8zgGfZApQQbBNHGNTttqqQaoJqzQMsiFqi57GbXAY9oYJi",
-      "additional": [
-        [
-          {
-            "Raw": "userpic"
-          },
-          {
-            "Raw": "7b8096c637d32a3636b543b747463590"
-          }
+    {
+      "xcmInfo": {
+        "symbol": "KSM",
+        "priceUSD": 175.11842346191406,
+        "relayChain": {
+          "relayChain": "kusama",
+          "relayAt": 12136571
+        },
+        "origination": {
+          "chainName": "Kintsugi",
+          "id": "kintsugi",
+          "chainID": 22092,
+          "paraID": 2092,
+          "sender": "a3crPwJ717zKVvpP8MWscjfVoXgwETmLhpAppat6P5fPLqKSb",
+          "amountSent": 1.37495,
+          "amountSentUSD": 240.77907633895873,
+          "txFee": 0,
+          "txFeeUSD": 0,
+          "blockNumber": 675237,
+          "section": "xTokens",
+          "method": "transfer",
+          "extrinsicID": "675237-2",
+          "extrinsicHash": "0x26a5ae999227e6819710952c1da48502655bf686fe00004e19fe583e878c2b6f",
+          "msgHash": "0x929df819dd616e2371d8b76795d428663c421af1538ebb1d1335a1f839d188a7",
+          "sentAt": 12136571,
+          "ts": 1649259492,
+          "complete": true
+        },
+        "destination": {
+          "chainName": "Kusama",
+          "id": "kusama",
+          "chainID": 2,
+          "paraID": 0,
+          "beneficiary": "J8zgGfZApQQbBNHGNTttqqQaoJqzQMsiFqi57GbXAY9oYJi",
+          "amountReceived": 1.37484333334,
+          "amountReceivedUSD": 240.7603970416236,
+          "teleportFee": 0.00010666665999981007,
+          "teleportFeeUSD": 0.018680746560789826,
+          "teleportFeeChainSymbol": "KSM",
+          "blockNumber": 12136574,
+          "extrinsicID": "12136574-1",
+          "eventID": "2-12136574-1-28",
+          "ts": 1649259510,
+          "status": true
+        },
+        "version": "V2"
+      },
+      "destAddress_info": {
+        "kusamaAddress": "J8zgGfZApQQbBNHGNTttqqQaoJqzQMsiFqi57GbXAY9oYJi",
+        "additional": [
+          [
+            {
+              "Raw": "userpic"
+            },
+            {
+              "Raw": "7b8096c637d32a3636b543b747463590"
+            }
+          ],
+          [
+            {
+              "Raw": "background"
+            },
+            {
+              "Raw": "b0c4ad41ce0b7418d7009c979e587d2a"
+            }
+          ]
         ],
-        [
-          {
-            "Raw": "background"
-          },
-          {
-            "Raw": "b0c4ad41ce0b7418d7009c979e587d2a"
-          }
-        ]
-      ],
-      "twitter": "@mwmtg3"
-    },
-    "destAddress_judgements": []
+        "twitter": "@mwmtg3"
+      },
+      "destAddress_judgements": []
   },
   ...
 ]    
@@ -1514,75 +1548,66 @@ curl "https://api.polkaholic.io/account/balances/dwehUeMiyxAcSWUBsJiJ7WKmHZLueCx
 ## Get XCM Transfers
 
 ```shell
-# get xcmtransfers from  moonbeam/moonrivers
-curl "https://api.polkaholic.io/xcmtransfers?chainfilters=moonbeam,moonriver" \
+# Get one xcmTranfer involving kbtc on moonriver network between unix_timestamp (1667928000,1668028000)
+curl "https://api.polkaholic.io/xcmtransfers?xcmType=xcmtransfer&chainIdentifier=moonriver&symbol=kbtc&startTS=1667928000&endTS=1668028000&limit=1" \
   -X GET \
   -H "Authorization: YOUR-API-KEY"
 ```
 
-> Example Response (last 1000 xcmtransfers)
+> Example Response
 
 ```json
 [
-  {
-    "extrinsicHash": "0xfee0215fe4586ad3e6c79264dbec11c1a1d41c5f74f99cda3ee17cc805912fc1",
-    "extrinsicID": "2576986-2",
-    "incomplete": 0,
-    "status": null,
-    "section": "polkadotXcm",
-    "method": "limitedReserveTransferAssets",
-    "relayChain": "kusama",
-    "fromAddress": "0x8ef13b727052170d8f21b20133664b31bff906fe7d157362840299b8bf6b1a64",
-    "id": "statemine",
-    "chainID": 21000,
-    "chainName": "Statemine",
-    "blockNumber": 2576986,
-    "sourceTS": 1659456769,
-    "destAddress": "0x0bcf7735dfd5cb5c646821ab9c9fb9a8ad6ddd1f",
-    "idDest": "moonriver",
-    "chainIDDest": 22023,
-    "chainDestName": "Moonriver",
-    "blockNumberDest": 2309213,
-    "destTS": 1659456780,
-    "asset": "{\"Token\":\"RMRK\"}",
-    "rawAsset": "{\"Token\":\"8\"}",
-    "amountSent": 1,
-    "amountSentUSD": 3.32324,
-    "amountReceived": 0.99896,
-    "amountReceivedUSD": 3.3197838304,
-    "priceUSD": 3.32324,
-    "priceUSDCurrent": 3.22612
-  },
-  {
-    "extrinsicHash": "0x0924a261244caf07b11b6e81396a044395c930a8914b34f47e75fe63ab692d32",
-    "extrinsicID": "1560107-2",
-    "incomplete": 0,
-    "status": null,
-    "section": "xTokens",
-    "method": "TransferredMultiAssets",
-    "relayChain": "polkadot",
-    "fromAddress": "0x24db1b64a82237408d3236328b898582aa57ab8bb4eb09719368a0b72c38db5b",
-    "id": "acala",
-    "chainID": 2000,
-    "chainName": "Acala",
-    "blockNumber": 1560107,
-    "sourceTS": 1659455370,
-    "destAddress": "0x5908fdb0bea504552a3a89c40d1c553a16db0acb",
-    "idDest": "moonbeam",
-    "chainIDDest": 2004,
-    "chainDestName": "Moonbeam",
-    "blockNumberDest": 1568464,
-    "destTS": 1659455388,
-    "asset": "{\"Token\":\"GLMR\"}",
-    "rawAsset": "{\"Token\":\"GLMR\"}",
-    "amountSent": 0.990676,
-    "amountSentUSD": 0.6896402745560001,
-    "amountReceived": 0.9906759992,
-    "amountReceivedUSD": 0.6896402739990953,
-    "priceUSD": 0.696131,
-    "priceUSDCurrent": 0.69711
-  },
-...
+    {
+        "xcmInfo": {
+            "symbol": "KBTC",
+            "priceUSD": 17356.63464598179,
+            "relayChain": {
+                "relayChain": "kusama",
+                "relayAt": 15257458
+            },
+            "origination": {
+                "chainName": "Moonriver",
+                "id": "moonriver",
+                "chainID": 22023,
+                "paraID": 2023,
+                "sender": "0x27e6a60146c5341d2e5577b219a2961f2d180579",
+                "amountSent": 0.00182979,
+                "amountSentUSD": 31.75899650887102,
+                "txFee": 0.00011918,
+                "txFeeUSD": 0.0009736966584964279,
+                "txFeeSymbol": "MOVR",
+                "blockNumber": 2955080,
+                "section": "ethereum",
+                "method": "transact",
+                "extrinsicID": "2955080-11",
+                "extrinsicHash": "0x7add5e6a7027369a2e69d3ceb95f55b870c719fcd9cfb2948608c3fbc499b908",
+                "transactionHash": "0x1078fcc8c8aed1906a8f28a42f86faeca4380fc5584910b79c69eb3c2c92c585",
+                "msgHash": "0x131e18138789b700f9ca2fb149bf1a09890c3869b02df00d9c5c634b601f3509",
+                "sentAt": 15257458,
+                "ts": 1668027996,
+                "isMsgSent": true
+            },
+            "destination": {
+                "chainName": "Kintsugi",
+                "id": "kintsugi",
+                "chainID": 22092,
+                "paraID": 2092,
+                "beneficiary": "a3dhTbe9t95rXK4vt87uqyTrrhtKcGxtmY8uGcGX27TTEnCuR",
+                "amountReceived": 0.00182856,
+                "amountReceivedUSD": 31.73764784825646,
+                "teleportFee": 0.0000012300000000000678,
+                "teleportFeeUSD": 0.02136302101430279,
+                "teleportFeeChainSymbol": "KBTC",
+                "blockNumber": 1843330,
+                "extrinsicID": "1843330-1",
+                "eventID": "22092-1843330-1-8",
+                "ts": 1668028020,
+                "status": true
+            },
+            "version": "V2"
+        }
+    }
 ]
 ```
 
@@ -1596,28 +1621,371 @@ Return the latest 1000 xcm tranfers from all supported networks.
 
 Parameter | Description | Optional? | Default |
 --------- | ----------- | --------- | ------- |
-decroate  | Whether API should return decorated fields | Yes | true
+decorate  | Whether API should return decorated fields | Yes | true
+extra     | Decorate the response with fields like ['usd','address', 'related', 'data'] | Yes | usd,address, data
+xcmType   | Filter the result by transact Type.(`xcmtransfer`, `xcmtransact`, or both) i.e. `xcmType=xcmtransfer`  | Yes | all  
+chainfilters   | Filter the result by comma-separated chainIdentifiers. i.e. `chainfilters=polkadot,moonbeam,2000`  | Yes | 'all'
+symbol   | Filter the result by xcAssets (comma-separated). i.e. `symbol=ibtc,kint`  | Yes | -  
+startTS  | Filter the result by startTS (unix timestamp). If startTS is set, endTS must also be set | Yes | -
+EndTS   | Filter the result by endTS (unix timestamp). If endTS is set, startTS must also be set | Yes | -
+limit   | Return the last n recent xcmtransfers i.e. | Yes | 1000
+
+### Response Description
+
+Attribute | Description
+--------- | -----------
+xcmInfo | An info struct containing {`symbol`, `priceUSD`,`relayChain`, `origination`, `destination`}
+sender_info  |  Sender info (if onchain identity is set)
+beneficiary_info  |  Beneficiary info (if onchain identity is set)
+
+### XcmInfo Struct Overview
+
+Attribute | Description|
+--------- | -----------|
+symbol   |  The asset symbol for the primary xcm Asset|
+priceUSD   |  The estimated asset price at the time of xcm transfer|
+origination   |  Contains the transfer info at the origination chain|
+destination  |  Contains information about the destination chain|
+relay   |  Contains info about the relayChain|
+
+### Origination Struct
+
+Attribute | Description|
+--------- | -----------|
+chainName | The name of origination chain
+id | The identifier of origination chain
+chainID | The identifier of origination chain
+sender | Sender address - SS58 or Account20 format
+paraID | The paraID of  origination chain (relaychain has paraID of 0)
+amountSent | The amount of xc asset to be teleported
+amountSentUSD | The estimated value of xc asset to be teleported
+txFee | The transaction fee for initiating the xcm on origination chain
+txFeeUSD | The transaction fee (evaluated at the time of txn)
+txFeeSymbol | The fee-paying symbol for initiating
+section | The related  module_call detected by our indexer (i.e. `xcmPallet`, `xTokens`, `polkadotXcm`)
+method | The related module_func detected by our indexer (i.e. `limitedReserveTransferAssets`, `transfer`,  `TransferredMultiAssets`) etc  |
+extrinsicID  | Unique identifier for an extrinsic
+extrinsicHash |  The Blake256(rawExtrinsic) identifying an extrinsic
+transactionHash | If the origination chain is an EVM chain, omitted otherwise
+msgHash | The Blake256(msgHex) identifying an extrinsic - potentially NOT unique
+sentAt | A “synthetic” relaychain bn where the xcm is being sent to relaychain
+ts | The timestamp where the xcm is initiated
+isMsgSent | In case of errors on origination chain, the xcm transfer is *TERMINATED* at origination. The xcmMsg is *NOT* relayed to nor received by destination. Not assets are actually being teleported in this case while the txFee has been deducted from sender's balance
+
+
+###  Destination Struct
+
+Attribute | Description|
+--------- | -----------|
+chainName | The name of destination chain
+id | The identifier of destination chain
+chainID | The identifier of destination chain
+paraID | The paraID of  destination chain (relayChain has paraID of 0)
+beneficiary | The beneficiary - SS58 or Account20 format
+amountReceived | The amount of xc asset received at destination chain
+amountReceived | The estimated value of xc asset received at destination chain
+teleportFee | *XCM fee – computed as amountSent -  amountReceived
+teleportFeeUSD | XCM fee (evaluated at the time of txn)
+teleportFeeSymbol | The fee-paying symbol for xcmFee
+extrinsicID | The extrinsicID on destination chain where matching event is found
+eventID | The matching eventID at destination chain, linked to either a success or fail event.
+blockNumber | The blockNumber where the xcm is processed at destination chain
+ts | The timestamp where the xcm is processed at destination chain
+status | Whether the xcm is successfully executed at destination chain
+error | In case of xcm error, xc assets are not received by the Beneficiary. An errorInfo with {code, errorType, errorDesc} is provided.
+
+###  RelayChain Struct
+
+Attribute | Description|
+--------- | -----------|
+relaychain | The relayChain that facilitates the message passing
+relayAt | [WIP] The estimated relay chain block when xcmmsg is sent from origination chain to destination chain
+
+### XCM Error codes
+See official [Parity Doc](https://github.com/paritytech/xcm-format#8-the-types-of-error-in-xcm) for detail:
+
+Code| ErrorType | Description|
+--- | --------- | -----------|
+0|Overflow|An arithmetic overflow happened.
+1|Unimplemented|The instruction is intentionally unsupported.
+2|UntrustedReserveLocation|Origin Register does not contain a value value for a reserve transfer notification.
+3|failedToTransactAsset|Origin Register does not contain a value value for a teleport notification.
+4|MultiLocationFull|`MultiLocation` value too large to descend further.
+5|MultiLocationNotInvertible|"Used by `BuyExecution` when the fees declared to purchase weight are insufficient. `Trap(u64) = 21`: Used by the `Trap` instruction to force an error intentionally. Its code is included."
+6|BadOrigin|The Origin Register does not contain a valid value for instruction.
+7|InvalidLocation|The location parameter is not a valid value for the instruction.
+8|AssetNotFound|The given asset is not handled.
+9|FailedToTransactAsset|An asset transaction (like withdraw or deposit) failed (typically due to type conversions).
+10|NotWithdrawable|An asset cannot be withdrawn, potentially due to lack of ownership, availability or rights.
+11|LocationCannotHold|An asset cannot be withdrawn, potentially due to lack of ownership, availability or rights.
+12|ExceedsMaxMessageSize|Attempt to send a message greater than the maximum supported by the transport protocol.
+13|DestinationUnsupported|The given message cannot be translated into a format supported by the destination.
+14|Transport|Destination is routable, but there is some issue with the transport mechanism.
+15|Unroutable|Destination is known to be unroutable.
+16|UnknownClaim|Used by `ClaimAsset` when the given claim could not be recognized/found.
+17|FailedToDecode|Used by `Transact` when the functor cannot be decoded.
+18|TooMuchWeightRequired|Used by `Transact` to indicate that the given weight limit could be breached by the functor.
+19|NotHoldingFees|Used by `BuyExecution` when the Holding Register does not contain payable fees
+20|TooExpensive|Used by `BuyExecution` when the fees declared to purchase weight are insufficient.
+21|Trap(u64)|Used by the `Trap` instruction to force an error intentionally. Its code is included.
+22|ExpectationFalse|Used by `ExpectAsset`, `ExpectError` and `ExpectOrigin` when the expectation was not true.
+
+### Undocumented Errors/Warnings
+The following error code are undocumented by Parity, which is returned without code & desc:
+
+Code| ErrorType | Description|
+--- | --------- | -----------|
+NA|weightNotComputable.| -
+NA|assetsTrapped.| Teleported/fee-paying asset is put into assetTrap when there's an error or surplus remaining after the execution
+NA|barrier | -  
+
+## Get XCM Messages
+
+```shell
+# get xcmtransfers from  moonbeam/moonrivers
+curl "https://api.polkaholic.io/xcmmessages?chainfilters=moonbeam,moonriver&limit=5" \
+  -X GET \
+  -H "Authorization: YOUR-API-KEY"
+```
+
+> Example Response (last 1000 xcmmessages)
+
+```json
+[
+    {
+        "msgHash": "0x5ce0ec0b27e0b05642ca3beadda92bd89de55cf68cf2eea105db21776b34f3d6",
+        "msg":{"v2":[{"withdrawAsset":[{"id":{"concrete":{"parents":0,"interior":{"here":null}}},"fun":{"fungible":10000000000}}]},{"clearOrigin":null},{"buyExecution":{"fees":{"id":{"concrete":{"parents":0,"interior":{"here":null}}},"fun":{"fungible":10000000000}},"weightLimit":{"limited":4000000000}}},{"depositAsset":{"assets":{"wild":{"all":null}},"maxAssets":1,"beneficiary":{"parents":0,"interior":{"x1":{"accountId32":{"network":{"any":null},"id":"0x32b276633fb2c5cbabef0408a4f1045fc9603889e481310e9938b68d40d3b92e"}}}}}}]},
+        "version": "v2",
+        "sentAt": 12742754,
+        "chainID": 2004,
+        "chainIDDest": 0,
+        "msgType": "ump",
+        "blockNumber": 12742755,
+        "incoming": 1,
+        "blockTS": 1667355708,
+        "extrinsicHash": "0xd16ab32071e475d6767830e3d8938627573f5112a75703e71c20e10d05f8a0f3",
+        "extrinsicID": "2208179-6",
+        "sectionMethod": "ethereum:transact",
+        "sourceTS": 1667355702,
+        "destTS": 1667355708,
+        "beneficiaries": "0x32b276633fb2c5cbabef0408a4f1045fc9603889e481310e9938b68d40d3b92e",
+        "destAddress": "129UQhit3nnkoctkLPNNWEEbpevzjWRoEbrzXEWZm7LRPDWb",
+        "assetsReceived": [],
+        "amountSentUSD": 6.4867,
+        "amountReceivedUSD": 0,
+        "matched": 1,
+        "matchTS": 1667355734,
+        "parentMsgHash": null,
+        "parentSentAt": null,
+        "parentBlocknumber": null,
+        "childMsgHash": null,
+        "childSentAt": null,
+        "childBlocknumber": null,
+        "blockNumberOutgoing": 2208179,
+        "blockNumberIncoming": 12742755,
+        "executedEventID": null,
+        "destStatus": -1,
+        "errorDesc": null,
+        "relayChain": "polkadot",
+        "id": "moonbeam",
+        "idDest": "polkadot",
+        "chainName": "Moonbeam",
+        "chainDestName": "Polkadot"
+      },
+    ...
+]
+```
+
+Return the latest 1000 xcm message from all supported networks.
+
+### HTTP Request
+
+`GET https://api.polkaholic.io/xcmmessages/`
+
+### URL Parameters
+
+Parameter | Description | Optional? | Default |
+--------- | ----------- | --------- | ------- |
+decorate  | Whether API should return decorated fields | Yes | true
 extra     | Decorate the response with fields like ['usd','address', 'related', 'data'] | Yes | usd,address, data
 chainfilters   | Filter the result by comma-separated chainIdentifiers. i.e. `chainfilters=polkadot,moonbeam,2000`  | Yes | 'all'
+limit   | Return the last n recent xcmtransfers i.e. | Yes | 1000
 
 ### Response Description
 
 Attribute | Description
 --------- | -----------
 fromAddress  | Sender's pubkey |  
-destAddress    | Recipient's pubkey|   
-section | The related  module_call detected by our indexer (i.e. `xcmPallet`, `xTokens`, `polkadotXcm`)
-method | The related module_func detected by our indexer (i.e. `limitedReserveTransferAssets`, `transfer`, `TransferredMultiAssets`) etc  |  
-relayChain | The relayChain that facilitates the message passing (polkadot or kusama)
-chainID   | The initiated chain where the xcm is sending from |
-chainIDDest   | The destination chain where the xcm is going to |
-incomplete | whether the xcm is successfully sent by the sender (NOTE: A successfully sent xcm does not guarantee it has been successfully processed by the destChain without errors )
-asset | The "human-readble" representation of the sent asset
-rawAsset | The "raw" representation of the sent asset. (NOTE: Sometimes different parachains represent the same asset differently. We will automatically any known assets)
+destAddress    | Recipient's pubkey|  
 
 <aside class="information">
 This API is in alpha development!
 </aside>
+
+## Get XCM MultiLocation
+
+```shell
+# get all known xcmV`Multilocation from kusama + it's parachains
+curl "https://api.polkaholic.io/xcm/multilocation/kusama" \
+  -X GET \
+  -H "Authorization: YOUR-API-KEY"
+```
+
+> Example Response
+
+```json
+[
+    {
+        "chainID": 2,
+        "paraID": 0,
+        "relayChain": "kusama",
+        "isUSD": 0,
+        "decimals": 12,
+        "symbol": "KSM",
+        "xcmInteriorKey": "here~kusama",
+        "xcmV1MultiLocation": {
+            "v1": {
+                "parents": 1,
+                "interior": {
+                    "here": null
+                }
+            }
+        },
+        "evmMultiLocation": [
+            1,
+            []
+        ],
+        "xcContractAddress": {
+            "22007": "0xffffffffffffffffffffffffffffffffffffffff",
+            "22023": "0xffffffff1fcacbd218edc0eba20fc2308c778080"
+        },
+        "xcCurrencyID": {
+            "22004": "0",
+            "22007": "340282366920938463463374607431768211455",
+            "22023": "42259045809535163221576417993425387648",
+            "22048": "4294967295",
+            "22084": "12",
+            "22085": "100",
+            "22090": "1",
+            "22107": "100",
+            "22110": "4",
+            "22118": "2"
+        }
+    },
+    {
+        "chainID": 21000,
+        "paraID": 1000,
+        "relayChain": "kusama",
+        "isUSD": 0,
+        "decimals": 8,
+        "symbol": "ARIS",
+        "xcmInteriorKey": "[{\"parachain\":1000},{\"palletInstance\":50},{\"generalIndex\":16}]~kusama",
+        "xcmV1MultiLocation": {
+            "v1": {
+                "parents": 1,
+                "interior": {
+                    "x3": [
+                        {
+                            "parachain": 1000
+                        },
+                        {
+                            "palletInstance": 50
+                        },
+                        {
+                            "generalIndex": 16
+                        }
+                    ]
+                }
+            }
+        },
+        "evmMultiLocation": [
+            1,
+            [
+                "0x00000003e8",
+                "0x040000000000000032",
+                "0x0510"
+            ]
+        ],
+        "xcContractAddress": {},
+        "xcCurrencyID": {
+            "21000": "16"
+        }
+    },
+    {
+        "chainID": 21000,
+        "paraID": 1000,
+        "relayChain": "kusama",
+        "isUSD": 0,
+        "decimals": 6,
+        "symbol": "USDT",
+        "xcmInteriorKey": "[{\"parachain\":1000},{\"palletInstance\":50},{\"generalIndex\":1984}]~kusama",
+        "xcmV1MultiLocation": {
+            "v1": {
+                "parents": 1,
+                "interior": {
+                    "x3": [
+                        {
+                            "parachain": 1000
+                        },
+                        {
+                            "palletInstance": 50
+                        },
+                        {
+                            "generalIndex": 1984
+                        }
+                    ]
+                }
+            }
+        },
+        "evmMultiLocation": [
+            1,
+            [
+                "0x00000003e8",
+                "0x040000000000000032",
+                "0x0507c0"
+            ]
+        ],
+        "xcContractAddress": {
+            "22007": "0xffffffff000000000000000000000001000007c0"
+        },
+        "xcCurrencyID": {
+            "21000": "1984",
+            "22007": "4294969280",
+            "22085": "102"
+        }
+    },
+    ...
+]
+```
+
+Return all known xcmV1Multilocation from a relaychain + its parachains
+
+### HTTP Request
+
+`GET https://api.polkaholic.io/xcm/multilocation/chainIdentifier`
+
+### URL Parameters
+
+Parameter | Description | Optional? | Default |
+--------- | ----------- | --------- | ------- |
+chainIdentifier | The identifier of the chain to retrieve data about  | Required | -
+
+### Response Description
+
+Attribute | Description
+--------- | -----------
+chainID | The native chainID of the xcAsset (ex. USDt is a native asset on statemint)
+paraID | The native paraID of the the xcAsset (ex.  USDt is a native asset on statemint - paraID 1000)
+relayChain | The relaychain where the xcAsset can be teleported
+symbol | Human readable symbol for the xcAsset
+decimals | Decimals of the xcAsset
+xcmInteriorKey|A flattened XCMV1Multilocation struct from relaychain’s “perspective”. Polkaholic uses xcmInteriorKeys to uniquely identify xcAssets across parachains.
+xcmV1MultiLocation|A multilocation struct from relaychain’s “perspective”, which can be used by substrate pallet like XcmTransactor
+xcCurrencyID|An u128 specifying the xcAsset at origination chain
+evmMultiLocation|An encoded byte arrays, which can be used by moonbeam’s precompile contract to specify an xcAsset  (This is a Moonbeam specific concept that’s not used by other parachains)
+xcContractAddress*|A precompiled XC20 contract address specifying the xcAsset at origination chain
+
+*This is an EVM specific concept that’s currently used by both Moonbeam and Astar
 
 # Search (tx, events, xcms...)
 
@@ -1681,7 +2049,7 @@ blockNumberEnd | Int| The Ending BlockNumber(inclusive) | Optional
 
 Parameter | Description | Optional? | Default |
 --------- | ----------- | --------- | ------- |
-decroate  | Whether API should return decorated fields | Yes | true
+decorate  | Whether API should return decorated fields | Yes | true
 extra     | Decorate the response with fields like ['usd','address', 'related', 'data'] | Yes | usd,address, data
 
 ### Response Description
@@ -1760,7 +2128,7 @@ result | Int | 0: Failure, 1: Success. If unspecified: including both | Optional
 
 Parameter | Description | Optional? | Default |
 --------- | ----------- | --------- | ------- |
-decroate  | Whether API should return decorated fields | Yes | true
+decorate  | Whether API should return decorated fields | Yes | true
 extra     | Decorate the response with fields like ['usd','address', 'related', 'data'] | Yes | usd,address, data
 
 ### Response Description
@@ -1827,7 +2195,7 @@ result | Int | 0: Failure, 1: Success. If unspecified: including both | Optional
 
 Parameter | Description | Optional? | Default |
 --------- | ----------- | --------- | ------- |
-decroate  | Whether API should return decorated fields | Yes | true
+decorate  | Whether API should return decorated fields | Yes | true
 extra     | Decorate the response with fields like ['usd','address', 'related', 'data'] | Yes | usd,address, data
 
 ### Response Description
@@ -1913,7 +2281,7 @@ complete | Int | 1: Complete(xcm successfully initiated), 0: Incomplete. If Unsp
 
 Parameter | Description | Optional? | Default |
 --------- | ----------- | --------- | ------- |
-decroate  | Whether API should return decorated fields | Yes | true
+decorate  | Whether API should return decorated fields | Yes | true
 extra     | Decorate the response with fields like ['usd','address', 'related', 'data'] | Yes | usd,address, data
 
 ### Response Description
