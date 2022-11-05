@@ -1107,33 +1107,6 @@ curl "https://api.polkaholic.io/account/xcmtransfers/13eEyAEkyazXwKnh51DPgdBdTWB
 ```json
 [
     {
-      "extrinsicHash": "0x26a5ae999227e6819710952c1da48502655bf686fe00004e19fe583e878c2b6f",
-      "extrinsicID": "675237-2",
-      "incomplete": 0,
-      "status": "NonFinalizedSource",
-      "section": "xTokens",
-      "method": "transfer",
-      "relayChain": "kusama",
-      "sender": "a3crPwJ717zKVvpP8MWscjfVoXgwETmLhpAppat6P5fPLqKSb",
-      "fromAddress": "0x74df9177b1360bf0c07952ffb2d37817366adf8900e3bb90287b9784fda3e045",
-      "id": "kintsugi",
-      "chainID": 22092,
-      "chainName": "Kintsugi",
-      "blockNumber": 675237,
-      "sourceTS": 1649259492,
-      "beneficiary": "J8zgGfZApQQbBNHGNTttqqQaoJqzQMsiFqi57GbXAY9oYJi",
-      "destAddress": "0xf618d8489511f00682df9f7d794d081cf5716b012d014846c01a162e94091d15",
-      "idDest": "kusama",
-      "chainIDDest": 2,
-      "chainDestName": "Kusama",
-      "blockNumberDest": 12136574,
-      "destTS": 1649259510,
-      "symbol": "KSM",
-      "amountSent": 1.37495,
-      "amountSentUSD": 240.77907633895873,
-      "amountReceived": 1.37484333334,
-      "amountReceivedUSD": 240.7603970416236,
-      "xcmFee": 0.00010666665999981007,
       "xcmInfo": {
         "symbol": "KSM",
         "priceUSD": 175.11842346191406,
@@ -1576,7 +1549,7 @@ curl "https://api.polkaholic.io/account/balances/dwehUeMiyxAcSWUBsJiJ7WKmHZLueCx
 
 ```shell
 # get xcmtransfers from  moonbeam/moonrivers
-curl "https://api.polkaholic.io/xcmtransfers?chainfilters=moonbeam,moonriver" \
+curl "https://api.polkaholic.io/xcmtransfers?chainfilters=moonbeam,moonriver&limit=5" \
   -X GET \
   -H "Authorization: YOUR-API-KEY"
 ```
@@ -1586,62 +1559,6 @@ curl "https://api.polkaholic.io/xcmtransfers?chainfilters=moonbeam,moonriver" \
 ```json
 [
     {
-      "extrinsicHash": "0xe36119bd080dc2883ac11c2f6afd7e8db5472175265764c867b5b7d6897fa33a",
-      "extrinsicID": "12742749-2",
-      "incomplete": 0,
-      "status": null,
-      "section": "xcmPallet",
-      "method": "limitedReserveTransferAssets",
-      "relayChain": "polkadot",
-      "sender": "16kk1Ax4ZgC6XFpDcFxZd9L4TWpwHrz8qniqmvJB4DsucngY",
-      "fromAddress": "0xfe897b02d2a4350f99d7a41384fcea6b2c14181bd0d7d012a81190c05d424570",
-      "id": "polkadot",
-      "chainID": 0,
-      "chainName": "Polkadot",
-      "blockNumber": 12742749,
-      "sourceTS": 1667355672,
-      "beneficiary": "0x8e769073839eccf28cf9936d09a6dbfb4f1f123c",
-      "destAddress": "0x8e769073839eccf28cf9936d09a6dbfb4f1f123c",
-      "idDest": "moonbeam",
-      "chainIDDest": 2004,
-      "chainDestName": "Moonbeam",
-      "blockNumberDest": 2208177,
-      "destTS": 1667355678,
-      "symbol": "DOT",
-      "amountSent": 25.7640182042,
-      "amountSentUSD": null,
-      "amountReceived": 0,
-      "amountReceivedUSD": null,
-      "xcmFee": 25.7640182042
-    },
-    {
-      "extrinsicHash": "0xb7bc6d89f398bcf04c8c93cd4269d7bc5aeae0fb576aa62c809bd53c572d4782",
-      "extrinsicID": "15145517-2",
-      "incomplete": 0,
-      "status": null,
-      "section": "xcmPallet",
-      "method": "limitedReserveTransferAssets",
-      "relayChain": "kusama",
-      "sender": "F7bympfByrSBnNPBcYWrEyYZdCGYxxZFCQpq6viCsMUDMNH",
-      "fromAddress": "0x70547d737e6a65bf4911becb02d42036ab038ab41d7546b33809ecf2e0207337",
-      "id": "kusama",
-      "chainID": 2,
-      "chainName": "Kusama",
-      "blockNumber": 15145517,
-      "sourceTS": 1667355450,
-      "beneficiary": "0xbeb187bc094cf89f9dc31a24e611efad15d9edce",
-      "destAddress": "0xbeb187bc094cf89f9dc31a24e611efad15d9edce",
-      "idDest": "moonriver",
-      "chainIDDest": 22023,
-      "chainDestName": "Moonriver",
-      "blockNumberDest": 2901379,
-      "destTS": 1667355450,
-      "symbol": "KSM",
-      "amountSent": 3.119510018007,
-      "amountSentUSD": 112.08162917516269,
-      "amountReceived": 3.119100852705,
-      "amountReceivedUSD": 112.06692817616432,
-      "xcmFee": 3.119510018007,
       "xcmInfo": {
         "symbol": "KSM",
         "priceUSD": 35.92924162069839,
@@ -1707,29 +1624,122 @@ Parameter | Description | Optional? | Default |
 decroate  | Whether API should return decorated fields | Yes | true
 extra     | Decorate the response with fields like ['usd','address', 'related', 'data'] | Yes | usd,address, data
 chainfilters   | Filter the result by comma-separated chainIdentifiers. i.e. `chainfilters=polkadot,moonbeam,2000`  | Yes | 'all'
+limit   | Return the last n recent xcmtransfers i.e. | Yes | 1000
 
 ### Response Description
 
 Attribute | Description
 --------- | -----------
-fromAddress  | Sender's pubkey |  
-destAddress    | Recipient's pubkey|   
-section | The related  module_call detected by our indexer (i.e. `xcmPallet`, `xTokens`, `polkadotXcm`)
-method | The related module_func detected by our indexer (i.e. `limitedReserveTransferAssets`, `transfer`, `TransferredMultiAssets`) etc  |  
-relayChain | The relayChain that facilitates the message passing (polkadot or kusama)
-chainID   | The initiated chain where the xcm is sending from |
-chainIDDest   | The destination chain where the xcm is going to |
-incomplete | whether the xcm is successfully sent by the sender (NOTE: A successfully sent xcm does not guarantee it has been successfully processed by the destChain without errors )
-asset | The "human-readble" representation of the sent asset
-rawAsset | The "raw" representation of the sent asset. (NOTE: Sometimes different parachains represent the same asset differently. We will automatically any known assets)
 xcmInfo | An info struct containing {`symbol`, `priceUSD`,`relayChain`, `origination`, `destination`}
+sender_info  |  Sender info (if onchain identity is set)
+beneficiary_info  |  Beneficiary info (if onchain identity is set)
 
+### XcmInfo Struct Overview
+
+Attribute | Description|
+--------- | -----------|
+symbol   |  The asset symbol for the primary xcm Asset|
+priceUSD   |  The estimated asset price at the time of xcm transfer|
+origination   |  Contains the transfer info at the destination chain|
+destination  |  Contains information about the destination chain|
+relay   |  Contains info about the relayChain|
+
+### Origination Struct
+
+Attribute | Description|
+--------- | -----------|
+chainName | The name of origination chain
+id | The identifier of origination chain
+chainID | The identifier of origination chain
+sender | Sender address - SS58 or Account20 format
+paraID | The paraID of  origination chain (relaychain has paraID of 0)
+amountSent | The amount of xc asset to be teleported
+amountSentUSD | The estimated value of xc asset to be teleported
+txFee | The transaction fee for initiating the xcm on origination chain
+txFeeUSD | The transaction fee (evaluated at the time of txn)
+txFeeSymbol | The fee-paying symbol for initiating
+section | The related  module_call detected by our indexer (i.e. `xcmPallet`, `xTokens`, `polkadotXcm`)
+method | The related module_func detected by our indexer (i.e. `limitedReserveTransferAssets`, `transfer`,  `TransferredMultiAssets`) etc  |
+extrinsicID  | Unique identifier for an extrinsic
+extrinsicHash |  The Blake256(rawExtrinsic) identifying an extrinsic
+transactionHash | If the origination chain is an EVM chain, omitted otherwise
+msgHash | The Blake256(msgHex) identifying an extrinsic - potentially NOT unique
+sentAt | A “synthetic” relaychain bn where the xcm is being sent to relaychain
+ts | The timestamp where the xcm is initiated
+complete | In case of error on origination chain, this will be false
+
+
+###  Destination Struct
+
+Attribute | Description|
+--------- | -----------|
+chainName | The name of destination chain
+id | The identifier of destination chain
+chainID | The identifier of destination chain
+paraID | The paraID of  destination chain (relayChain has paraID of 0)
+beneficiary | The beneficiary - SS58 or Account20 format
+amountReceived | The amount of xc asset received at destination chain
+amountReceived | The estimated value of xc asset received at destination chain
+teleportFee | *XCM fee – computed as amountSent -  amountReceived
+teleportFeeUSD | XCM fee (evaluated at the time of txn)
+teleportFeeSymbol | The fee-paying symbol for xcmFee
+extrinsicID | The extrinsicID on destination chain where matching event is found
+eventID | The matching eventID at destination chain, linked to either a success or fail event.
+blockNumber | The blockNumber where the xcm is processed at destination chain
+ts | The timestamp where the xcm is processed at destination chain
+status | Whether the xcm is successfully executed at destination chain
+error | In case of xcm error, xc assets are not received by the Beneficiary. An errorInfo with {code, errorType, errorDesc} is provided.
+
+###  RelayChain Struct
+
+Attribute | Description|
+--------- | -----------|
+relaychain | The relayChain that facilitates the message passing
+relayAt | [WIP] The estimated relay chain block when xcmmsg is sent from origination chain to destination chain
+
+### XCM Error codes
+See official [Parity Doc](https://github.com/paritytech/xcm-format#8-the-types-of-error-in-xcm) for detail:
+
+Code| ErrorType | Description|
+--- | --------- | -----------|
+0|Overflow|An arithmetic overflow happened.
+1|Unimplemented|The instruction is intentionally unsupported.
+2|UntrustedReserveLocation|Origin Register does not contain a value value for a reserve transfer notification.
+3|failedToTransactAsset|Origin Register does not contain a value value for a teleport notification.
+4|MultiLocationFull|`MultiLocation` value too large to descend further.
+5|MultiLocationNotInvertible|"Used by `BuyExecution` when the fees declared to purchase weight are insufficient. `Trap(u64) = 21`: Used by the `Trap` instruction to force an error intentionally. Its code is included."
+6|BadOrigin|The Origin Register does not contain a valid value for instruction.
+7|InvalidLocation|The location parameter is not a valid value for the instruction.
+8|AssetNotFound|The given asset is not handled.
+9|FailedToTransactAsset|An asset transaction (like withdraw or deposit) failed (typically due to type conversions).
+10|NotWithdrawable|An asset cannot be withdrawn, potentially due to lack of ownership, availability or rights.
+11|LocationCannotHold|An asset cannot be withdrawn, potentially due to lack of ownership, availability or rights.
+12|ExceedsMaxMessageSize|Attempt to send a message greater than the maximum supported by the transport protocol.
+13|DestinationUnsupported|The given message cannot be translated into a format supported by the destination.
+14|Transport|Destination is routable, but there is some issue with the transport mechanism.
+15|Unroutable|Destination is known to be unroutable.
+16|UnknownClaim|Used by `ClaimAsset` when the given claim could not be recognized/found.
+17|FailedToDecode|Used by `Transact` when the functor cannot be decoded.
+18|TooMuchWeightRequired|Used by `Transact` to indicate that the given weight limit could be breached by the functor.
+19|NotHoldingFees|Used by `BuyExecution` when the Holding Register does not contain payable fees
+20|TooExpensive|Used by `BuyExecution` when the fees declared to purchase weight are insufficient.
+21|Trap(u64)|Used by the `Trap` instruction to force an error intentionally. Its code is included.
+22|ExpectationFalse|Used by `ExpectAsset`, `ExpectError` and `ExpectOrigin` when the expectation was not true.
+
+### Undocumented Errors/Warnings
+The following error code are undocumented by Parity, which is returned without code & desc:
+
+Code| ErrorType | Description|
+--- | --------- | -----------|
+NA|weightNotComputable.| -
+NA|assetsTrapped.| Teleported/fee-paying asset is put into assetTrap when there's an error or surplus remaining after the execution
+NA|barrier | -  
 
 ## Get XCM Messages
 
 ```shell
 # get xcmtransfers from  moonbeam/moonrivers
-curl "https://api.polkaholic.io/xcmmessages?chainfilters=moonbeam,moonriver" \
+curl "https://api.polkaholic.io/xcmmessages?chainfilters=moonbeam,moonriver&limit=5" \
   -X GET \
   -H "Authorization: YOUR-API-KEY"
 ```
@@ -1795,6 +1805,7 @@ Parameter | Description | Optional? | Default |
 decroate  | Whether API should return decorated fields | Yes | true
 extra     | Decorate the response with fields like ['usd','address', 'related', 'data'] | Yes | usd,address, data
 chainfilters   | Filter the result by comma-separated chainIdentifiers. i.e. `chainfilters=polkadot,moonbeam,2000`  | Yes | 'all'
+limit   | Return the last n recent xcmtransfers i.e. | Yes | 1000
 
 ### Response Description
 
@@ -1806,6 +1817,171 @@ destAddress    | Recipient's pubkey|
 <aside class="information">
 This API is in alpha development!
 </aside>
+
+## Get XCM MultiLocation
+
+```shell
+# get all known xcmV`Multilocation from kusama + it's parachains
+curl "https://api.polkaholic.io/xcm/multilocation/kusama" \
+  -X GET \
+  -H "Authorization: YOUR-API-KEY"
+```
+
+> Example Response
+
+```json
+[
+    {
+        "chainID": 2,
+        "paraID": 0,
+        "relayChain": "kusama",
+        "isUSD": 0,
+        "decimals": 12,
+        "symbol": "KSM",
+        "xcmInteriorKey": "here~kusama",
+        "xcmV1MultiLocation": {
+            "v1": {
+                "parents": 1,
+                "interior": {
+                    "here": null
+                }
+            }
+        },
+        "evmMultiLocation": [
+            1,
+            []
+        ],
+        "xcContractAddress": {
+            "22007": "0xffffffffffffffffffffffffffffffffffffffff",
+            "22023": "0xffffffff1fcacbd218edc0eba20fc2308c778080"
+        },
+        "xcCurrencyID": {
+            "22004": "0",
+            "22007": "340282366920938463463374607431768211455",
+            "22023": "42259045809535163221576417993425387648",
+            "22048": "4294967295",
+            "22084": "12",
+            "22085": "100",
+            "22090": "1",
+            "22107": "100",
+            "22110": "4",
+            "22118": "2"
+        }
+    },
+    {
+        "chainID": 21000,
+        "paraID": 1000,
+        "relayChain": "kusama",
+        "isUSD": 0,
+        "decimals": 8,
+        "symbol": "ARIS",
+        "xcmInteriorKey": "[{\"parachain\":1000},{\"palletInstance\":50},{\"generalIndex\":16}]~kusama",
+        "xcmV1MultiLocation": {
+            "v1": {
+                "parents": 1,
+                "interior": {
+                    "x3": [
+                        {
+                            "parachain": 1000
+                        },
+                        {
+                            "palletInstance": 50
+                        },
+                        {
+                            "generalIndex": 16
+                        }
+                    ]
+                }
+            }
+        },
+        "evmMultiLocation": [
+            1,
+            [
+                "0x00000003e8",
+                "0x040000000000000032",
+                "0x0510"
+            ]
+        ],
+        "xcContractAddress": {},
+        "xcCurrencyID": {
+            "21000": "16"
+        }
+    },
+    {
+        "chainID": 21000,
+        "paraID": 1000,
+        "relayChain": "kusama",
+        "isUSD": 0,
+        "decimals": 6,
+        "symbol": "USDT",
+        "xcmInteriorKey": "[{\"parachain\":1000},{\"palletInstance\":50},{\"generalIndex\":1984}]~kusama",
+        "xcmV1MultiLocation": {
+            "v1": {
+                "parents": 1,
+                "interior": {
+                    "x3": [
+                        {
+                            "parachain": 1000
+                        },
+                        {
+                            "palletInstance": 50
+                        },
+                        {
+                            "generalIndex": 1984
+                        }
+                    ]
+                }
+            }
+        },
+        "evmMultiLocation": [
+            1,
+            [
+                "0x00000003e8",
+                "0x040000000000000032",
+                "0x0507c0"
+            ]
+        ],
+        "xcContractAddress": {
+            "22007": "0xffffffff000000000000000000000001000007c0"
+        },
+        "xcCurrencyID": {
+            "21000": "1984",
+            "22007": "4294969280",
+            "22085": "102"
+        }
+    },
+    ...
+]
+```
+
+Return all known xcmV1Multilocation from a relaychain + its parachains
+
+### HTTP Request
+
+`GET https://api.polkaholic.io/xcm/multilocation/chainIdentifier`
+
+### URL Parameters
+
+Parameter | Description | Optional? | Default |
+--------- | ----------- | --------- | ------- |
+chainIdentifier | The identifier of the chain to retrieve data about  | Required | -
+
+### Response Description
+
+Attribute | Description
+--------- | -----------
+chainID | The native chainID of the xcAsset (ex. USDt is a native asset on statemint)
+paraID | The native paraID of the the xcAsset (ex.  USDt is a native asset on statemint - paraID 1000)
+relayChain | The relaychain where the xcAsset can be teleported
+symbol | Human readable symbol for the xcAsset
+decimals | Decimals of the xcAsset
+xcmInteriorKey|A flattened XCMV1Multilocation struct from relaychain’s “perspective”. Polkaholic uses xcmInteriorKeys to uniquely identify xcAssets across parachains.
+xcmV1MultiLocation|A multilocation struct from relaychain’s “perspective”, which can be used by substrate pallet like XcmTransactor
+xcCurrencyID|An u128 specifying the xcAsset at origination chain
+evmMultiLocation|An encoded byte arrays, which can be used by moonbeam’s precompile contract to specify an xcAsset  (This is a Moonbeam specific concept that’s not used by other parachains)
+xcContractAddress*|A precompiled XC20 contract address specifying the xcAsset at origination chain
+
+*This is an EVM specific concept that’s currently used by both Moonbeam and Astar
 
 # Search (tx, events, xcms...)
 
