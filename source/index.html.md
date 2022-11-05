@@ -1818,6 +1818,172 @@ destAddress    | Recipient's pubkey|
 This API is in alpha development!
 </aside>
 
+## Get XCM MultiLocation
+
+```shell
+# get all known xcmV`Multilocation from kusama + it's parachains
+curl "https://api.polkaholic.io/xcm/multilocation/0" \
+  -X GET \
+  -H "Authorization: YOUR-API-KEY"
+```
+
+> Example Response
+
+```json
+[
+    {
+        "chainID": 2,
+        "paraID": 0,
+        "relayChain": "kusama",
+        "isUSD": 0,
+        "decimals": 12,
+        "symbol": "KSM",
+        "xcmInteriorKey": "here~kusama",
+        "xcmV1MultiLocation": {
+            "v1": {
+                "parents": 1,
+                "interior": {
+                    "here": null
+                }
+            }
+        },
+        "evmMultiLocation": [
+            1,
+            []
+        ],
+        "xcContractAddress": {
+            "22007": "0xffffffffffffffffffffffffffffffffffffffff",
+            "22023": "0xffffffff1fcacbd218edc0eba20fc2308c778080"
+        },
+        "xcCurrencyID": {
+            "22004": "0",
+            "22007": "340282366920938463463374607431768211455",
+            "22023": "42259045809535163221576417993425387648",
+            "22048": "4294967295",
+            "22084": "12",
+            "22085": "100",
+            "22090": "1",
+            "22107": "100",
+            "22110": "4",
+            "22118": "2"
+        }
+    },
+    {
+        "chainID": 21000,
+        "paraID": 1000,
+        "relayChain": "kusama",
+        "isUSD": 0,
+        "decimals": 8,
+        "symbol": "ARIS",
+        "xcmInteriorKey": "[{\"parachain\":1000},{\"palletInstance\":50},{\"generalIndex\":16}]~kusama",
+        "xcmV1MultiLocation": {
+            "v1": {
+                "parents": 1,
+                "interior": {
+                    "x3": [
+                        {
+                            "parachain": 1000
+                        },
+                        {
+                            "palletInstance": 50
+                        },
+                        {
+                            "generalIndex": 16
+                        }
+                    ]
+                }
+            }
+        },
+        "evmMultiLocation": [
+            1,
+            [
+                "0x00000003e8",
+                "0x040000000000000032",
+                "0x0510"
+            ]
+        ],
+        "xcContractAddress": {},
+        "xcCurrencyID": {
+            "21000": "16"
+        }
+    },
+    {
+        "chainID": 21000,
+        "paraID": 1000,
+        "relayChain": "kusama",
+        "isUSD": 0,
+        "decimals": 6,
+        "symbol": "USDT",
+        "xcmInteriorKey": "[{\"parachain\":1000},{\"palletInstance\":50},{\"generalIndex\":1984}]~kusama",
+        "xcmV1MultiLocation": {
+            "v1": {
+                "parents": 1,
+                "interior": {
+                    "x3": [
+                        {
+                            "parachain": 1000
+                        },
+                        {
+                            "palletInstance": 50
+                        },
+                        {
+                            "generalIndex": 1984
+                        }
+                    ]
+                }
+            }
+        },
+        "evmMultiLocation": [
+            1,
+            [
+                "0x00000003e8",
+                "0x040000000000000032",
+                "0x0507c0"
+            ]
+        ],
+        "xcContractAddress": {
+            "22007": "0xffffffff000000000000000000000001000007c0"
+        },
+        "xcCurrencyID": {
+            "21000": "1984",
+            "22007": "4294969280",
+            "22085": "102"
+        }
+    },
+    ...
+]
+```
+
+Return all known xcmV1Multilocation from a relaychain + its parachains
+
+### HTTP Request
+
+`GET https://api.polkaholic.io/xcm/multilocation/chainIdentifier`
+
+### URL Parameters
+
+Parameter | Description | Optional? | Default |
+--------- | ----------- | --------- | ------- |
+chainIdentifier | The identifier of the chain to retrieve data about  | Required | -
+
+### Response Description
+
+Attribute | Description
+--------- | -----------
+chainID | The native chainID of the xcAsset (ex. USDt is a native asset on statemint)
+paraID | The native paraID of the the xcAsset (ex.  USDt is a native asset on statemint - paraID 1000)
+relayChain | The relaychain where the xcAsset can be teleported
+symbol | Human readable symbol for the xcAsset
+decimals | decimals of the xcAsset
+xcmInteriorKey|A flattened XCMV1Multilocation struct from relaychain’s “perspective”. Polkaholic uses xcmInteriorKeys to uniquely identify xcAssets across parachains.
+xcmV1MultiLocation|A multilocation struct from relaychain’s “perspective”, which can be used by substrate pallet like XcmTransactor
+xcCurrencyID|An u128 specifying the xcAsset at origination chain
+evmMultiLocation|"An encoded byte arrays, which can be used by moonbeam’s precompile contract to specify an xcAsset
+(This is a Moonbeam specific concept that’s not used by other parachains)"
+xcContractAddress*|"A precompiled XC20 contract address specifying the xcAsset at origination chain
+
+*This is an EVM specific concept that’s currently used by both Moonbeam and Astar)
+
 # Search (tx, events, xcms...)
 
 Search API returns a list of {extrinsics, evmtxs, events, xcmtransfers, xcmmessages} given certain user-specified criteria.
