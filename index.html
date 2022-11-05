@@ -2722,11 +2722,11 @@ curl <span class="s2">"https://api.polkaholic.io/xcmtransfers?chainfilters=moonb
 </tr>
 <tr>
 <td>sender_info</td>
-<td>beneficiary info (if onchain identity is set)</td>
+<td>Sender info (if onchain identity is set)</td>
 </tr>
 <tr>
 <td>beneficiary_info</td>
-<td>beneficiary info (if onchain identity is set)</td>
+<td>Beneficiary info (if onchain identity is set)</td>
 </tr>
 </tbody></table>
 <h3 id='xcminfo-struct-overview'>XcmInfo Struct Overview</h3>
@@ -2750,11 +2750,11 @@ curl <span class="s2">"https://api.polkaholic.io/xcmtransfers?chainfilters=moonb
 </tr>
 <tr>
 <td>destination</td>
-<td>Contains info about the relayChain</td>
+<td>Contains information about the destination chain</td>
 </tr>
 <tr>
 <td>relay</td>
-<td>Contains information about the destination chain</td>
+<td>Contains info about the relayChain</td>
 </tr>
 </tbody></table>
 <h3 id='origination-struct'>Origination Struct</h3>
@@ -2926,7 +2926,7 @@ curl <span class="s2">"https://api.polkaholic.io/xcmtransfers?chainfilters=moonb
 </tr>
 <tr>
 <td>relayAt</td>
-<td>[WIP] the estimated relay chain block when xcmmsg is sent from origination chain to destination chain</td>
+<td>[WIP] The estimated relay chain block when xcmmsg is sent from origination chain to destination chain</td>
 </tr>
 </tbody></table>
 <h3 id='xcm-error-codes'>XCM Error codes</h3>
@@ -3365,7 +3365,7 @@ curl <span class="s2">"https://api.polkaholic.io/xcm/multilocation/kusama"</span
 </tr>
 <tr>
 <td>decimals</td>
-<td>decimals of the xcAsset</td>
+<td>Decimals of the xcAsset</td>
 </tr>
 <tr>
 <td>xcmInteriorKey</td>
@@ -3389,7 +3389,7 @@ curl <span class="s2">"https://api.polkaholic.io/xcm/multilocation/kusama"</span
 </tr>
 </tbody></table>
 
-<p>(*This is an EVM specific concept that’s currently used by both Moonbeam and Astar)</p>
+<p>*This is an EVM specific concept that’s currently used by both Moonbeam and Astar</p>
 <h1 id='search-tx-events-xcms'>Search (tx, events, xcms...)</h1>
 <p>Search API returns a list of {extrinsics, evmtxs, events, xcmtransfers, xcmmessages} given certain user-specified criteria.</p>
 <h2 id='search-extrinsics'>Search Extrinsics</h2>
