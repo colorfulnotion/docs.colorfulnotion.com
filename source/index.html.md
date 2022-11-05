@@ -1978,11 +1978,10 @@ decimals | decimals of the xcAsset
 xcmInteriorKey|A flattened XCMV1Multilocation struct from relaychain’s “perspective”. Polkaholic uses xcmInteriorKeys to uniquely identify xcAssets across parachains.
 xcmV1MultiLocation|A multilocation struct from relaychain’s “perspective”, which can be used by substrate pallet like XcmTransactor
 xcCurrencyID|An u128 specifying the xcAsset at origination chain
-evmMultiLocation|"An encoded byte arrays, which can be used by moonbeam’s precompile contract to specify an xcAsset
-(This is a Moonbeam specific concept that’s not used by other parachains)"
-xcContractAddress*|"A precompiled XC20 contract address specifying the xcAsset at origination chain
+evmMultiLocation|An encoded byte arrays, which can be used by moonbeam’s precompile contract to specify an xcAsset  (This is a Moonbeam specific concept that’s not used by other parachains)
+xcContractAddress*|A precompiled XC20 contract address specifying the xcAsset at origination chain
 
-*This is an EVM specific concept that’s currently used by both Moonbeam and Astar)
+(*This is an EVM specific concept that’s currently used by both Moonbeam and Astar)
 
 # Search (tx, events, xcms...)
 
