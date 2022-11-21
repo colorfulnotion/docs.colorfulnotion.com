@@ -478,7 +478,7 @@ BlockNumber | The Block Number to retrieve data about
 
 Parameter | Description | Optional? | Default |
 --------- | ----------- | --------- | ------- |
-decroate  | Whether API should return decorated fields | Yes | true
+  | Whether API should return decorated fields | Yes | true
 extra     | Decorate the response with fields like ['usd','address', 'related', 'data'] | Yes | usd,address, data
 
 ### Response Description
@@ -610,7 +610,7 @@ TxHash | The Transaction Hash to retrieve data about, can be either Substrate's 
 
 Parameter | Description | Optional? | Default |
 --------- | ----------- | --------- | ------- |
-decroate  | Whether API should return decorated fields | Yes | true
+decorate  | Whether API should return decorated fields | Yes | true
 extra     | Decorate the response with fields like ['usd','address', 'related', 'data'] | Yes | usd,address, data
 
 ### Response Description (Decorated SubStrate Extrinsic)
@@ -783,7 +783,7 @@ TxHash | The Transaction Hash to retrieve data about, can be either Substrate's 
 
 Parameter | Description | Optional? | Default |
 --------- | ----------- | --------- | ------- |
-decroate  | Whether API should return decorated fields | Yes | true
+decorate  | Whether API should return decorated fields | Yes | true
 extra     | Decorate the response with fields like ['usd','address', 'related', 'data'] | Yes | usd,address, data
 
 ### Response Description (Decorated EVM Transaction)
@@ -927,7 +927,7 @@ Parameter      | Description | Optional? | Default |
 ---------------| ----------- | --------- | ------- |
 group          | The group type to return by the API (see below) | Yes | 'realtime'
 lookbackWindow | TBA | Yes | 180
-decroate       | Whether API should return decorated fields | Yes | true
+decorate       | Whether API should return decorated fields | Yes | true
 extra          | Decorate the response with fields like ['usd','address', 'related', 'data'] | Yes | usd,address, data
 chainfilters   | Filter the result by comma-separated chainIdentifiers. i.e. `chainfilters=polkadot,kusama,2000`  | Yes | 'all'
 
@@ -1548,66 +1548,66 @@ curl "https://api.polkaholic.io/account/balances/dwehUeMiyxAcSWUBsJiJ7WKmHZLueCx
 ## Get XCM Transfers
 
 ```shell
-# get xcmtransfers from  moonbeam/moonrivers
-curl "https://api.polkaholic.io/xcmtransfers?chainfilters=moonbeam,moonriver&limit=5" \
+# Get one xcmTranfer involving kbtc on moonriver network between unix_timestamp (1667928000,1668028000)
+curl "https://api.polkaholic.io/xcmtransfers?xcmType=xcmtransfer&chainIdentifier=moonriver&symbol=kbtc&startTS=1667928000&endTS=1668028000&limit=1" \
   -X GET \
   -H "Authorization: YOUR-API-KEY"
 ```
 
-> Example Response (last 1000 xcmtransfers)
+> Example Response
 
 ```json
 [
     {
-      "xcmInfo": {
-        "symbol": "KSM",
-        "priceUSD": 35.92924162069839,
-        "relayChain": {
-          "relayChain": "kusama",
-          "relayAt": 15145517
-        },
-        "origination": {
-          "chainName": "Kusama",
-          "id": "kusama",
-          "chainID": 2,
-          "paraID": 0,
-          "sender": "F7bympfByrSBnNPBcYWrEyYZdCGYxxZFCQpq6viCsMUDMNH",
-          "amountSent": 3.119510018007,
-          "amountSentUSD": 112.08162917516269,
-          "txFee": 6.1247764e-05,
-          "txFeeUSD": 0.002200585711483513,
-          "txFeeSymbol": "KSM",
-          "blockNumber": 15145517,
-          "section": "xcmPallet",
-          "method": "limitedReserveTransferAssets",
-          "extrinsicID": "15145517-2",
-          "extrinsicHash": "0xb7bc6d89f398bcf04c8c93cd4269d7bc5aeae0fb576aa62c809bd53c572d4782",
-          "msgHash": "0xc74503e03b15a437a8ed7be5a01019ae962df557e5b198aa11747a56de0b23d2",
-          "sentAt": 15145517,
-          "ts": 1667355450,
-          "complete": true
-        },
-        "destination": {
-          "chainName": "Moonriver",
-          "id": "moonriver",
-          "chainID": 22023,
-          "paraID": 2023,
-          "beneficiary": "0xbeb187bc094cf89f9dc31a24e611efad15d9edce",
-          "amountReceived": 3.119100852705,
-          "amountReceivedUSD": 112.06692817616432,
-          "teleportFee": 0.0004091653019999697,
-          "teleportFeeUSD": 0.014702927483198448,
-          "teleportFeeChainSymbol": "KSM",
-          "blockNumber": 2901380,
-          "extrinsicID": "2901380-0",
-          "eventID": "22023-2901380-0-1",
-          "ts": 1667355463,
-          "status": true
-        },
-        "version": "V2"
-      }
-    },
-    ...
+        "xcmInfo": {
+            "symbol": "KBTC",
+            "priceUSD": 17356.63464598179,
+            "relayChain": {
+                "relayChain": "kusama",
+                "relayAt": 15257458
+            },
+            "origination": {
+                "chainName": "Moonriver",
+                "id": "moonriver",
+                "chainID": 22023,
+                "paraID": 2023,
+                "sender": "0x27e6a60146c5341d2e5577b219a2961f2d180579",
+                "amountSent": 0.00182979,
+                "amountSentUSD": 31.75899650887102,
+                "txFee": 0.00011918,
+                "txFeeUSD": 0.0009736966584964279,
+                "txFeeSymbol": "MOVR",
+                "blockNumber": 2955080,
+                "section": "ethereum",
+                "method": "transact",
+                "extrinsicID": "2955080-11",
+                "extrinsicHash": "0x7add5e6a7027369a2e69d3ceb95f55b870c719fcd9cfb2948608c3fbc499b908",
+                "transactionHash": "0x1078fcc8c8aed1906a8f28a42f86faeca4380fc5584910b79c69eb3c2c92c585",
+                "msgHash": "0x131e18138789b700f9ca2fb149bf1a09890c3869b02df00d9c5c634b601f3509",
+                "sentAt": 15257458,
+                "ts": 1668027996,
+                "isMsgSent": true
+            },
+            "destination": {
+                "chainName": "Kintsugi",
+                "id": "kintsugi",
+                "chainID": 22092,
+                "paraID": 2092,
+                "beneficiary": "a3dhTbe9t95rXK4vt87uqyTrrhtKcGxtmY8uGcGX27TTEnCuR",
+                "amountReceived": 0.00182856,
+                "amountReceivedUSD": 31.73764784825646,
+                "teleportFee": 0.0000012300000000000678,
+                "teleportFeeUSD": 0.02136302101430279,
+                "teleportFeeChainSymbol": "KBTC",
+                "blockNumber": 1843330,
+                "extrinsicID": "1843330-1",
+                "eventID": "22092-1843330-1-8",
+                "ts": 1668028020,
+                "status": true
+            },
+            "version": "V2"
+        }
+    }
 ]
 ```
 
@@ -1621,9 +1621,13 @@ Return the latest 1000 xcm tranfers from all supported networks.
 
 Parameter | Description | Optional? | Default |
 --------- | ----------- | --------- | ------- |
-decroate  | Whether API should return decorated fields | Yes | true
+decorate  | Whether API should return decorated fields | Yes | true
 extra     | Decorate the response with fields like ['usd','address', 'related', 'data'] | Yes | usd,address, data
+xcmType   | Filter the result by transact Type.(`xcmtransfer`, `xcmtransact`, or both) i.e. `xcmType=xcmtransfer`  | Yes | all  
 chainfilters   | Filter the result by comma-separated chainIdentifiers. i.e. `chainfilters=polkadot,moonbeam,2000`  | Yes | 'all'
+symbol   | Filter the result by xcAssets (comma-separated). i.e. `symbol=ibtc,kint`  | Yes | -  
+startTS  | Filter the result by startTS (unix timestamp). If startTS is set, endTS must also be set | Yes | -
+EndTS   | Filter the result by endTS (unix timestamp). If endTS is set, startTS must also be set | Yes | -
 limit   | Return the last n recent xcmtransfers i.e. | Yes | 1000
 
 ### Response Description
@@ -1640,7 +1644,7 @@ Attribute | Description|
 --------- | -----------|
 symbol   |  The asset symbol for the primary xcm Asset|
 priceUSD   |  The estimated asset price at the time of xcm transfer|
-origination   |  Contains the transfer info at the destination chain|
+origination   |  Contains the transfer info at the origination chain|
 destination  |  Contains information about the destination chain|
 relay   |  Contains info about the relayChain|
 
@@ -1666,7 +1670,7 @@ transactionHash | If the origination chain is an EVM chain, omitted otherwise
 msgHash | The Blake256(msgHex) identifying an extrinsic - potentially NOT unique
 sentAt | A “synthetic” relaychain bn where the xcm is being sent to relaychain
 ts | The timestamp where the xcm is initiated
-complete | In case of error on origination chain, this will be false
+isMsgSent | In case of errors on origination chain, the xcm transfer is *TERMINATED* at origination. The xcmMsg is *NOT* relayed to nor received by destination. Not assets are actually being teleported in this case while the txFee has been deducted from sender's balance
 
 
 ###  Destination Struct
@@ -1802,7 +1806,7 @@ Return the latest 1000 xcm message from all supported networks.
 
 Parameter | Description | Optional? | Default |
 --------- | ----------- | --------- | ------- |
-decroate  | Whether API should return decorated fields | Yes | true
+decorate  | Whether API should return decorated fields | Yes | true
 extra     | Decorate the response with fields like ['usd','address', 'related', 'data'] | Yes | usd,address, data
 chainfilters   | Filter the result by comma-separated chainIdentifiers. i.e. `chainfilters=polkadot,moonbeam,2000`  | Yes | 'all'
 limit   | Return the last n recent xcmtransfers i.e. | Yes | 1000
@@ -2045,7 +2049,7 @@ blockNumberEnd | Int| The Ending BlockNumber(inclusive) | Optional
 
 Parameter | Description | Optional? | Default |
 --------- | ----------- | --------- | ------- |
-decroate  | Whether API should return decorated fields | Yes | true
+decorate  | Whether API should return decorated fields | Yes | true
 extra     | Decorate the response with fields like ['usd','address', 'related', 'data'] | Yes | usd,address, data
 
 ### Response Description
@@ -2124,7 +2128,7 @@ result | Int | 0: Failure, 1: Success. If unspecified: including both | Optional
 
 Parameter | Description | Optional? | Default |
 --------- | ----------- | --------- | ------- |
-decroate  | Whether API should return decorated fields | Yes | true
+decorate  | Whether API should return decorated fields | Yes | true
 extra     | Decorate the response with fields like ['usd','address', 'related', 'data'] | Yes | usd,address, data
 
 ### Response Description
@@ -2191,7 +2195,7 @@ result | Int | 0: Failure, 1: Success. If unspecified: including both | Optional
 
 Parameter | Description | Optional? | Default |
 --------- | ----------- | --------- | ------- |
-decroate  | Whether API should return decorated fields | Yes | true
+decorate  | Whether API should return decorated fields | Yes | true
 extra     | Decorate the response with fields like ['usd','address', 'related', 'data'] | Yes | usd,address, data
 
 ### Response Description
@@ -2277,7 +2281,7 @@ complete | Int | 1: Complete(xcm successfully initiated), 0: Incomplete. If Unsp
 
 Parameter | Description | Optional? | Default |
 --------- | ----------- | --------- | ------- |
-decroate  | Whether API should return decorated fields | Yes | true
+decorate  | Whether API should return decorated fields | Yes | true
 extra     | Decorate the response with fields like ['usd','address', 'related', 'data'] | Yes | usd,address, data
 
 ### Response Description
