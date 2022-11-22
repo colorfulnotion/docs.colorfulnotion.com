@@ -22,9 +22,9 @@ meta:
 
 # Introduction
 
-Welcome to [Polkaholic](http://polkaholic.io) API!
+Welcome to [Polkaholic](http://polkaholic.io) API
 
-Polkaholic API gives you powerful access to over 40+ networks in Polkadot and Kusama ecosystem. Get a [free API key](https://polkaholic.io/apikeys) today and start building your own dApps!
+Polkaholic API gives you powerful access to over 50+ networks in Polkadot and Kusama ecosystem. Get a [free API key](https://polkaholic.io/apikeys) today and start building your own dApps!
 
 Got any questions? Find us on [Matrix](https://matrix.to/#/#polkaholic:matrix.org): `#polkaholic:matrix.org`
 
@@ -1986,6 +1986,12 @@ evmMultiLocation|An encoded byte arrays, which can be used by moonbeam’s preco
 xcContractAddress*|A precompiled XC20 contract address specifying the xcAsset at origination chain
 
 *This is an EVM specific concept that’s currently used by both Moonbeam and Astar
+
+## XCM Websocket
+
+Subscribe to Websocket to receive xcmInfo Struct in realtime
+
+[TDB]
 
 # Search (tx, events, xcms...)
 
