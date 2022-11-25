@@ -390,13 +390,13 @@
             <a href="#xcm" class="toc-h1 toc-link" data-title="XCM">XCM</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#get-xcm-transfers" class="toc-h2 toc-link" data-title="Get XCM Transfers">Get XCM Transfers</a>
+                    <a href="#xcm-transfers" class="toc-h2 toc-link" data-title="XCM Transfers">XCM Transfers</a>
                   </li>
                   <li>
-                    <a href="#get-xcm-messages" class="toc-h2 toc-link" data-title="Get XCM Messages">Get XCM Messages</a>
+                    <a href="#xcm-messages" class="toc-h2 toc-link" data-title="XCM Messages">XCM Messages</a>
                   </li>
                   <li>
-                    <a href="#get-xcm-multilocation" class="toc-h2 toc-link" data-title="Get XCM MultiLocation">Get XCM MultiLocation</a>
+                    <a href="#xcm-multilocation" class="toc-h2 toc-link" data-title="XCM MultiLocation">XCM MultiLocation</a>
                   </li>
                   <li>
                     <a href="#xcm-websocket" class="toc-h2 toc-link" data-title="XCM Websocket">XCM Websocket</a>
@@ -2608,7 +2608,7 @@ curl <span class="s2">"https://api.polkaholic.io/account/xcmtransfers/13eEyAEkya
   </span><span class="nl">"nextPage"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h1 id='xcm'>XCM</h1><h2 id='get-xcm-transfers'>Get XCM Transfers</h2><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># Get one xcmTranfer involving kbtc on moonriver network between unix_timestamp (1667928000,1668028000)</span>
+</span></code></pre></div><h1 id='xcm'>XCM</h1><h2 id='xcm-transfers'>XCM Transfers</h2><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># Get one xcmTranfer involving kbtc on moonriver network between unix_timestamp (1667928000,1668028000)</span>
 curl <span class="s2">"https://api.polkaholic.io/xcmtransfers?xcmType=xcmtransfer&amp;chainIdentifier=moonriver&amp;symbol=kbtc&amp;startTS=1667928000&amp;endTS=1668028000&amp;limit=1"</span> <span class="se">\</span>
   <span class="nt">-X</span> GET <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Authorization: YOUR-API-KEY"</span>
@@ -2936,7 +2936,7 @@ curl <span class="s2">"https://api.polkaholic.io/xcmtransfers?xcmType=xcmtransfe
 </tr>
 <tr>
 <td>executionStatus</td>
-<td>The current known xcm execution status on destination chain, such as {<code>pending</code>,<code>sucess</code>, <code>failed</code>}</td>
+<td>The current known xcm execution status on destination chain, such as {<code>pending</code>,<code>success</code>, <code>failed</code>}</td>
 </tr>
 <tr>
 <td>error</td>
@@ -3111,7 +3111,7 @@ curl <span class="s2">"https://api.polkaholic.io/xcmtransfers?xcmType=xcmtransfe
 <td>-</td>
 </tr>
 </tbody></table>
-<h2 id='get-xcm-messages'>Get XCM Messages</h2><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># get xcmtransfers from  moonbeam/moonrivers</span>
+<h2 id='xcm-messages'>XCM Messages</h2><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># get xcmtransfers from  moonbeam/moonrivers</span>
 curl <span class="s2">"https://api.polkaholic.io/xcmmessages?chainfilters=moonbeam,moonriver&amp;limit=5"</span> <span class="se">\</span>
   <span class="nt">-X</span> GET <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Authorization: YOUR-API-KEY"</span>
@@ -3220,7 +3220,7 @@ curl <span class="s2">"https://api.polkaholic.io/xcmmessages?chainfilters=moonbe
 <aside class="information">
 This API is in alpha development!
 </aside>
-<h2 id='get-xcm-multilocation'>Get XCM MultiLocation</h2><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># get all known xcmV`Multilocation from kusama + it's parachains</span>
+<h2 id='xcm-multilocation'>XCM MultiLocation</h2><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># get all known xcmV`Multilocation from kusama + it's parachains</span>
 curl <span class="s2">"https://api.polkaholic.io/xcm/multilocation/kusama"</span> <span class="se">\</span>
   <span class="nt">-X</span> GET <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Authorization: YOUR-API-KEY"</span>
