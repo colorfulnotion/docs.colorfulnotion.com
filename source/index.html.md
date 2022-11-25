@@ -1993,7 +1993,7 @@ xcContractAddress*|A precompiled XC20 contract address specifying the xcAsset at
 
 Subscribe to Polkaholic XCM Websocket feed to receive xcmInfo in realtime. A [demo](https://polkaholic.io/xcminfows) can be found on our website.
 
-# Search (extrinsics, evmtxs, events...)
+# Search
 
 Search API returns a list of {extrinsics, evmtxs, events} given certain user-specified criteria. As of 2022 11-24, decorations(`'usd','address', 'related', 'data'`) are no longer supported.
 
