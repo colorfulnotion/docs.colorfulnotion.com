@@ -1545,7 +1545,7 @@ curl "https://api.polkaholic.io/account/balances/dwehUeMiyxAcSWUBsJiJ7WKmHZLueCx
 
 # XCM
 
-## Get XCM Transfers
+## XCM Transfers
 
 ```shell
 # Get one xcmTranfer involving kbtc on moonriver network between unix_timestamp (1667928000,1668028000)
@@ -1558,56 +1558,57 @@ curl "https://api.polkaholic.io/xcmtransfers?xcmType=xcmtransfer&chainIdentifier
 
 ```json
 [
-    {
-        "xcmInfo": {
-            "symbol": "KBTC",
-            "priceUSD": 17356.63464598179,
-            "relayChain": {
-                "relayChain": "kusama",
-                "relayAt": 15257458
-            },
-            "origination": {
-                "chainName": "Moonriver",
-                "id": "moonriver",
-                "chainID": 22023,
-                "paraID": 2023,
-                "sender": "0x27e6a60146c5341d2e5577b219a2961f2d180579",
-                "amountSent": 0.00182979,
-                "amountSentUSD": 31.75899650887102,
-                "txFee": 0.00011918,
-                "txFeeUSD": 0.0009736966584964279,
-                "txFeeSymbol": "MOVR",
-                "blockNumber": 2955080,
-                "section": "ethereum",
-                "method": "transact",
-                "extrinsicID": "2955080-11",
-                "extrinsicHash": "0x7add5e6a7027369a2e69d3ceb95f55b870c719fcd9cfb2948608c3fbc499b908",
-                "transactionHash": "0x1078fcc8c8aed1906a8f28a42f86faeca4380fc5584910b79c69eb3c2c92c585",
-                "msgHash": "0x131e18138789b700f9ca2fb149bf1a09890c3869b02df00d9c5c634b601f3509",
-                "sentAt": 15257458,
-                "ts": 1668027996,
-                "isMsgSent": true
-            },
-            "destination": {
-                "chainName": "Kintsugi",
-                "id": "kintsugi",
-                "chainID": 22092,
-                "paraID": 2092,
-                "beneficiary": "a3dhTbe9t95rXK4vt87uqyTrrhtKcGxtmY8uGcGX27TTEnCuR",
-                "amountReceived": 0.00182856,
-                "amountReceivedUSD": 31.73764784825646,
-                "teleportFee": 0.0000012300000000000678,
-                "teleportFeeUSD": 0.02136302101430279,
-                "teleportFeeChainSymbol": "KBTC",
-                "blockNumber": 1843330,
-                "extrinsicID": "1843330-1",
-                "eventID": "22092-1843330-1-8",
-                "ts": 1668028020,
-                "status": true
-            },
-            "version": "V2"
-        }
+  {
+    "xcmInfo": {
+      "symbol": "KBTC",
+      "priceUSD": 18308.31197363603,
+      "relayChain": {
+        "relayChain": "kusama",
+        "relayAt": 15257458
+      },
+      "origination": {
+        "chainName": "Moonriver",
+        "id": "moonriver",
+        "chainID": 22023,
+        "paraID": 2023,
+        "sender": "0x27e6a60146c5341d2e5577b219a2961f2d180579",
+        "amountSent": 0.00182979,
+        "amountSentUSD": 33.50036616623947,
+        "txFee": 0.00011918,
+        "txFeeUSD": 0.0009637323303706722,
+        "txFeeSymbol": "MOVR",
+        "blockNumber": 2955080,
+        "section": "ethereum",
+        "method": "transact",
+        "extrinsicID": "2955080-11",
+        "extrinsicHash": "0x7add5e6a7027369a2e69d3ceb95f55b870c719fcd9cfb2948608c3fbc499b908",
+        "transactionHash": "0x1078fcc8c8aed1906a8f28a42f86faeca4380fc5584910b79c69eb3c2c92c585",
+        "msgHash": "0x131e18138789b700f9ca2fb149bf1a09890c3869b02df00d9c5c634b601f3509",
+        "sentAt": 15257458,
+        "ts": 1668027996,
+        "finalized": true
+      },
+      "destination": {
+        "chainName": "Kintsugi",
+        "id": "kintsugi",
+        "chainID": 22092,
+        "paraID": 2092,
+        "beneficiary": "a3dhTbe9t95rXK4vt87uqyTrrhtKcGxtmY8uGcGX27TTEnCuR",
+        "amountReceived": 0.00182856,
+        "amountReceivedUSD": 33.4778469425119,
+        "teleportFee": 1.2300000000000678e-06,
+        "teleportFeeUSD": 0.02253437151883276,
+        "teleportFeeChainSymbol": "KBTC",
+        "blockNumber": 1843330,
+        "extrinsicID": "1843330-1",
+        "eventID": "22092-1843330-1-8",
+        "ts": 1668028020,
+        "finalized": true,
+        "executionStatus": "success"
+      },
+      "version": "V4"
     }
+  }
 ]
 ```
 
@@ -1627,7 +1628,7 @@ xcmType   | Filter the result by transact Type.(`xcmtransfer`, `xcmtransact`, or
 chainfilters   | Filter the result by comma-separated chainIdentifiers. i.e. `chainfilters=polkadot,moonbeam,2000`  | Yes | 'all'
 symbol   | Filter the result by xcAssets (comma-separated). i.e. `symbol=ibtc,kint`  | Yes | -  
 startTS  | Filter the result by startTS (unix timestamp). If startTS is set, endTS must also be set | Yes | -
-EndTS   | Filter the result by endTS (unix timestamp). If endTS is set, startTS must also be set | Yes | -
+endTS   | Filter the result by endTS (unix timestamp). If endTS is set, startTS must also be set | Yes | -
 limit   | Return the last n recent xcmtransfers i.e. | Yes | 1000
 
 ### Response Description
@@ -1666,12 +1667,12 @@ section | The related  module_call detected by our indexer (i.e. `xcmPallet`, `x
 method | The related module_func detected by our indexer (i.e. `limitedReserveTransferAssets`, `transfer`,  `TransferredMultiAssets`) etc  |
 extrinsicID  | Unique identifier for an extrinsic
 extrinsicHash |  The Blake256(rawExtrinsic) identifying an extrinsic
-transactionHash | If the origination chain is an EVM chain, omitted otherwise
+transactionHash | The corresponding evm txhash if the origination chain is an EVM chain, omitted otherwise
 msgHash | The Blake256(msgHex) identifying an extrinsic - potentially NOT unique
 sentAt | A “synthetic” relaychain bn where the xcm is being sent to relaychain
 ts | The timestamp where the xcm is initiated
-isMsgSent | In case of errors on origination chain, the xcm transfer is *TERMINATED* at origination. The xcmMsg is *NOT* relayed to nor received by destination. Not assets are actually being teleported in this case while the txFee has been deducted from sender's balance
-
+isMsgSent | In case of errors on origination chain, the xcm transfer is *TERMINATED* at origination. The xcmMsg is *NOT* relayed to nor received by destination. No assets are actually being teleported in this case while the txFee has been deducted from sender's balance
+finalized | Whether the xcm is finalized on origination chain
 
 ###  Destination Struct
 
@@ -1683,7 +1684,7 @@ chainID | The identifier of destination chain
 paraID | The paraID of  destination chain (relayChain has paraID of 0)
 beneficiary | The beneficiary - SS58 or Account20 format
 amountReceived | The amount of xc asset received at destination chain
-amountReceived | The estimated value of xc asset received at destination chain
+amountReceivedUSD | The estimated value of xc asset received at destination chain
 teleportFee | *XCM fee – computed as amountSent -  amountReceived
 teleportFeeUSD | XCM fee (evaluated at the time of txn)
 teleportFeeSymbol | The fee-paying symbol for xcmFee
@@ -1691,7 +1692,8 @@ extrinsicID | The extrinsicID on destination chain where matching event is found
 eventID | The matching eventID at destination chain, linked to either a success or fail event.
 blockNumber | The blockNumber where the xcm is processed at destination chain
 ts | The timestamp where the xcm is processed at destination chain
-status | Whether the xcm is successfully executed at destination chain
+finalized | Whether the xcm is finalized on destination chain
+executionStatus | The current known xcm execution status on destination chain, such as {`pending`,`success`, `failed`}
 error | In case of xcm error, xc assets are not received by the Beneficiary. An errorInfo with {code, errorType, errorDesc} is provided.
 
 ###  RelayChain Struct
@@ -1739,7 +1741,7 @@ NA|weightNotComputable.| -
 NA|assetsTrapped.| Teleported/fee-paying asset is put into assetTrap when there's an error or surplus remaining after the execution
 NA|barrier | -  
 
-## Get XCM Messages
+## XCM Messages
 
 ```shell
 # get xcmtransfers from  moonbeam/moonrivers
@@ -1822,7 +1824,7 @@ destAddress    | Recipient's pubkey|
 This API is in alpha development!
 </aside>
 
-## Get XCM MultiLocation
+## XCM MultiLocation
 
 ```shell
 # get all known xcmV`Multilocation from kusama + it's parachains
@@ -1989,13 +1991,11 @@ xcContractAddress*|A precompiled XC20 contract address specifying the xcAsset at
 
 ## XCM Websocket
 
-Subscribe to Websocket to receive xcmInfo Struct in realtime
+Subscribe to Polkaholic XCM Websocket feed to receive xcmInfo in realtime. A [demo](https://polkaholic.io/xcminfows) can be found on our website.
 
-[TDB]
+# Search
 
-# Search (tx, events, xcms...)
-
-Search API returns a list of {extrinsics, evmtxs, events, xcmtransfers, xcmmessages} given certain user-specified criteria.
+Search API returns a list of {extrinsics, evmtxs, events} given certain user-specified criteria. As of 2022 11-24, decorations(`'usd','address', 'related', 'data'`) are no longer supported.
 
 ## Search Extrinsics
 
@@ -2050,13 +2050,6 @@ dateStart | `"YYYY-MM-DD"` | The Starting Date(inclusive). ex: "2022-05-01" | Op
 dateEnd | `"YYYY-MM-DD"` |  The Ending Date(inclusive). ex: "2022-05-31" | Optional
 blockNumberStart | Int | The Starting BlockNumber(inclusive) | Optional
 blockNumberEnd | Int| The Ending BlockNumber(inclusive) | Optional
-
-### URL Parameters
-
-Parameter | Description | Optional? | Default |
---------- | ----------- | --------- | ------- |
-decorate  | Whether API should return decorated fields | Yes | true
-extra     | Decorate the response with fields like ['usd','address', 'related', 'data'] | Yes | usd,address, data
 
 ### Response Description
 
@@ -2130,13 +2123,6 @@ blockNumberStart | Int | The Starting BlockNumber(inclusive) | Optional
 blockNumberEnd | Int| The Ending BlockNumber(inclusive) | Optional
 result | Int | 0: Failure, 1: Success. If unspecified: including both | Optional
 
-### URL Parameters
-
-Parameter | Description | Optional? | Default |
---------- | ----------- | --------- | ------- |
-decorate  | Whether API should return decorated fields | Yes | true
-extra     | Decorate the response with fields like ['usd','address', 'related', 'data'] | Yes | usd,address, data
-
 ### Response Description
 
 Attribute | Description
@@ -2196,14 +2182,6 @@ blockNumberStart | Int | The Starting BlockNumber(inclusive) | Optional
 blockNumberEnd | Int| The Ending BlockNumber(inclusive) | Optional
 result | Int | 0: Failure, 1: Success. If unspecified: including both | Optional
 
-
-### URL Parameters
-
-Parameter | Description | Optional? | Default |
---------- | ----------- | --------- | ------- |
-decorate  | Whether API should return decorated fields | Yes | true
-extra     | Decorate the response with fields like ['usd','address', 'related', 'data'] | Yes | usd,address, data
-
 ### Response Description
 
 Attribute | Description
@@ -2214,191 +2192,6 @@ section | The "section" part of the event. Ex: "balances"  |
 method  | The "method" part of the event. Ex: "Transfer"  |
 
 
-## Search XCM Transfers
-
-This endpoint returns a list of xcm transfers given certain user-specified criteria.
-
-
-```shell
-curl https://api.polkaholic.io/search/xcmtransfers \
--X POST \
--H "Content-Type: application/json" \
--d '{
-    "chainID": "polkadot",
-    "chainIDDest": "acala",
-    "complete": 0,
-    "toAddress":"0x9e992a944acb1efa30bcd3275aedf7218bac369ca62dc0269ccec2f36db65c6f"
-}'
-```
-
-> Example Response (array of xcm tranfers)
-
-```json
-[
-  {
-    "extrinsicHash": "0x625e023ecb994fdf71c1b86e933cd747e529706e9e826a7de801d708c2a82f93",
-    "extrinsicID": "10530678-3",
-    "chainID": 0,
-    "chainIDDest": 2000,
-    "blockNumber": "10530678",
-    "fromAddress": "0x9e992a944acb1efa30bcd3275aedf7218bac369ca62dc0269ccec2f36db65c6f",
-    "destAddress": "0x9e992a944acb1efa30bcd3275aedf7218bac369ca62dc0269ccec2f36db65c6f",
-    "sectionMethod": "xcmPallet:reserveTransferAssets",
-    "asset": "{\"Token\":\"DOT\"}",
-    "rawAsset": "{\"Token\":\"DOT\"}",
-    "nativeAssetChain": null,
-    "blockNumberDest": 1125835,
-    "sourceTS": 1653927474,
-    "destTS": 1653927474,
-    "amountSent": 2.7,
-    "amountReceived": 2.6997573809,
-    "status": "NonFinalizedSource",
-    "relayChain": "polkadot",
-    "incomplete": 0,
-    "amountSentUSD": 25.9353,
-    "amountReceivedUSD": 25.933,
-    "chainName": "Polkadot",
-    "id": "polkadot",
-    "idDest": "acala",
-    "chainDestName": "Acala"
-  }
-]
-```
-
-### HTTP Request
-
-`POST https://api.polkaholic.io/search/xcmtransfers`
-
-### Input Parameters
-
-Attribute | Type | Description | Optional?
---------- | -----|----- | :---------:
-chainID | String or Int | The identifier of the chain to retrieve data about  | Optional
-chainIDDest | String or Int | The identifier of the chain to retrieve data about  | Optional  
-fromAddress | String | The XCM sender pubkey | Optional
-toAddress | String | The XCM beneficiary pubkey | Optional  
-dateStart | `"YYYY-MM-DD"` | The Starting Date(inclusive). ex: "2022-05-01" | Optional
-dateEnd | `"YYYY-MM-DD"` |  The Ending Date(inclusive). ex: "2022-05-31" | Optional
-blockNumberStart | Int | The Starting BlockNumber at sending chain (inclusive) | Optional
-blockNumberEnd | Int| The Ending BlockNumber at sending chain (inclusive) | Optional
-complete | Int | 1: Complete(xcm successfully initiated), 0: Incomplete. If Unspecified: Including both | Optional
-
-### URL Parameters
-
-Parameter | Description | Optional? | Default |
---------- | ----------- | --------- | ------- |
-decorate  | Whether API should return decorated fields | Yes | true
-extra     | Decorate the response with fields like ['usd','address', 'related', 'data'] | Yes | usd,address, data
-
-### Response Description
-Return an list of (xcmtransfer)[#xcmtransfers]
-
-## Search XCM Messages
-
-This endpoint returns a list of channelMsg {dmp, ump, xcmp} given certain user-specified criteria.
-
-
-```shell
-curl https://api.polkaholic.io/search/xcmmessages \
--X POST \
--H "Content-Type: application/json" \
--d '{
-    "startDate": "2022-06-27",
-    "endDate": "2022-06-30",
-    "relayChain":"polkadot"
-}'
-```
-
-> Example Response (array of xcm message)
-
-```json
-[
-  {
-    "xcmID": "1334065-1-dmp-2000-0-0",
-    "chainID": 0,
-    "id": "polkadot",
-    "chainName": "Polkadot",
-    "chainIDDest": 2000,
-    "idDest": "acala",
-    "chainDestName": "Acala",    
-    "msgType": "dmp",
-    "msgHash": "a6fd9ca31c18b44d64cdfed29c90eebeb89548f294cf2389ca76e56b79f4f367",
-    "msgHex": "0x02100104000100000700e87648170a13000100000700e8764817010300286bee0d010004000101006642ee28fc1b7d1a01ea2bc956bfe5fde1c7121cae33afe51a83cc683785a81f",
-    "msgStr": "{\"v2\":[{\"reserveAssetDeposited\":[{\"id\":{\"concrete\":{\"parents\":1,\"interior\":{\"here\":null}}},\"fun\":{\"fungible\":100000000000}}]},{\"clearOrigin\":null},{\"buyExecution\":{\"fees\":{\"id\":{\"concrete\":{\"parents\":1,\"interior\":{\"here\":null}}},\"fun\":{\"fungible\":100000000000}},\"weightLimit\":{\"limited\":4000000000}}},{\"depositAsset\":{\"assets\":{\"wild\":{\"all\":null}},\"maxAssets\":1,\"beneficiary\":{\"parents\":0,\"interior\":{\"x1\":{\"accountId32\":{\"network\":{\"any\":null},\"id\":\"0x6642ee28fc1b7d1a01ea2bc956bfe5fde1c7121cae33afe51a83cc683785a81f\"}}}}}}]}",
-    "ts": 1656594360,
-    "blockNumber": 1334065,
-    "relayChain": "Polkadot",
-    "sentAt": 10962759
-  },
-  {
-    "xcmID": "10962787-1-ump-0-2006-0",
-    "chainID": 2006,
-    "id": "astar",
-    "chainName": "Astar",
-    "chainIDDest": 0,
-    "idDest": "polkadot",
-    "chainDestName": "Polkadot",    
-    "msgType": "ump",
-    "msgHash": "f85d75771ed2b88c5ecfe9d9d9bb3255a650eb33512d1e6b8bf49c2ae8a1e700",
-    "msgHex": "0x02100004000000000700aea68f020a13000000000700aea68f02010300286bee0d010004000101006877a0db00acc7da104aa11b05cf091254843468189c8b13808567eead2c8e57",
-    "msgStr": "{\"v2\":[{\"withdrawAsset\":[{\"id\":{\"concrete\":{\"parents\":0,\"interior\":{\"here\":null}}},\"fun\":{\"fungible\":11000000000}}]},{\"clearOrigin\":null},{\"buyExecution\":{\"fees\":{\"id\":{\"concrete\":{\"parents\":0,\"interior\":{\"here\":null}}},\"fun\":{\"fungible\":11000000000}},\"weightLimit\":{\"limited\":4000000000}}},{\"depositAsset\":{\"assets\":{\"wild\":{\"all\":null}},\"maxAssets\":1,\"beneficiary\":{\"parents\":0,\"interior\":{\"x1\":{\"accountId32\":{\"network\":{\"any\":null},\"id\":\"0x6877a0db00acc7da104aa11b05cf091254843468189c8b13808567eead2c8e57\"}}}}}}]}",
-    "ts": 1656594528,
-    "blockNumber": 10962787,
-    "relayChain": "Polkadot",
-    "sentAt": 10962786
-  },
-  {
-    "xcmID": "1334166-1-xcmp-2000-2004-0",
-    "chainID": 2004,
-    "id": "moonbeam",
-    "chainName": "Moonbeam",
-    "chainIDDest": 2000,
-    "idDest": "acala",
-    "chainDestName": "Acala",
-    "msgType": "xcmp",
-    "msgHash": "e4da9547a5c2977713b7c9277b26a77e8ea65e2c07ea177b125c359e72728f00",
-    "msgHex": "0x0210000400000106080000000b08b6957fbd430a1300000106080000000b08b6957fbd43010300286bee0d01000400010100d0c696806e3f6020040241eefddbbbb6ef5bf870f4c77feaac4775d26e7a662c",
-    "msgStr": "{\"v2\":[{\"withdrawAsset\":[{\"id\":{\"concrete\":{\"parents\":0,\"interior\":{\"x1\":{\"generalKey\":\"0x0000\"}}}},\"fun\":{\"fungible\":74481168397832}}]},{\"clearOrigin\":null},{\"buyExecution\":{\"fees\":{\"id\":{\"concrete\":{\"parents\":0,\"interior\":{\"x1\":{\"generalKey\":\"0x0000\"}}}},\"fun\":{\"fungible\":74481168397832}},\"weightLimit\":{\"limited\":4000000000}}},{\"depositAsset\":{\"assets\":{\"wild\":{\"all\":null}},\"maxAssets\":1,\"beneficiary\":{\"parents\":0,\"interior\":{\"x1\":{\"accountId32\":{\"network\":{\"any\":null},\"id\":\"0xd0c696806e3f6020040241eefddbbbb6ef5bf870f4c77feaac4775d26e7a662c\"}}}}}}]}",
-    "ts": 1656595609,
-    "blockNumber": 1334166,
-    "relayChain": "Polkadot",
-    "sentAt": 10962961,
-  },
-  ...
-]
-```
-
-### HTTP Request
-
-`POST https://api.polkaholic.io/search/xcmmessages`
-
-### Input Parameters
-
-Attribute | Type | Description | Optional?
---------- | -----|----- | :---------:
-chainID | String or Int | The identifier of the source chain to retrieve data about  | Optional
-chainIDDest | String or Int | The identifier of the dest chain to retrieve data about  | Optional  
-dateStart | `"YYYY-MM-DD"` | The Starting Date(inclusive). ex: "2022-05-01" | Optional
-dateEnd | `"YYYY-MM-DD"` |  The Ending Date(inclusive). ex: "2022-05-31" | Optional
-msgType | String | Filter based on channel msg type ['ump','dmp','xcmp'] | Optional
-relayChain | String| relayChain of the msg. ex: 'polkadot' or 'kusama' | Optional
-
-### URL Parameters
-
-NONE
-
-### Response Description
-Return an list of xcmmessage
-
-Attribute    | Description
--------------|------------
-xcmID        | The xcm identifiers in the form of: <br /> `blockNumber-txIdx-mpType-sourceChainID-destChainID-msgIdx` |
-msgType      | _ump_  - upward msg send from parachain to relaychain.<br />_dmp_  - downard msg send from relaychain to parachain. <br />_xcmp_ - horizontal msg (hrmp) send from parachain to parachain
-msgHex       | The hexEncoded msg. _Note:_ First byte is effectively removed from the raw xcmp msg |
-msgHash      | The blake256(msgHex)   |
-msgStr       | The undecorated Channel Msg   |
-blockNumber  | The BN where the msg is received by dest chain  |
-sentAt       | The hrmpWatermark BN  |
 
 # Hash
 
