@@ -404,7 +404,7 @@
               </ul>
           </li>
           <li>
-            <a href="#search-tx-events-xcms" class="toc-h1 toc-link" data-title="Search (tx, events, xcms...)">Search (tx, events, xcms...)</a>
+            <a href="#search" class="toc-h1 toc-link" data-title="Search">Search</a>
               <ul class="toc-list-h2">
                   <li>
                     <a href="#search-extrinsics" class="toc-h2 toc-link" data-title="Search Extrinsics">Search Extrinsics</a>
@@ -414,12 +414,6 @@
                   </li>
                   <li>
                     <a href="#search-events" class="toc-h2 toc-link" data-title="Search Events">Search Events</a>
-                  </li>
-                  <li>
-                    <a href="#search-xcm-transfers" class="toc-h2 toc-link" data-title="Search XCM Transfers">Search XCM Transfers</a>
-                  </li>
-                  <li>
-                    <a href="#search-xcm-messages" class="toc-h2 toc-link" data-title="Search XCM Messages">Search XCM Messages</a>
                   </li>
               </ul>
           </li>
@@ -2623,56 +2617,57 @@ curl <span class="s2">"https://api.polkaholic.io/xcmtransfers?xcmType=xcmtransfe
 <p>Example Response</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"xcmInfo"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"KBTC"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"priceUSD"</span><span class="p">:</span><span class="w"> </span><span class="mf">17356.63464598179</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"relayChain"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="nl">"relayChain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"kusama"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"relayAt"</span><span class="p">:</span><span class="w"> </span><span class="mi">15257458</span><span class="w">
-            </span><span class="p">},</span><span class="w">
-            </span><span class="nl">"origination"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="nl">"chainName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Moonriver"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"moonriver"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"chainID"</span><span class="p">:</span><span class="w"> </span><span class="mi">22023</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"paraID"</span><span class="p">:</span><span class="w"> </span><span class="mi">2023</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"sender"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x27e6a60146c5341d2e5577b219a2961f2d180579"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"amountSent"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.00182979</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"amountSentUSD"</span><span class="p">:</span><span class="w"> </span><span class="mf">31.75899650887102</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"txFee"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.00011918</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"txFeeUSD"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0009736966584964279</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"txFeeSymbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MOVR"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"blockNumber"</span><span class="p">:</span><span class="w"> </span><span class="mi">2955080</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"section"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ethereum"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"transact"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"extrinsicID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2955080-11"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"extrinsicHash"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x7add5e6a7027369a2e69d3ceb95f55b870c719fcd9cfb2948608c3fbc499b908"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"transactionHash"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x1078fcc8c8aed1906a8f28a42f86faeca4380fc5584910b79c69eb3c2c92c585"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"msgHash"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x131e18138789b700f9ca2fb149bf1a09890c3869b02df00d9c5c634b601f3509"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"sentAt"</span><span class="p">:</span><span class="w"> </span><span class="mi">15257458</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"ts"</span><span class="p">:</span><span class="w"> </span><span class="mi">1668027996</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"isMsgSent"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
-            </span><span class="p">},</span><span class="w">
-            </span><span class="nl">"destination"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="nl">"chainName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kintsugi"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"kintsugi"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"chainID"</span><span class="p">:</span><span class="w"> </span><span class="mi">22092</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"paraID"</span><span class="p">:</span><span class="w"> </span><span class="mi">2092</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"beneficiary"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a3dhTbe9t95rXK4vt87uqyTrrhtKcGxtmY8uGcGX27TTEnCuR"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"amountReceived"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.00182856</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"amountReceivedUSD"</span><span class="p">:</span><span class="w"> </span><span class="mf">31.73764784825646</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"teleportFee"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0000012300000000000678</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"teleportFeeUSD"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.02136302101430279</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"teleportFeeChainSymbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"KBTC"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"blockNumber"</span><span class="p">:</span><span class="w"> </span><span class="mi">1843330</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"extrinsicID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1843330-1"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"eventID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"22092-1843330-1-8"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"ts"</span><span class="p">:</span><span class="w"> </span><span class="mi">1668028020</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
-            </span><span class="p">},</span><span class="w">
-            </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"V2"</span><span class="w">
-        </span><span class="p">}</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"xcmInfo"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"KBTC"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"priceUSD"</span><span class="p">:</span><span class="w"> </span><span class="mf">18308.31197363603</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"relayChain"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"relayChain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"kusama"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"relayAt"</span><span class="p">:</span><span class="w"> </span><span class="mi">15257458</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"origination"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"chainName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Moonriver"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"moonriver"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"chainID"</span><span class="p">:</span><span class="w"> </span><span class="mi">22023</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"paraID"</span><span class="p">:</span><span class="w"> </span><span class="mi">2023</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"sender"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x27e6a60146c5341d2e5577b219a2961f2d180579"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"amountSent"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.00182979</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"amountSentUSD"</span><span class="p">:</span><span class="w"> </span><span class="mf">33.50036616623947</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"txFee"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.00011918</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"txFeeUSD"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0009637323303706722</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"txFeeSymbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MOVR"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"blockNumber"</span><span class="p">:</span><span class="w"> </span><span class="mi">2955080</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"section"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ethereum"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"transact"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"extrinsicID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2955080-11"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"extrinsicHash"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x7add5e6a7027369a2e69d3ceb95f55b870c719fcd9cfb2948608c3fbc499b908"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"transactionHash"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x1078fcc8c8aed1906a8f28a42f86faeca4380fc5584910b79c69eb3c2c92c585"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"msgHash"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x131e18138789b700f9ca2fb149bf1a09890c3869b02df00d9c5c634b601f3509"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"sentAt"</span><span class="p">:</span><span class="w"> </span><span class="mi">15257458</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"ts"</span><span class="p">:</span><span class="w"> </span><span class="mi">1668027996</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"finalized"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"destination"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"chainName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kintsugi"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"kintsugi"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"chainID"</span><span class="p">:</span><span class="w"> </span><span class="mi">22092</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"paraID"</span><span class="p">:</span><span class="w"> </span><span class="mi">2092</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"beneficiary"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a3dhTbe9t95rXK4vt87uqyTrrhtKcGxtmY8uGcGX27TTEnCuR"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"amountReceived"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.00182856</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"amountReceivedUSD"</span><span class="p">:</span><span class="w"> </span><span class="mf">33.4778469425119</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"teleportFee"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.2300000000000678e-06</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"teleportFeeUSD"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.02253437151883276</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"teleportFeeChainSymbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"KBTC"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"blockNumber"</span><span class="p">:</span><span class="w"> </span><span class="mi">1843330</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"extrinsicID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1843330-1"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"eventID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"22092-1843330-1-8"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"ts"</span><span class="p">:</span><span class="w"> </span><span class="mi">1668028020</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"finalized"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"executionStatus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"V4"</span><span class="w">
     </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre></div>
 <p>Return the latest 1000 xcm tranfers from all supported networks.</p>
@@ -2724,7 +2719,7 @@ curl <span class="s2">"https://api.polkaholic.io/xcmtransfers?xcmType=xcmtransfe
 <td>-</td>
 </tr>
 <tr>
-<td>EndTS</td>
+<td>endTS</td>
 <td>Filter the result by endTS (unix timestamp). If endTS is set, startTS must also be set</td>
 <td>Yes</td>
 <td>-</td>
@@ -2849,7 +2844,7 @@ curl <span class="s2">"https://api.polkaholic.io/xcmtransfers?xcmType=xcmtransfe
 </tr>
 <tr>
 <td>transactionHash</td>
-<td>If the origination chain is an EVM chain, omitted otherwise</td>
+<td>The corresponding evm txhash if the origination chain is an EVM chain, omitted otherwise</td>
 </tr>
 <tr>
 <td>msgHash</td>
@@ -2866,6 +2861,10 @@ curl <span class="s2">"https://api.polkaholic.io/xcmtransfers?xcmType=xcmtransfe
 <tr>
 <td>isMsgSent</td>
 <td>In case of errors on origination chain, the xcm transfer is <em>TERMINATED</em> at origination. The xcmMsg is <em>NOT</em> relayed to nor received by destination. Not assets are actually being teleported in this case while the txFee has been deducted from sender&#39;s balance</td>
+</tr>
+<tr>
+<td>finalized</td>
+<td>Whether the xcm is finalized on origination chain</td>
 </tr>
 </tbody></table>
 <h3 id='destination-struct'>Destination Struct</h3>
@@ -2900,7 +2899,7 @@ curl <span class="s2">"https://api.polkaholic.io/xcmtransfers?xcmType=xcmtransfe
 <td>The amount of xc asset received at destination chain</td>
 </tr>
 <tr>
-<td>amountReceived</td>
+<td>amountReceivedUSD</td>
 <td>The estimated value of xc asset received at destination chain</td>
 </tr>
 <tr>
@@ -2932,8 +2931,12 @@ curl <span class="s2">"https://api.polkaholic.io/xcmtransfers?xcmType=xcmtransfe
 <td>The timestamp where the xcm is processed at destination chain</td>
 </tr>
 <tr>
-<td>status</td>
-<td>Whether the xcm is successfully executed at destination chain</td>
+<td>finalized</td>
+<td>Whether the xcm is finalized on destination chain</td>
+</tr>
+<tr>
+<td>executionStatus</td>
+<td>The current known xcm execution status on destination chain, such as {<code>pending</code>,<code>sucess</code>, <code>failed</code>}</td>
 </tr>
 <tr>
 <td>error</td>
@@ -3418,11 +3421,9 @@ curl <span class="s2">"https://api.polkaholic.io/xcm/multilocation/kusama"</span
 
 <p>*This is an EVM specific concept that’s currently used by both Moonbeam and Astar</p>
 <h2 id='xcm-websocket'>XCM Websocket</h2>
-<p>Subscribe to Websocket to receive xcmInfo Struct in realtime</p>
-
-<p>[TDB]</p>
-<h1 id='search-tx-events-xcms'>Search (tx, events, xcms...)</h1>
-<p>Search API returns a list of {extrinsics, evmtxs, events, xcmtransfers, xcmmessages} given certain user-specified criteria.</p>
+<p>Subscribe to Polkaholic XCM Websocket feed to receive xcmInfo in realtime. A <a href="https://polkaholic.io/xcminfows">demo</a> can be found on our website.</p>
+<h1 id='search'>Search</h1>
+<p>Search API returns a list of {extrinsics, evmtxs, events} given certain user-specified criteria. As of 2022 11-24, decorations(<code>&#39;usd&#39;,&#39;address&#39;, &#39;related&#39;, &#39;data&#39;</code>) are no longer supported.</p>
 <h2 id='search-extrinsics'>Search Extrinsics</h2>
 <p>This endpoint returns a list of extrinsic meta given certain user-specified criteria.</p>
 <div class="highlight"><pre class="highlight shell tab-shell"><code>curl https://api.polkaholic.io/search/extrinsics <span class="se">\</span>
@@ -3512,28 +3513,6 @@ curl <span class="s2">"https://api.polkaholic.io/xcm/multilocation/kusama"</span
 <td>Int</td>
 <td>The Ending BlockNumber(inclusive)</td>
 <td style="text-align: center">Optional</td>
-</tr>
-</tbody></table>
-<h3 id='url-parameters-8'>URL Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-<th>Optional?</th>
-<th>Default</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>decorate</td>
-<td>Whether API should return decorated fields</td>
-<td>Yes</td>
-<td>true</td>
-</tr>
-<tr>
-<td>extra</td>
-<td>Decorate the response with fields like [&#39;usd&#39;,&#39;address&#39;, &#39;related&#39;, &#39;data&#39;]</td>
-<td>Yes</td>
-<td>usd,address, data</td>
 </tr>
 </tbody></table>
 <h3 id='response-description-7'>Response Description</h3>
@@ -3676,28 +3655,6 @@ curl <span class="s2">"https://api.polkaholic.io/xcm/multilocation/kusama"</span
 <td style="text-align: center">Optional</td>
 </tr>
 </tbody></table>
-<h3 id='url-parameters-9'>URL Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-<th>Optional?</th>
-<th>Default</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>decorate</td>
-<td>Whether API should return decorated fields</td>
-<td>Yes</td>
-<td>true</td>
-</tr>
-<tr>
-<td>extra</td>
-<td>Decorate the response with fields like [&#39;usd&#39;,&#39;address&#39;, &#39;related&#39;, &#39;data&#39;]</td>
-<td>Yes</td>
-<td>usd,address, data</td>
-</tr>
-</tbody></table>
 <h3 id='response-description-8'>Response Description</h3>
 <table><thead>
 <tr>
@@ -3805,28 +3762,6 @@ curl <span class="s2">"https://api.polkaholic.io/xcm/multilocation/kusama"</span
 <td style="text-align: center">Optional</td>
 </tr>
 </tbody></table>
-<h3 id='url-parameters-10'>URL Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-<th>Optional?</th>
-<th>Default</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>decorate</td>
-<td>Whether API should return decorated fields</td>
-<td>Yes</td>
-<td>true</td>
-</tr>
-<tr>
-<td>extra</td>
-<td>Decorate the response with fields like [&#39;usd&#39;,&#39;address&#39;, &#39;related&#39;, &#39;data&#39;]</td>
-<td>Yes</td>
-<td>usd,address, data</td>
-</tr>
-</tbody></table>
 <h3 id='response-description-9'>Response Description</h3>
 <table><thead>
 <tr>
@@ -3849,296 +3784,6 @@ curl <span class="s2">"https://api.polkaholic.io/xcm/multilocation/kusama"</span
 <tr>
 <td>method</td>
 <td>The &quot;method&quot; part of the event. Ex: &quot;Transfer&quot;</td>
-</tr>
-</tbody></table>
-<h2 id='search-xcm-transfers'>Search XCM Transfers</h2>
-<p>This endpoint returns a list of xcm transfers given certain user-specified criteria.</p>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>curl https://api.polkaholic.io/search/xcmtransfers <span class="se">\</span>
-<span class="nt">-X</span> POST <span class="se">\</span>
-<span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
-<span class="nt">-d</span> <span class="s1">'{
-    "chainID": "polkadot",
-    "chainIDDest": "acala",
-    "complete": 0,
-    "toAddress":"0x9e992a944acb1efa30bcd3275aedf7218bac369ca62dc0269ccec2f36db65c6f"
-}'</span>
-</code></pre></div>
-<blockquote>
-<p>Example Response (array of xcm tranfers)</p>
-</blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"extrinsicHash"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x625e023ecb994fdf71c1b86e933cd747e529706e9e826a7de801d708c2a82f93"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"extrinsicID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10530678-3"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"chainID"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"chainIDDest"</span><span class="p">:</span><span class="w"> </span><span class="mi">2000</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"blockNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10530678"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"fromAddress"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x9e992a944acb1efa30bcd3275aedf7218bac369ca62dc0269ccec2f36db65c6f"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"destAddress"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x9e992a944acb1efa30bcd3275aedf7218bac369ca62dc0269ccec2f36db65c6f"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"sectionMethod"</span><span class="p">:</span><span class="w"> </span><span class="s2">"xcmPallet:reserveTransferAssets"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"asset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{</span><span class="se">\"</span><span class="s2">Token</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">DOT</span><span class="se">\"</span><span class="s2">}"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"rawAsset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{</span><span class="se">\"</span><span class="s2">Token</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">DOT</span><span class="se">\"</span><span class="s2">}"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"nativeAssetChain"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"blockNumberDest"</span><span class="p">:</span><span class="w"> </span><span class="mi">1125835</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"sourceTS"</span><span class="p">:</span><span class="w"> </span><span class="mi">1653927474</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"destTS"</span><span class="p">:</span><span class="w"> </span><span class="mi">1653927474</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"amountSent"</span><span class="p">:</span><span class="w"> </span><span class="mf">2.7</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"amountReceived"</span><span class="p">:</span><span class="w"> </span><span class="mf">2.6997573809</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NonFinalizedSource"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"relayChain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"polkadot"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"incomplete"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"amountSentUSD"</span><span class="p">:</span><span class="w"> </span><span class="mf">25.9353</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"amountReceivedUSD"</span><span class="p">:</span><span class="w"> </span><span class="mf">25.933</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"chainName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Polkadot"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"polkadot"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"idDest"</span><span class="p">:</span><span class="w"> </span><span class="s2">"acala"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"chainDestName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Acala"</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
-</span></code></pre></div><h3 id='http-request-22'>HTTP Request</h3>
-<p><code>POST https://api.polkaholic.io/search/xcmtransfers</code></p>
-<h3 id='input-parameters-4'>Input Parameters</h3>
-<table><thead>
-<tr>
-<th>Attribute</th>
-<th>Type</th>
-<th>Description</th>
-<th style="text-align: center">Optional?</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>chainID</td>
-<td>String or Int</td>
-<td>The identifier of the chain to retrieve data about</td>
-<td style="text-align: center">Optional</td>
-</tr>
-<tr>
-<td>chainIDDest</td>
-<td>String or Int</td>
-<td>The identifier of the chain to retrieve data about</td>
-<td style="text-align: center">Optional</td>
-</tr>
-<tr>
-<td>fromAddress</td>
-<td>String</td>
-<td>The XCM sender pubkey</td>
-<td style="text-align: center">Optional</td>
-</tr>
-<tr>
-<td>toAddress</td>
-<td>String</td>
-<td>The XCM beneficiary pubkey</td>
-<td style="text-align: center">Optional</td>
-</tr>
-<tr>
-<td>dateStart</td>
-<td><code>&quot;YYYY-MM-DD&quot;</code></td>
-<td>The Starting Date(inclusive). ex: &quot;2022-05-01&quot;</td>
-<td style="text-align: center">Optional</td>
-</tr>
-<tr>
-<td>dateEnd</td>
-<td><code>&quot;YYYY-MM-DD&quot;</code></td>
-<td>The Ending Date(inclusive). ex: &quot;2022-05-31&quot;</td>
-<td style="text-align: center">Optional</td>
-</tr>
-<tr>
-<td>blockNumberStart</td>
-<td>Int</td>
-<td>The Starting BlockNumber at sending chain (inclusive)</td>
-<td style="text-align: center">Optional</td>
-</tr>
-<tr>
-<td>blockNumberEnd</td>
-<td>Int</td>
-<td>The Ending BlockNumber at sending chain (inclusive)</td>
-<td style="text-align: center">Optional</td>
-</tr>
-<tr>
-<td>complete</td>
-<td>Int</td>
-<td>1: Complete(xcm successfully initiated), 0: Incomplete. If Unspecified: Including both</td>
-<td style="text-align: center">Optional</td>
-</tr>
-</tbody></table>
-<h3 id='url-parameters-11'>URL Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-<th>Optional?</th>
-<th>Default</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>decorate</td>
-<td>Whether API should return decorated fields</td>
-<td>Yes</td>
-<td>true</td>
-</tr>
-<tr>
-<td>extra</td>
-<td>Decorate the response with fields like [&#39;usd&#39;,&#39;address&#39;, &#39;related&#39;, &#39;data&#39;]</td>
-<td>Yes</td>
-<td>usd,address, data</td>
-</tr>
-</tbody></table>
-<h3 id='response-description-10'>Response Description</h3>
-<p>Return an list of (xcmtransfer)[#xcmtransfers]</p>
-<h2 id='search-xcm-messages'>Search XCM Messages</h2>
-<p>This endpoint returns a list of channelMsg {dmp, ump, xcmp} given certain user-specified criteria.</p>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>curl https://api.polkaholic.io/search/xcmmessages <span class="se">\</span>
-<span class="nt">-X</span> POST <span class="se">\</span>
-<span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
-<span class="nt">-d</span> <span class="s1">'{
-    "startDate": "2022-06-27",
-    "endDate": "2022-06-30",
-    "relayChain":"polkadot"
-}'</span>
-</code></pre></div>
-<blockquote>
-<p>Example Response (array of xcm message)</p>
-</blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"xcmID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1334065-1-dmp-2000-0-0"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"chainID"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"polkadot"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"chainName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Polkadot"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"chainIDDest"</span><span class="p">:</span><span class="w"> </span><span class="mi">2000</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"idDest"</span><span class="p">:</span><span class="w"> </span><span class="s2">"acala"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"chainDestName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Acala"</span><span class="p">,</span><span class="w">    
-    </span><span class="nl">"msgType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dmp"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"msgHash"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a6fd9ca31c18b44d64cdfed29c90eebeb89548f294cf2389ca76e56b79f4f367"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"msgHex"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x02100104000100000700e87648170a13000100000700e8764817010300286bee0d010004000101006642ee28fc1b7d1a01ea2bc956bfe5fde1c7121cae33afe51a83cc683785a81f"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"msgStr"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{</span><span class="se">\"</span><span class="s2">v2</span><span class="se">\"</span><span class="s2">:[{</span><span class="se">\"</span><span class="s2">reserveAssetDeposited</span><span class="se">\"</span><span class="s2">:[{</span><span class="se">\"</span><span class="s2">id</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">concrete</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">parents</span><span class="se">\"</span><span class="s2">:1,</span><span class="se">\"</span><span class="s2">interior</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">here</span><span class="se">\"</span><span class="s2">:null}}},</span><span class="se">\"</span><span class="s2">fun</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">fungible</span><span class="se">\"</span><span class="s2">:100000000000}}]},{</span><span class="se">\"</span><span class="s2">clearOrigin</span><span class="se">\"</span><span class="s2">:null},{</span><span class="se">\"</span><span class="s2">buyExecution</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">fees</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">id</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">concrete</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">parents</span><span class="se">\"</span><span class="s2">:1,</span><span class="se">\"</span><span class="s2">interior</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">here</span><span class="se">\"</span><span class="s2">:null}}},</span><span class="se">\"</span><span class="s2">fun</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">fungible</span><span class="se">\"</span><span class="s2">:100000000000}},</span><span class="se">\"</span><span class="s2">weightLimit</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">limited</span><span class="se">\"</span><span class="s2">:4000000000}}},{</span><span class="se">\"</span><span class="s2">depositAsset</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">assets</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">wild</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">all</span><span class="se">\"</span><span class="s2">:null}},</span><span class="se">\"</span><span class="s2">maxAssets</span><span class="se">\"</span><span class="s2">:1,</span><span class="se">\"</span><span class="s2">beneficiary</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">parents</span><span class="se">\"</span><span class="s2">:0,</span><span class="se">\"</span><span class="s2">interior</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">x1</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">accountId32</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">network</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">any</span><span class="se">\"</span><span class="s2">:null},</span><span class="se">\"</span><span class="s2">id</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">0x6642ee28fc1b7d1a01ea2bc956bfe5fde1c7121cae33afe51a83cc683785a81f</span><span class="se">\"</span><span class="s2">}}}}}}]}"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"ts"</span><span class="p">:</span><span class="w"> </span><span class="mi">1656594360</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"blockNumber"</span><span class="p">:</span><span class="w"> </span><span class="mi">1334065</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"relayChain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Polkadot"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"sentAt"</span><span class="p">:</span><span class="w"> </span><span class="mi">10962759</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"xcmID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10962787-1-ump-0-2006-0"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"chainID"</span><span class="p">:</span><span class="w"> </span><span class="mi">2006</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"astar"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"chainName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Astar"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"chainIDDest"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"idDest"</span><span class="p">:</span><span class="w"> </span><span class="s2">"polkadot"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"chainDestName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Polkadot"</span><span class="p">,</span><span class="w">    
-    </span><span class="nl">"msgType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ump"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"msgHash"</span><span class="p">:</span><span class="w"> </span><span class="s2">"f85d75771ed2b88c5ecfe9d9d9bb3255a650eb33512d1e6b8bf49c2ae8a1e700"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"msgHex"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x02100004000000000700aea68f020a13000000000700aea68f02010300286bee0d010004000101006877a0db00acc7da104aa11b05cf091254843468189c8b13808567eead2c8e57"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"msgStr"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{</span><span class="se">\"</span><span class="s2">v2</span><span class="se">\"</span><span class="s2">:[{</span><span class="se">\"</span><span class="s2">withdrawAsset</span><span class="se">\"</span><span class="s2">:[{</span><span class="se">\"</span><span class="s2">id</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">concrete</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">parents</span><span class="se">\"</span><span class="s2">:0,</span><span class="se">\"</span><span class="s2">interior</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">here</span><span class="se">\"</span><span class="s2">:null}}},</span><span class="se">\"</span><span class="s2">fun</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">fungible</span><span class="se">\"</span><span class="s2">:11000000000}}]},{</span><span class="se">\"</span><span class="s2">clearOrigin</span><span class="se">\"</span><span class="s2">:null},{</span><span class="se">\"</span><span class="s2">buyExecution</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">fees</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">id</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">concrete</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">parents</span><span class="se">\"</span><span class="s2">:0,</span><span class="se">\"</span><span class="s2">interior</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">here</span><span class="se">\"</span><span class="s2">:null}}},</span><span class="se">\"</span><span class="s2">fun</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">fungible</span><span class="se">\"</span><span class="s2">:11000000000}},</span><span class="se">\"</span><span class="s2">weightLimit</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">limited</span><span class="se">\"</span><span class="s2">:4000000000}}},{</span><span class="se">\"</span><span class="s2">depositAsset</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">assets</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">wild</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">all</span><span class="se">\"</span><span class="s2">:null}},</span><span class="se">\"</span><span class="s2">maxAssets</span><span class="se">\"</span><span class="s2">:1,</span><span class="se">\"</span><span class="s2">beneficiary</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">parents</span><span class="se">\"</span><span class="s2">:0,</span><span class="se">\"</span><span class="s2">interior</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">x1</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">accountId32</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">network</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">any</span><span class="se">\"</span><span class="s2">:null},</span><span class="se">\"</span><span class="s2">id</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">0x6877a0db00acc7da104aa11b05cf091254843468189c8b13808567eead2c8e57</span><span class="se">\"</span><span class="s2">}}}}}}]}"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"ts"</span><span class="p">:</span><span class="w"> </span><span class="mi">1656594528</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"blockNumber"</span><span class="p">:</span><span class="w"> </span><span class="mi">10962787</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"relayChain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Polkadot"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"sentAt"</span><span class="p">:</span><span class="w"> </span><span class="mi">10962786</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"xcmID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1334166-1-xcmp-2000-2004-0"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"chainID"</span><span class="p">:</span><span class="w"> </span><span class="mi">2004</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"moonbeam"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"chainName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Moonbeam"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"chainIDDest"</span><span class="p">:</span><span class="w"> </span><span class="mi">2000</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"idDest"</span><span class="p">:</span><span class="w"> </span><span class="s2">"acala"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"chainDestName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Acala"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"msgType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"xcmp"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"msgHash"</span><span class="p">:</span><span class="w"> </span><span class="s2">"e4da9547a5c2977713b7c9277b26a77e8ea65e2c07ea177b125c359e72728f00"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"msgHex"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x0210000400000106080000000b08b6957fbd430a1300000106080000000b08b6957fbd43010300286bee0d01000400010100d0c696806e3f6020040241eefddbbbb6ef5bf870f4c77feaac4775d26e7a662c"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"msgStr"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{</span><span class="se">\"</span><span class="s2">v2</span><span class="se">\"</span><span class="s2">:[{</span><span class="se">\"</span><span class="s2">withdrawAsset</span><span class="se">\"</span><span class="s2">:[{</span><span class="se">\"</span><span class="s2">id</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">concrete</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">parents</span><span class="se">\"</span><span class="s2">:0,</span><span class="se">\"</span><span class="s2">interior</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">x1</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">generalKey</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">0x0000</span><span class="se">\"</span><span class="s2">}}}},</span><span class="se">\"</span><span class="s2">fun</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">fungible</span><span class="se">\"</span><span class="s2">:74481168397832}}]},{</span><span class="se">\"</span><span class="s2">clearOrigin</span><span class="se">\"</span><span class="s2">:null},{</span><span class="se">\"</span><span class="s2">buyExecution</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">fees</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">id</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">concrete</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">parents</span><span class="se">\"</span><span class="s2">:0,</span><span class="se">\"</span><span class="s2">interior</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">x1</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">generalKey</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">0x0000</span><span class="se">\"</span><span class="s2">}}}},</span><span class="se">\"</span><span class="s2">fun</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">fungible</span><span class="se">\"</span><span class="s2">:74481168397832}},</span><span class="se">\"</span><span class="s2">weightLimit</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">limited</span><span class="se">\"</span><span class="s2">:4000000000}}},{</span><span class="se">\"</span><span class="s2">depositAsset</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">assets</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">wild</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">all</span><span class="se">\"</span><span class="s2">:null}},</span><span class="se">\"</span><span class="s2">maxAssets</span><span class="se">\"</span><span class="s2">:1,</span><span class="se">\"</span><span class="s2">beneficiary</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">parents</span><span class="se">\"</span><span class="s2">:0,</span><span class="se">\"</span><span class="s2">interior</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">x1</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">accountId32</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">network</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">any</span><span class="se">\"</span><span class="s2">:null},</span><span class="se">\"</span><span class="s2">id</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">0xd0c696806e3f6020040241eefddbbbb6ef5bf870f4c77feaac4775d26e7a662c</span><span class="se">\"</span><span class="s2">}}}}}}]}"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"ts"</span><span class="p">:</span><span class="w"> </span><span class="mi">1656595609</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"blockNumber"</span><span class="p">:</span><span class="w"> </span><span class="mi">1334166</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"relayChain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Polkadot"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"sentAt"</span><span class="p">:</span><span class="w"> </span><span class="mi">10962961</span><span class="p">,</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="err">...</span><span class="w">
-</span><span class="p">]</span><span class="w">
-</span></code></pre></div><h3 id='http-request-23'>HTTP Request</h3>
-<p><code>POST https://api.polkaholic.io/search/xcmmessages</code></p>
-<h3 id='input-parameters-5'>Input Parameters</h3>
-<table><thead>
-<tr>
-<th>Attribute</th>
-<th>Type</th>
-<th>Description</th>
-<th style="text-align: center">Optional?</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>chainID</td>
-<td>String or Int</td>
-<td>The identifier of the source chain to retrieve data about</td>
-<td style="text-align: center">Optional</td>
-</tr>
-<tr>
-<td>chainIDDest</td>
-<td>String or Int</td>
-<td>The identifier of the dest chain to retrieve data about</td>
-<td style="text-align: center">Optional</td>
-</tr>
-<tr>
-<td>dateStart</td>
-<td><code>&quot;YYYY-MM-DD&quot;</code></td>
-<td>The Starting Date(inclusive). ex: &quot;2022-05-01&quot;</td>
-<td style="text-align: center">Optional</td>
-</tr>
-<tr>
-<td>dateEnd</td>
-<td><code>&quot;YYYY-MM-DD&quot;</code></td>
-<td>The Ending Date(inclusive). ex: &quot;2022-05-31&quot;</td>
-<td style="text-align: center">Optional</td>
-</tr>
-<tr>
-<td>msgType</td>
-<td>String</td>
-<td>Filter based on channel msg type [&#39;ump&#39;,&#39;dmp&#39;,&#39;xcmp&#39;]</td>
-<td style="text-align: center">Optional</td>
-</tr>
-<tr>
-<td>relayChain</td>
-<td>String</td>
-<td>relayChain of the msg. ex: &#39;polkadot&#39; or &#39;kusama&#39;</td>
-<td style="text-align: center">Optional</td>
-</tr>
-</tbody></table>
-<h3 id='url-parameters-12'>URL Parameters</h3>
-<p>NONE</p>
-<h3 id='response-description-11'>Response Description</h3>
-<p>Return an list of xcmmessage</p>
-
-<table><thead>
-<tr>
-<th>Attribute</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>xcmID</td>
-<td>The xcm identifiers in the form of: <br /> <code>blockNumber-txIdx-mpType-sourceChainID-destChainID-msgIdx</code></td>
-</tr>
-<tr>
-<td>msgType</td>
-<td><em>ump</em>  - upward msg send from parachain to relaychain.<br /><em>dmp</em>  - downard msg send from relaychain to parachain. <br /><em>xcmp</em> - horizontal msg (hrmp) send from parachain to parachain</td>
-</tr>
-<tr>
-<td>msgHex</td>
-<td>The hexEncoded msg. <em>Note:</em> First byte is effectively removed from the raw xcmp msg</td>
-</tr>
-<tr>
-<td>msgHash</td>
-<td>The blake256(msgHex)</td>
-</tr>
-<tr>
-<td>msgStr</td>
-<td>The undecorated Channel Msg</td>
-</tr>
-<tr>
-<td>blockNumber</td>
-<td>The BN where the msg is received by dest chain</td>
-</tr>
-<tr>
-<td>sentAt</td>
-<td>The hrmpWatermark BN</td>
 </tr>
 </tbody></table>
 <h1 id='hash'>Hash</h1><h2 id='hash-lookup'>Hash Lookup</h2>
@@ -4215,7 +3860,7 @@ curl <span class="s2">"https://api.polkaholic.io/hash/0xe5b17b7515813b54826b7231
     </span><span class="nl">"chainID"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
     </span><span class="nl">"blockNumber"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h3 id='http-request-24'>HTTP Request</h3>
+</span></code></pre></div><h3 id='http-request-22'>HTTP Request</h3>
 <p><code>GET https://api.polkaholic.io/hash/&lt;Hash&gt;</code></p>
 <h3 id='query-parameters-2'>Query Parameters</h3>
 <table><thead>
@@ -4229,7 +3874,7 @@ curl <span class="s2">"https://api.polkaholic.io/hash/0xe5b17b7515813b54826b7231
 <td>The hash to lookup. If found, the corresponding hashType and relevant info will be returned</td>
 </tr>
 </tbody></table>
-<h3 id='response-description-12'>Response Description</h3>
+<h3 id='response-description-10'>Response Description</h3>
 <table><thead>
 <tr>
 <th>Attribute</th>
